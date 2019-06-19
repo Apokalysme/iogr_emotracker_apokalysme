@@ -1,0 +1,93 @@
+[
+  // EP Label
+  {
+    "name": "Edward's Prison",
+    "type": "static",
+    "img": "images/EP.png",
+    "codes": "ep_label"
+  },
+  // IR Label
+  {
+    "name": "Incan Ruins",
+    "type": "static",
+    "img": "images/IR.png",
+    "codes": "ir_label"
+  },
+  // DM Label
+  {
+    "name": "Diamant Mine",
+    "type": "static",
+    "img": "images/DM.png",
+    "codes": "DM_label"
+  },
+  // SG Label
+  {
+    "name": "Sky Garden",
+    "type": "static",
+    "img": "images/SG.png",
+    "codes": "sg_label"
+  },
+  // SP Label
+  {
+    "name": "Seaside Palace",
+    "type": "static",
+    "img": "images/SP.png",
+    "codes": "sp_label"
+  },
+  // MU Label
+  {
+    "name": "Mu",
+    "type": "static",
+    "img": "images/MU.png",
+    "codes": "mu_label"
+  },
+  // AD Label
+  {
+    "name": "Angel Dungeon",
+    "type": "static",
+    "img": "images/AD.png",
+    "codes": "ad_label"
+  },
+  // GW Label
+  {
+    "name": "Great Wall",
+    "type": "static",
+    "img": "images/GW.png",
+    "codes": "gw_label"
+  },
+  // MT Label
+  {
+    "name": "Mt. Temple",
+    "type": "static",
+    "img": "images/MT.png",
+    "codes": "mt_label"
+  },
+  // AV Label
+  {
+    "name": "Ankor Vat",
+    "type": "static",
+    "img": "images/AV.png",
+    "codes": "av_label"
+  },
+  // PY Label
+  {
+    "name": "Pyramid",
+    "type": "static",
+    "img": "images/PY.png",
+    "codes": "py_label"
+  },
+  // BT Label
+  {
+    "name": "Babel Tower",
+    "type": "static",
+    "img": "images/BT.png",
+    "codes": "bt_label"
+  },
+  // JM Label
+  {
+    "name": "Jeweler's Mansion",
+    "type": "static",
+    "img": "images/JM.png",
+    "codes": "jm_label"
+  }    
+]

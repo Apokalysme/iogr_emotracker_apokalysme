@@ -1,0 +1,504 @@
+[
+	// West Continent
+    {
+        "name": "West Continent",
+        "group": "West Continent",
+        "children": [
+			// South Cape
+			{
+				"name": "South Cape",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 4
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 190,
+						"y": 935
+					}
+				],
+				"children": [
+					{
+						"name": "South Cape Dark Spaces",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"chest_unopened_img": "images/dark_space.png",
+								"chest_opened_img": "images/dark_space_visited.png",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 230,
+								"y": 935
+							}
+						]
+					}
+				]
+			},
+
+			// Edward's Castle
+			{
+				"name": "Edward's Castle",
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 220,
+						"y": 810
+					}
+				],
+				"sections": [
+					{
+						"name": "Castle",
+						"clear_as_group": false,
+						"item_count": 2
+					}
+				]
+			},
+			
+			// Itory
+			{
+				"name": "Itory",
+				"access_rules": [ "melody_lola" ],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 185,
+						"y": 680
+					}
+				],
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 1
+					},
+					{
+						"name": "Cave",
+						"clear_as_group": false,
+						"access_rules": [ "psycho_dash" ],
+						"item_count": 1
+					}
+				],
+				"children": [
+					{
+						"name": "Itory Dark Spaces",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"chest_unopened_img": "images/dark_space.png",
+								"chest_opened_img": "images/dark_space_visited.png",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 225,
+								"y": 680
+							}
+						]
+					}
+				]
+			},
+			
+			// Moon Tribe
+			{
+				"name": "Moon Tribe",
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 145,
+						"y": 585
+					}
+				],
+				"sections": [
+					{
+						"name": "Trial",
+						"clear_as_group": false,
+						"item_count": 1
+					}
+				]
+			},
+			
+			// Gold Ship
+			{
+				"name": "Gold Ship",
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 365,
+						"y": 630
+					}
+				],
+				"sections": [
+					{
+						"name": "Ship",
+						"clear_as_group": false,
+						"access_rules": [ "diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b" ],
+						"item_count": 1
+					}
+				]
+			}
+		]
+	},
+
+	// East Continent
+    {
+        "name": "East Continent",
+        "group": "East Continent",
+		"access_rules": [ "teapot", "letter_lola", "diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b" ],
+        "children": [
+			// Diamond Coast
+			{
+				"name": "Diamond Coast",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 590,
+						"y": 860
+					}
+				]
+			},
+			
+			// Freejia
+			{
+				"name": "Freejia",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 5
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 580,
+						"y": 715
+					}
+				],
+				"children": [
+					{
+						"name": "Freejia Dark Spaces",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"chest_unopened_img": "images/dark_space.png",
+								"chest_opened_img": "images/dark_space_visited.png",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 620,
+								"y": 715
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	
+	//  North Continent
+    {
+        "name": "North Continent",
+        "group": "North Continent",
+        "access_rules": [ "teapot,mu_key", "letter_lola" ],
+        "children": [
+
+			// Angel Village
+			{
+				"name": "Angel Village",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 860,
+						"y": 345
+					}
+				],
+				"children": [
+					{
+						"name": "Angel Village Dark Spaces",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"chest_unopened_img": "images/dark_space.png",
+								"chest_opened_img": "images/dark_space_visited.png",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 900,
+								"y": 345
+							}
+						]
+					}
+				]
+			},
+	
+			// Watermia
+			{
+				"name": "Watermia",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 4
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 720,
+						"y": 420
+					}
+				],
+				"children": [
+					{
+						"name": "Watermia Dark Spaces",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"chest_unopened_img": "images/dark_space.png",
+								"chest_opened_img": "images/dark_space_visited.png",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 760,
+								"y": 420
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+
+	//  North Continent - Center
+	{
+		"name": "North Continent - Center",
+		"group": "North Continent - Center",
+		"access_rules": [ "melody_memory", "teapot,mu_key,will", "letter_lola,will" ],
+		"children": [
+		
+			// Euro
+			{
+				"name": "Euro",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"access_rules": [ "apple" ],
+						"item_count": 7
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 450,
+						"y": 295
+					}
+				],
+				"children": [
+					{
+						"name": "Euro Dark Spaces",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"chest_unopened_img": "images/dark_space.png",
+								"chest_opened_img": "images/dark_space_visited.png",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 490,
+								"y": 295
+							}
+						]
+					}
+				]
+			},
+
+			// Natives' Village
+			{
+				"name": "Natives' Village",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 1
+					},
+					{
+						"name": "Statue",
+						"clear_as_group": false,
+						"access_rules": [ "gorgon_flower" ],
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 240,
+						"y": 410
+					}
+				],
+				"children": [
+					{
+						"name": "Natives' Village Dark Spaces",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"chest_unopened_img": "images/dark_space.png",
+								"chest_opened_img": "images/dark_space_visited.png",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 280,
+								"y": 410
+							}
+						]
+					}
+				]
+			}					
+		]
+	},
+	
+	//  North Continent - Desert
+	{
+		"name": "North Continent - Desert",
+		"group": "North Continent - Desert",
+		"access_rules": [ "melody_memory", "teapot,mu_key,will,large_roast", "letter_lola,will,large_roast" ],
+			"children": [
+				// Dao
+				{
+					"name": "Dao",
+					"sections": [
+						{
+							"name": "City",
+							"clear_as_group": false,
+							"item_count": 4
+						}
+					],
+					"map_locations": [
+						{
+							"map": "world",
+							"x": 125,
+							"y": 265
+						}
+					],
+					"children": [
+						{
+							"name": "Dao Dark Spaces",
+							"access_rules": [ "setting_dark_spaces_all" ],
+							"sections": [
+								{
+									"name": "City",
+									"chest_unopened_img": "images/dark_space.png",
+									"chest_opened_img": "images/dark_space_visited.png",
+									"item_count": 1
+								}
+							],
+							"map_locations": [
+								{
+									"map": "world",
+									"x": 165,
+									"y": 265
+								}
+							]
+						}
+					]
+				}
+			]
+	},
+	
+    // Jeweler's Mansion
+    {
+        "name": "Jeweler",
+        "access_rules": [ "red_jewel" ],
+        "sections": [
+            {
+                "name": "Gift 1",
+                "clear_as_group": false,
+				"access_rules": [ "[red_jewel:49]" ],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 2",
+                "clear_as_group": false,
+				"access_rules": [ "[red_jewel:49]" ],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 3",
+                "clear_as_group": false,
+				"access_rules": [ "[red_jewel:49]" ],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 4",
+                "clear_as_group": false,
+				"access_rules": [ "[red_jewel:49]" ],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 5",
+                "clear_as_group": false,
+				"access_rules": [ "[red_jewel:49]" ],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 6",
+                "clear_as_group": false,
+				"access_rules": [ "[red_jewel:49]" ],
+                "item_count": 1
+            }
+        ],
+        "map_locations": [
+            {
+                "map": "world",
+                "x": 475,
+                "y": 50
+            }
+        ]
+    }
+]

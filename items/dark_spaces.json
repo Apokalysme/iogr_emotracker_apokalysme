@@ -1,0 +1,9 @@
+[
+  {
+    "name": "Dark Space",
+    "type": "consumable",
+    "img": "images/dark_space.png",
+    "codes": "dark_space",
+    "max_quantity": 36
+  }
+]

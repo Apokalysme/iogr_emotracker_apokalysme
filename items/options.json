@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Dark Spaces",
+    "type": "progressive",
+    "allow_disabled": false,
+    "loop": true,
+    "initial_stage_idx": 2,
+    "stages": [
+      {
+        "img": "images/setting_dark_spaces_off.png",
+        "codes": "setting_dark_spaces_off"
+      },
+      {
+        "img": "images/setting_dark_spaces_dungeons.png",
+        "codes": "setting_dark_spaces_dungeons"
+      },
+      {
+        "img": "images/setting_dark_spaces_all.png",
+        "codes": "setting_dark_spaces_all"
+      }
+    ]
+  }
+]

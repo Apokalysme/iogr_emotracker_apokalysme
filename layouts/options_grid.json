@@ -1,0 +1,13 @@
+{
+  "options_grid": {
+    "type": "itemgrid",
+    "h_alignment": "center",
+    "item_margin": "1,2",
+    "rows": [
+      [
+        "setting_dark_spaces_off",
+        ""
+      ]
+    ]
+  }
+}
