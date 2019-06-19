@@ -348,9 +348,29 @@
         "secondary_codes": "kara_found"
 		},
 		{
-        "img": "images/kara_saved.png",
+        "img": "images/kara_edwards_castle.png",
         "codes": "save_kara",
-        "secondary_codes": "kara_saved"
+        "secondary_codes": "kara_edwards_castle"
+		},
+		{
+        "img": "images/kara_diamond_mine.png",
+        "codes": "save_kara",
+        "secondary_codes": "kara_diamond_mine"
+		},
+		{
+        "img": "images/kara_angel_dungeon.png",
+        "codes": "save_kara",
+        "secondary_codes": "kara_angel_dungeon"
+		},
+		{
+        "img": "images/kara_mount_kress.png",
+        "codes": "save_kara",
+        "secondary_codes": "kara_mount_kress"
+		},
+		{
+        "img": "images/kara_ankor_vat.png",
+        "codes": "save_kara",
+        "secondary_codes": "kara_ankor_vat"
 		}
 	]
   }

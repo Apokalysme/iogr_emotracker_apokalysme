@@ -242,9 +242,9 @@
 			"teapot, mu_key",
 			"teapot, memory_melody, will",
 			"letter_lola",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, mu_key",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
 			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, memory_melody, will",
 			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, memory_melody, will",
 			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, memory_melody, will"
@@ -341,12 +341,13 @@
 			"teapot, melody_memory",
 			"teapot, mu_key, will",
 			"letter_lola, will",
+			"letter_lola, melody_memory",
 			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
 			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
 			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, mu_key, will",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will"
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will"
 		],
 		"children": [
 		
@@ -355,10 +356,15 @@
 				"name": "Euro",
 				"sections": [
 					{
-						"name": "City",
+						"name": "Ann",
 						"clear_as_group": false,
 						"access_rules": [ "apple" ],
-						"item_count": 7
+						"item_count": 1
+					},
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 6
 					}
 				],
 				"map_locations": [

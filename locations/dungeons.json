@@ -52,7 +52,7 @@
 							},
 							{
 								"name": "Sewer",
-								"access_rules": [ "prison_key, melody_lola" ],
+								"access_rules": [ "prison_key, melody_lola, necklace" ],
 								"chest_unopened_img": "images/dark_space.png",
 								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
@@ -258,7 +258,11 @@
     {
         "name": "Sky Garden",
         "access_rules": [
-			"teapot"
+			"teapot",
+			"letter_lola",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b"
 		],
         "sections": [
             {
@@ -365,9 +369,13 @@
 		"access_rules": [
 			"teapot",
 			"letter_lola, mu_key",
+			"letter_lola, crystal_ball:4",
 			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will, mu_key",
 			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will, mu_key",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will, mu_key"
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will, mu_key",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4"
 		],
 		"sections": [
 			{
@@ -491,7 +499,10 @@
 			"letter_lola",
 			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will",
 			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will"
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key"
 		],
         "children": [
 
@@ -604,12 +615,13 @@
 			"teapot, melody_memory",
 			"teapot, mu_key, will",
 			"letter_lola, will",
+			"letter_lola, melody_memory",
 			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
 			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
 			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, mu_key, will",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will"
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will"
 		],
 		"children": [
 		
