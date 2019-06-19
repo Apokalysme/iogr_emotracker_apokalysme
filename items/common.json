@@ -487,9 +487,19 @@
     // Psycho Slide
     {
       "name": "Psycho Slide",
-      "type": "toggle",
-      "img": "images/psycho_slide.png",
-      "codes": "psycho_slide"
+      "type": "progressive",
+	  "stages": [
+		{
+			"img": "images/psycho_slide.png",
+			"codes": "psycho_slide",
+			"secondary_codes": "none"
+		},
+		{
+			"img": "images/psycho_slide_powerful.png",
+			"codes": "powerful_slide",
+			"secondary_codes": "powerful"
+		}
+	  ]
     },
     // Spin Dash
     {
@@ -501,9 +511,19 @@
     // Dark Friar
     {
       "name": "Dark Friar",
-      "type": "toggle",
-      "img": "images/dark_friar.png",
-      "codes": "dark_friar"
+      "type": "progressive",
+	  "stages": [
+		{
+			"img": "images/dark_friar.png",
+			"codes": "dark_friar",
+			"secondary_codes": "none"
+		},
+		{
+			"img": "images/dark_friar_powerful.png",
+			"codes": "powerful_friar",
+			"secondary_codes": "powerful"
+		}
+	  ]
     },
     // Aura Barrier
     {

@@ -66,7 +66,9 @@
 			// Itory
 			{
 				"name": "Itory",
-				"access_rules": [ "melody_lola" ],
+				"access_rules": [
+					"melody_lola"
+				],
 				"map_locations": [
 					{
 						"map": "world",
@@ -83,7 +85,11 @@
 					{
 						"name": "Cave",
 						"clear_as_group": false,
-						"access_rules": [ "psycho_dash" ],
+						"access_rules": [ 
+							"psycho_dash",
+							"psycho_slide",
+							"spin_dash"
+						],
 						"item_count": 1
 					}
 				],
@@ -143,7 +149,11 @@
 					{
 						"name": "Ship",
 						"clear_as_group": false,
-						"access_rules": [ "diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b" ],
+						"access_rules": [
+							"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b",
+							"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b",
+							"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b"
+						],
 						"item_count": 1
 					}
 				]
@@ -151,11 +161,17 @@
 		]
 	},
 
-	// East Continent
+	// South East Continent
     {
-        "name": "East Continent",
-        "group": "East Continent",
-		"access_rules": [ "teapot", "letter_lola", "diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b" ],
+        "name": "South East Continent",
+        "group": "South East Continent",
+		"access_rules": [
+			"teapot",
+			"letter_lola",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b"
+		],
         "children": [
 			// Diamond Coast
 			{
@@ -218,11 +234,21 @@
 		]
 	},
 	
-	//  North Continent
+	//  North East Continent
     {
-        "name": "North Continent",
-        "group": "North Continent",
-        "access_rules": [ "teapot,mu_key", "letter_lola" ],
+        "name": "North East Continent",
+        "group": "North East Continent",
+        "access_rules": [
+			"teapot, mu_key",
+			"teapot, memory_melody, will",
+			"letter_lola",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, mu_key",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, memory_melody, will",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, memory_melody, will",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, memory_melody, will"
+		],
         "children": [
 
 			// Angel Village
@@ -307,11 +333,21 @@
 		]
 	},
 
-	//  North Continent - Center
+	//  North Continent
 	{
-		"name": "North Continent - Center",
-		"group": "North Continent - Center",
-		"access_rules": [ "melody_memory", "teapot,mu_key,will", "letter_lola,will" ],
+		"name": "North Continent",
+		"group": "North Continent",
+		"access_rules": [
+			"teapot, melody_memory",
+			"teapot, mu_key, will",
+			"letter_lola, will",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, mu_key, will",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will"
+		],
 		"children": [
 		
 			// Euro
@@ -403,11 +439,22 @@
 		]
 	},
 	
-	//  North Continent - Desert
+	//  North West Continent
 	{
-		"name": "North Continent - Desert",
-		"group": "North Continent - Desert",
-		"access_rules": [ "melody_memory", "teapot,mu_key,will,large_roast", "letter_lola,will,large_roast" ],
+		"name": "North West Continent",
+		"group": "North West Continent",
+		"access_rules": [
+			"teapot, mu_key, will, large_roast",
+			"teapot, melody_memory",
+			"letter_lola, will, large_roast",
+			"letter_lola, melody_memory",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will, large_roast",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, mu_key, will, large_roast",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will, large_roast",
+			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
+			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
+			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory"
+		],
 			"children": [
 				// Dao
 				{
@@ -459,37 +506,49 @@
             {
                 "name": "Gift 1",
                 "clear_as_group": false,
-				"access_rules": [ "[red_jewel:49]" ],
+				"access_rules": [
+					"red_jewel:1, [red_jewel:3]"
+				],
                 "item_count": 1
             },
 			{
                 "name": "Gift 2",
                 "clear_as_group": false,
-				"access_rules": [ "[red_jewel:49]" ],
+				"access_rules": [
+					"red_jewel:4, [red_jewel:6]"
+				],
                 "item_count": 1
             },
 			{
                 "name": "Gift 3",
                 "clear_as_group": false,
-				"access_rules": [ "[red_jewel:49]" ],
+				"access_rules": [
+					"red_jewel:7, [red_jewel:9]"
+				],
                 "item_count": 1
             },
 			{
                 "name": "Gift 4",
                 "clear_as_group": false,
-				"access_rules": [ "[red_jewel:49]" ],
+				"access_rules": [
+					"red_jewel:10, [red_jewel:14]"
+				],
                 "item_count": 1
             },
 			{
                 "name": "Gift 5",
                 "clear_as_group": false,
-				"access_rules": [ "[red_jewel:49]" ],
+				"access_rules": [
+					"red_jewel:15, [red_jewel:24]"
+				],
                 "item_count": 1
             },
 			{
                 "name": "Gift 6",
                 "clear_as_group": false,
-				"access_rules": [ "[red_jewel:49]" ],
+				"access_rules": [
+					"red_jewel:25, [red_jewel:34]"
+				],
                 "item_count": 1
             }
         ],

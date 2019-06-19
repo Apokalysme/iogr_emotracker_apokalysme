@@ -5,6 +5,7 @@ Tracker:AddItems("items/options.json")
 Tracker:AddItems("items/common.json")
 Tracker:AddItems("items/dungeon_items.json")
 Tracker:AddItems("items/dark_spaces.json")
+Tracker:AddItems("items/labels.json")
 
 Tracker:AddMaps("maps/maps.json")
 Tracker:AddLocations("locations/world.json")
