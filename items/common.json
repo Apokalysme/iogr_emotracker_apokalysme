@@ -19,9 +19,19 @@
     // Lola's Melody
     {
       "name": "Lola's Melody",
-      "type": "toggle",
-      "img": "images/melody_lola.png",
-      "codes": "melody_lola"
+	  "type": "progressive_toggle",
+      "stages": [
+        {
+          "img": "images/melody_lola.png",
+		  "codes": "melody_lola",
+          "secondary_codes": "none"
+        },
+        {
+          "img": "images/melody_lola_used.png",
+          "codes": "melody_lola",
+          "secondary_codes": "used"
+        }
+      ]
     },
     // Prison Key
     {
@@ -283,7 +293,7 @@
           "secondary_codes": "none"
         },
         {
-          "img": "images/necklace_used.png",
+          "img": "images/necklace_given.png",
           "codes": "necklace",
           "secondary_codes": "used"
         }
