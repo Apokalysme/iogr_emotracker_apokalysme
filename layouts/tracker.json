@@ -1,4 +1,6 @@
 {
+	"chest_unopened_img": "images/chest_unopened.png",
+	"chest_opened_img": "images/chest_opened.png",
     "shared_item_grid": {
         "type": "itemgrid",
         "h_alignment": "center",

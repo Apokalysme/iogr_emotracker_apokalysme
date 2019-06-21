@@ -1,8 +1,8 @@
 ﻿{
-  "name": "EmoTracker Illusion of Gaia Support",
-  "game_name": "Illusion of Gaia : Randomizer",
+  "name": "IoGR Map and Item Tracker",
+  "game_name": "Illusion of Gaia Randomizer",
   "platform": "snes",
-  "package_version": "1.2.1.0",
+  "package_version": "1.2.2.0",
   "package_uid": "iogr_emotracker_apokalysme",
   "author": "Apokalysme",
   "variants": {

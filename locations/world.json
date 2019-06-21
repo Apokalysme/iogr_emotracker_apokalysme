@@ -3,6 +3,8 @@
     {
         "name": "West Continent",
         "group": "West Continent",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
         "children": [
 			// South Cape
 			{
@@ -165,6 +167,8 @@
     {
         "name": "South East Continent",
         "group": "South East Continent",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
 		"access_rules": [
 			"teapot",
 			"letter_lola",
@@ -238,6 +242,8 @@
     {
         "name": "North East Continent",
         "group": "North East Continent",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
         "access_rules": [
 			"teapot, mu_key",
 			"teapot, memory_melody, will",
@@ -337,6 +343,8 @@
 	{
 		"name": "North Continent",
 		"group": "North Continent",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
 		"access_rules": [
 			"teapot, melody_memory",
 			"teapot, mu_key, will",
@@ -449,6 +457,8 @@
 	{
 		"name": "North West Continent",
 		"group": "North West Continent",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
 		"access_rules": [
 			"teapot, mu_key, will, large_roast",
 			"teapot, melody_memory",
@@ -504,9 +514,11 @@
 			]
 	},
 	
-    // Jeweler's Mansion
+    // Jeweler
     {
         "name": "Jeweler",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
         "access_rules": [ "red_jewel" ],
         "sections": [
             {

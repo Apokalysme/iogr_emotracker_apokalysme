@@ -3,7 +3,7 @@
     {
         "name": "West Continent",
         "group": "West Continent",
-		"chest_unopened_img": "images/chest_unopened_img.png",
+		"chest_unopened_img": "images/chest_unopened.png",
 		"chest_opened_img": "images/chest_opened.png",
         "children": [
 			// Edward's Prison
@@ -151,6 +151,8 @@
     {
         "name": "South East Continent",
         "group": "South East Continent",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
 		"access_rules": [
 			"teapot",
 			"letter_lola",
@@ -257,6 +259,8 @@
     // Sky Garden
     {
         "name": "Sky Garden",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
         "access_rules": [
 			"teapot",
 			"letter_lola",
@@ -366,6 +370,8 @@
 	//  Seaside Palace
 	{
 		"name": "Seaside Palace",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
 		"access_rules": [
 			"teapot",
 			"letter_lola, mu_key",
@@ -433,6 +439,8 @@
 	// Mu
 	{
 		"name": "Mu",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
 		"access_rules": [ "teapot, mu_key", "letter_lola" ],
 		"sections": [
 			{
@@ -493,6 +501,8 @@
     {
         "name": "North East Continent",
         "group": "North East Continent",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
         "access_rules": [
 			"teapot, mu_key",
 			"teapot, melody_memory, will",
@@ -611,6 +621,8 @@
 	{
 		"name": "North Continent",
 		"group": "North Continent",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
 		"access_rules": [
 			"teapot, melody_memory",
 			"teapot, mu_key, will",
@@ -809,6 +821,8 @@
 	{
 		"name": "North West Continent",
 		"group": "North West Continent",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
 		"access_rules": [
 			"teapot, mu_key, will, large_roast",
 			"teapot, melody_memory",
@@ -943,6 +957,8 @@
 	// Babel
 	{
 		"name": "Babel",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
 		"access_rules": [
 			"teapot, melody_memory",
 			"letter_lola, melody_memory",
@@ -1005,6 +1021,8 @@
     // Jeweler's Mansion
     {
         "name": "Jeweler's Mansion",
+		"chest_unopened_img": "images/chest_unopened.png",
+		"chest_opened_img": "images/chest_opened.png",
         "access_rules": [
 			"red_jewel:36, [red_jewel:50]"
 		],
