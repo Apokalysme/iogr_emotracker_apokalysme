@@ -1,9 +1,34 @@
 [
-  {
-    "name": "Dark Space",
-    "type": "consumable",
-    "img": "images/dark_space.png",
-    "codes": "dark_space",
-    "max_quantity": 36
-  }
+	// Dark Space object
+	{
+		"name": "Dark Space",
+		"type": "consumable",
+		"img": "images/icons/dark_space.png",
+		"codes": "dark_space",
+		"max_quantity": 36
+	},
+	
+	// Dark Spaces tracking settings
+	// default : all
+	{
+		"name": "Dark Spaces",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"stages": [
+			{
+				"img": "images/icons/setting_dark_spaces_off.png",
+				"codes": "setting_dark_spaces_off"
+			},
+			{
+				"img": "images/icons/setting_dark_spaces_dungeons.png",
+				"codes": "setting_dark_spaces_dungeons"
+			},
+			{
+				"img": "images/icons/setting_dark_spaces_all.png",
+				"codes": "setting_dark_spaces_all"
+			}
+		]
+	}
 ]

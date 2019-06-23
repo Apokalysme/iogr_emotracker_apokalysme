@@ -1,0 +1,71 @@
+[
+    // Psycho Dash
+    {
+      "name": "Psycho Dash",
+      "type": "toggle",
+      "img": "images/abilities/will_psycho_dash.png",
+      "codes": "psycho_dash"
+    },
+    // Psycho Slide
+    {
+      "name": "Psycho Slide",
+      "type": "progressive",
+	  "stages": [
+		{
+			"img": "images/abilities/will_psycho_slide.png",
+			"codes": "psycho_slide",
+			"secondary_codes": "none"
+		},
+		{
+			"img": "images/abilities/will_psycho_slide_powerful.png",
+			"codes": "powerful_slide",
+			"secondary_codes": "powerful"
+		}
+	  ]
+    },
+    // Spin Dash
+    {
+      "name": "Spin Dash",
+      "type": "toggle",
+      "img": "images/abilities/will_spin_dash.png",
+      "codes": "spin_dash"
+    },
+    // Dark Friar
+    {
+      "name": "Dark Friar",
+      "type": "progressive",
+	  "stages": [
+		{
+			"img": "images/abilities/freedan_dark_friar.png",
+			"codes": "dark_friar",
+			"secondary_codes": "none"
+		},
+		{
+			"img": "images/abilities/freedan_dark_friar_powerful.png",
+			"codes": "powerful_friar",
+			"secondary_codes": "powerful"
+		}
+	  ]
+    },
+    // Aura Barrier
+    {
+      "name": "Aura Barrier",
+      "type": "toggle",
+      "img": "images/abilities/freedan_aura_barrier.png",
+      "codes": "aura_barrier"
+    },
+    // Earthquaker
+    {
+      "name": "Earthquaker",
+      "type": "toggle",
+      "img": "images/abilities/freedan_earthquaker.png",
+      "codes": "earthquaker"
+    },
+	// Go Mode
+    {
+      "name": "Go Mode",
+      "type": "toggle",
+      "img": "images/objectives/go_mode.png",
+      "codes": "go_mode"
+    }
+  ]

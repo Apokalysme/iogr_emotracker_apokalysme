@@ -3,8 +3,8 @@
     {
         "name": "West Continent",
         "group": "West Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
         "children": [
 			// South Cape
 			{
@@ -21,17 +21,22 @@
 						"map": "world",
 						"x": 190,
 						"y": 935
+					},
+					{
+						"map": "south_west",
+						"x": 225,
+						"y": 485
 					}
 				],
 				"children": [
 					{
-						"name": "South Cape Dark Spaces",
+						"name": "South Cape - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "City",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -40,6 +45,11 @@
 								"map": "world",
 								"x": 230,
 								"y": 935
+							},
+							{
+								"map": "south_west",
+								"x": 265,
+								"y": 485
 							}
 						]
 					}
@@ -49,18 +59,23 @@
 			// Edward's Castle
 			{
 				"name": "Edward's Castle",
-				"map_locations": [
-					{
-						"map": "world",
-						"x": 220,
-						"y": 810
-					}
-				],
 				"sections": [
 					{
 						"name": "Castle",
 						"clear_as_group": false,
 						"item_count": 2
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 220,
+						"y": 810
+					},
+					{
+						"map": "south_west",
+						"x": 280,
+						"y": 345
 					}
 				]
 			},
@@ -76,6 +91,11 @@
 						"map": "world",
 						"x": 185,
 						"y": 680
+					},
+					{
+						"map": "south_west",
+						"x": 215,
+						"y": 190
 					}
 				],
 				"sections": [
@@ -88,22 +108,20 @@
 						"name": "Cave",
 						"clear_as_group": false,
 						"access_rules": [ 
-							"psycho_dash",
-							"psycho_slide",
-							"spin_dash"
+							"@logic/will ability"
 						],
 						"item_count": 1
 					}
 				],
 				"children": [
 					{
-						"name": "Itory Dark Spaces",
+						"name": "Itory - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "City",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -112,6 +130,11 @@
 								"map": "world",
 								"x": 225,
 								"y": 680
+							},
+							{
+								"map": "south_west",
+								"x": 255,
+								"y": 190
 							}
 						]
 					}
@@ -126,6 +149,11 @@
 						"map": "world",
 						"x": 145,
 						"y": 585
+					},
+					{
+						"map": "south_west",
+						"x": 140,
+						"y": 80
 					}
 				],
 				"sections": [
@@ -145,6 +173,11 @@
 						"map": "world",
 						"x": 365,
 						"y": 630
+					},
+					{
+						"map": "south_west",
+						"x": 430,
+						"y": 135
 					}
 				],
 				"sections": [
@@ -152,9 +185,7 @@
 						"name": "Ship",
 						"clear_as_group": false,
 						"access_rules": [
-							"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b",
-							"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b",
-							"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b"
+							"diamond_block, @logic/will ability, melody_wind, @logic/incan statues"
 						],
 						"item_count": 1
 					}
@@ -167,14 +198,10 @@
     {
         "name": "South East Continent",
         "group": "South East Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
 		"access_rules": [
-			"teapot",
-			"letter_lola",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b"
+			"@logic/south-east continent"
 		],
         "children": [
 			// Diamond Coast
@@ -215,13 +242,13 @@
 				],
 				"children": [
 					{
-						"name": "Freejia Dark Spaces",
+						"name": "Freejia - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "City",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -242,18 +269,10 @@
     {
         "name": "North East Continent",
         "group": "North East Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
         "access_rules": [
-			"teapot, mu_key",
-			"teapot, memory_melody, will",
-			"letter_lola",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, memory_melody, will",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, memory_melody, will",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, memory_melody, will"
+			"@logic/north-east continent"
 		],
         "children": [
 
@@ -276,13 +295,13 @@
 				],
 				"children": [
 					{
-						"name": "Angel Village Dark Spaces",
+						"name": "Angel - Village Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "City",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -316,13 +335,13 @@
 				],
 				"children": [
 					{
-						"name": "Watermia Dark Spaces",
+						"name": "Watermia - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "City",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -343,19 +362,10 @@
 	{
 		"name": "North Continent",
 		"group": "North Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
 		"access_rules": [
-			"teapot, melody_memory",
-			"teapot, mu_key, will",
-			"letter_lola, will",
-			"letter_lola, melody_memory",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will"
+			"@logic/north continent"
 		],
 		"children": [
 		
@@ -384,13 +394,13 @@
 				],
 				"children": [
 					{
-						"name": "Euro Dark Spaces",
+						"name": "Euro - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "City",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -430,13 +440,13 @@
 				],
 				"children": [
 					{
-						"name": "Natives' Village Dark Spaces",
+						"name": "Natives' Village - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "City",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -457,68 +467,59 @@
 	{
 		"name": "North West Continent",
 		"group": "North West Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
 		"access_rules": [
-			"teapot, mu_key, will, large_roast",
-			"teapot, melody_memory",
-			"letter_lola, will, large_roast",
-			"letter_lola, melody_memory",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will, large_roast",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, mu_key, will, large_roast",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will, large_roast",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory"
+			"@logic/north-west continent"
 		],
-			"children": [
-				// Dao
-				{
-					"name": "Dao",
-					"sections": [
-						{
-							"name": "City",
-							"clear_as_group": false,
-							"item_count": 4
-						}
-					],
-					"map_locations": [
-						{
-							"map": "world",
-							"x": 125,
-							"y": 265
-						}
-					],
-					"children": [
-						{
-							"name": "Dao Dark Spaces",
-							"access_rules": [ "setting_dark_spaces_all" ],
-							"sections": [
-								{
-									"name": "City",
-									"chest_unopened_img": "images/dark_space.png",
-									"chest_opened_img": "images/dark_space_visited.png",
-									"item_count": 1
-								}
-							],
-							"map_locations": [
-								{
-									"map": "world",
-									"x": 165,
-									"y": 265
-								}
-							]
-						}
-					]
-				}
-			]
+		"children": [
+			// Dao
+			{
+				"name": "Dao",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 4
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 125,
+						"y": 265
+					}
+				],
+				"children": [
+					{
+						"name": "Dao - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 165,
+								"y": 265
+							}
+						]
+					}
+				]
+			}
+		]
 	},
 	
     // Jeweler
     {
         "name": "Jeweler",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
         "access_rules": [ "red_jewel" ],
         "sections": [
             {

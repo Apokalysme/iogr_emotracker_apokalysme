@@ -3,8 +3,8 @@
     {
         "name": "West Continent",
         "group": "West Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
         "children": [
 			// Edward's Prison
 			{
@@ -27,7 +27,7 @@
 						"name": "Sewer",
 						"clear_as_group": false,
 						"access_rules": [
-							"prison_key, melody_lola, necklace"
+							"prison_key, @logic/lily"
 						],
 						"item_count": 2
 					}
@@ -37,24 +37,27 @@
 						"map": "world",
 						"x": 260,
 						"y": 810
+					},
+					{
+						"map": "south_west",
+						"x": 320,
+						"y": 345
 					}
 				],
 				"children": [
 					{
-						"name": "Edward's Prison Dark Spaces",
+						"name": "Edward's Prison - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "Prison",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							},
 							{
 								"name": "Sewer",
-								"access_rules": [ "prison_key, melody_lola, necklace" ],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
+								"access_rules": [ "prison_key, @logic/lily" ],
 								"item_count": 1
 							}
 						],
@@ -63,6 +66,40 @@
 								"map": "world",
 								"x": 300,
 								"y": 810
+							},
+							{
+								"map": "south_west",
+								"x": 360,
+								"y": 345
+							}
+						]
+					},
+					{
+						"name": "Edward's Prison - Kara's Paint",
+						"chest_unopened_img": "images/objectives/kara.png",
+						"chest_opened_img": "images/objectives/kara_unknown.png",
+						"access_rules": [
+							"kara_edwards_castle"
+						],
+						"sections": [
+							{
+								"name": "Kara's Paint",
+								"access_rules": [
+									"prison_key, @logic/lily, magic_dust"
+								],
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 260,
+								"y": 770
+							},
+							{
+								"map": "south_west",
+								"x": 320,
+								"y": 305
 							}
 						]
 					}
@@ -78,6 +115,11 @@
 						"map": "world",
 						"x": 285,
 						"y": 630
+					},
+					{
+						"map": "south_west",
+						"x": 350,
+						"y": 135
 					}
 				],
 				"sections": [
@@ -90,47 +132,38 @@
 						"name": "Cliffs",
 						"clear_as_group": false,
 						"access_rules": [
-							"diamond_block, psycho_dash",
-							"diamond_block, psycho_slide",
-							"diamond_block, spin_dash",
+							"diamond_block, @logic/will ability"
 						],
 						"item_count": 4
 					},
 					{
 						"name": "Castoth",
 						"access_rules": [
-							"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b",
-							"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b",
-							"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b"
+							"diamond_block, @logic/will ability, melody_wind, @logic/incan statues"
 						],
 						"hosted_item": "mystic_statue_1"
 					}
 				],
 				"children": [
 					{
-						"name": "Incan Ruins Dark Spaces",
+						"name": "Incan Ruins - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "Cliffs",
+								"clear_as_group": false,
 								"access_rules": [
-									"diamond_block, psycho_dash",
-									"diamond_block, psycho_slide",
-									"diamond_block, spin_dash"
+									"diamond_block, @logic/will ability"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 2
 							},
 							{
 								"name": "Pedestals Cliff",
 								"access_rules": [
-									"diamond_block, psycho_dash, melody_wind",
-									"diamond_block, psycho_slide, melody_wind",
-									"diamond_block, spin_dash, melody_wind"
+									"diamond_block, @logic/will ability, melody_wind"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -139,6 +172,11 @@
 								"map": "world",
 								"x": 325,
 								"y": 630
+							},
+							{
+								"map": "south_west",
+								"x": 390,
+								"y": 135
 							}
 						]
 					}
@@ -151,14 +189,10 @@
     {
         "name": "South East Continent",
         "group": "South East Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
 		"access_rules": [
-			"teapot",
-			"letter_lola",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b"
+			"@logic/south-east continent"
 		],
         "children": [
 			// Diamond Mine
@@ -174,9 +208,7 @@
 						"name": "Buried Miner",
 						"clear_as_group": false,
 						"access_rules": [
-							"psycho_dash",
-							"psycho_slide",
-							"spin_dash"
+							"@logic/will ability"
 						],
 						"item_count": 1
 					},
@@ -185,7 +217,6 @@
 						"clear_as_group": false,
 						"access_rules": [
 							"dark_friar",
-							"powerful_friar",
 							"spin_dash"
 						],
 						"item_count": 1
@@ -202,7 +233,7 @@
 						"name": "Samlet",
 						"clear_as_group": false,
 						"access_rules": [
-							"elevator_key, mine_key_a, mine_key_b"
+							"@logic/mine keys"
 						],
 						"item_count": 1
 					}
@@ -216,30 +247,24 @@
 				],
 				"children": [
 					{
-						"name": "Diamond Mine Dark Spaces",
+						"name": "Diamond Mine - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "Buried Miner Room",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							},
 							{
 								"name": "Room Below Alone Miner's",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							},
 							{
 								"name": "Secret Room",
 								"access_rules": [
-									"psycho_dash",
-									"psycho_slide",
-									"spin_dash"
+									"@logic/will ability"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -250,138 +275,136 @@
 								"y": 810
 							}
 						]
-					}
-				]
-			}
-		]
-	},
-	
-    // Sky Garden
-    {
-        "name": "Sky Garden",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
-        "access_rules": [
-			"teapot",
-			"letter_lola",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b"
-		],
-        "sections": [
-            {
-                "name": "East",
-                "clear_as_group": false,
-                "item_count": 3
-            },
-			{
-                "name": "West",
-                "clear_as_group": false,
-                "access_rules": [
-					"dark_friar",
-					"powerful_friar"
-				],
-                "item_count": 2
-            },
-			{
-                "name": "South East",
-                "clear_as_group": false,
-                "access_rules": [
-					"dark_friar",
-					"powerful_friar"
-				],
-                "item_count": 1
-            },
-			{
-                "name": "South West - Top",
-                "clear_as_group": false,
-				"access_rules": [
-					"[dark_friar]",
-					"[powerful_friar]",
-					"[spin_dash]",
-					"[psycho_dash]",
-					"[psycho_slider]"
-				],
-				"item_count": 1
-			},
-			{
-				"name": "South West - Below",
-				"clear_as_group": false,
-				"item_count": 1
-            },
-            {
-                "name": "Viper",
-                "access_rules": [ "crystal_ball:4" ],
-                "hosted_item": "mystic_statue_2"
-            }
-        ],
-        "map_locations": [
-            {
-                "map": "world",
-                "x": 750,
-                "y": 630
-            }
-        ],
-		"children": [
-			{
-				"name": "Sky Garden Dark Spaces",
-				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
-				"sections": [
-					{
-						"name": "Entrance",
-						"chest_unopened_img": "images/dark_space.png",
-						"chest_opened_img": "images/dark_space_visited.png",
-						"item_count": 1
 					},
 					{
-						"name": "West - Below",
-						"chest_unopened_img": "images/dark_space.png",
-						"chest_opened_img": "images/dark_space_visited.png",
-						"item_count": 1
+						"name": "Diamond Mine - Kara's Paint",
+						"chest_unopened_img": "images/objectives/kara.png",
+						"chest_opened_img": "images/objectives/kara_unknown.png",
+						"access_rules": [
+							"kara_diamond_mine"
+						],
+						"sections": [
+							{
+								"name": "Kara's Paint",
+								"access_rules": [
+									"@logic/mine keys, magic_dust"
+								],
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 810,
+								"y": 770
+							}
+						]
+					}
+				]
+			},	
+
+			// Sky Garden
+			{
+				"name": "Sky Garden",
+				"chest_unopened_img": "images/icons/chest_unopened.png",
+				"chest_opened_img": "images/icons/chest_opened.png",
+				"sections": [
+					{
+						"name": "East",
+						"clear_as_group": false,
+						"item_count": 3
+					},
+					{
+						"name": "West",
+						"clear_as_group": false,
+						"access_rules": [
+							"dark_friar"
+						],
+						"item_count": 2
 					},
 					{
 						"name": "South East",
-						"chest_unopened_img": "images/dark_space.png",
-						"chest_opened_img": "images/dark_space_visited.png",
+						"clear_as_group": false,
+						"access_rules": [
+							"dark_friar"
+						],
 						"item_count": 1
 					},
 					{
-						"name": "South West",
+						"name": "South West - Top",
+						"clear_as_group": false,
 						"access_rules": [
-							"dark_friar",
-							"powerful_friar"
+							"[dark_friar]",
+							"[powerful_friar]",
+							"[@logic/will ability]"
 						],
-						"chest_unopened_img": "images/dark_space.png",
-						"chest_opened_img": "images/dark_space_visited.png",
 						"item_count": 1
+					},
+					{
+						"name": "South West - Below",
+						"clear_as_group": false,
+						"item_count": 1
+					},
+					{
+						"name": "Viper",
+						"access_rules": [ "crystal_ball:4" ],
+						"hosted_item": "mystic_statue_2"
 					}
 				],
 				"map_locations": [
 					{
 						"map": "world",
-						"x": 790,
+						"x": 750,
 						"y": 630
 					}
+				],
+				"children": [
+					{
+						"name": "Sky Garden - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
+						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "Entrance",
+								"item_count": 1
+							},
+							{
+								"name": "West - Below",
+								"item_count": 1
+							},
+							{
+								"name": "South East",
+								"item_count": 1
+							},
+							{
+								"name": "South West",
+								"access_rules": [
+									"dark_friar"
+								],
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 790,
+								"y": 630
+							}
+						]
+					}
 				]
-			}
+			},
 		]
-    },
+	},
 	
 	//  Seaside Palace
 	{
 		"name": "Seaside Palace",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
 		"access_rules": [
-			"teapot",
-			"letter_lola, mu_key",
-			"letter_lola, crystal_ball:4",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will, mu_key",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will, mu_key",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will, mu_key",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4"
+			"@logic/seaside palace access"
 		],
 		"sections": [
 			{
@@ -393,7 +416,7 @@
 				"name": "Coffin",
 				"clear_as_group": false,
 				"access_rules": [
-					"melody_lola, necklace"
+					"@logic/lily"
 				],
 				"item_count": 1
 			},
@@ -415,13 +438,13 @@
 		],
 		"children": [
 			{
-				"name": "Seaside Palace Dark Spaces",
+				"name": "Seaside Palace - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
 				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
 				"sections": [
 					{
 						"name": "Entrance",
-						"chest_unopened_img": "images/dark_space.png",
-						"chest_opened_img": "images/dark_space_visited.png",
 						"item_count": 1
 					}
 				],
@@ -436,86 +459,76 @@
 		]
 	},
 	
-	// Mu
-	{
-		"name": "Mu",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
-		"access_rules": [ "teapot, mu_key", "letter_lola" ],
-		"sections": [
-			{
-				"name": "Higher Level",
-				"clear_as_group": false,
-				"item_count": 3
-			},
-			{
-				"name": "Middle Level",
-				"clear_as_group": false,
-				"access_rules": [ "psycho_slide, hope_statue:1" ],
-				"item_count": 1
-			},
-			{
-				"name": "Lower Level",
-				"clear_as_group": false,
-				"access_rules": [ "hope_statue:2" ],
-				"item_count": 3
-			},
-			{
-				"name": "Vampires",
-				"access_rules": [ "hope_statue:2, rama_statue:2" ],
-				"hosted_item": "mystic_statue_3"
-			}
-		],
-		"map_locations": [
-			{
-				"map": "world",
-				"x": 800,
-				"y": 120
-			}
-		],
-		"children": [
-			{
-				"name": "Mu Dark Spaces",
-				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
-				"sections": [
-					{
-						"name": "Middle Level",
-						"access_rules": [ "hope_statue:1" ],
-						"chest_unopened_img": "images/dark_space.png",
-						"chest_opened_img": "images/dark_space_visited.png",
-						"item_count": 2
-					}
-				],
-				"map_locations": [
-					{
-						"map": "world",
-						"x": 840,
-						"y": 120
-					}
-				]
-			}
-		]
-	},
 	
 	//  North East Continent
     {
         "name": "North East Continent",
         "group": "North East Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
         "access_rules": [
-			"teapot, mu_key",
-			"teapot, melody_memory, will",
-			"letter_lola",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory, will",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key"
+			"@logic/north-east continent"
 		],
         "children": [
-
+			// Mu
+			{
+				"name": "Mu",
+				"sections": [
+					{
+						"name": "Higher Level",
+						"clear_as_group": false,
+						"item_count": 3
+					},
+					{
+						"name": "Middle Level",
+						"clear_as_group": false,
+						"access_rules": [ "psycho_slide, hope_statue:1" ],
+						"item_count": 1
+					},
+					{
+						"name": "Lower Level",
+						"clear_as_group": false,
+						"access_rules": [ "hope_statue:2" ],
+						"item_count": 3
+					},
+					{
+						"name": "Vampires",
+						"access_rules": [ "hope_statue:2, rama_statue:2" ],
+						"hosted_item": "mystic_statue_3"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 800,
+						"y": 120
+					}
+				],
+				"children": [
+					{
+						"name": "Mu - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
+						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "Middle Level",
+								"clear_as_group": false,
+								"access_rules": [ "hope_statue:1" ],
+								"item_count": 2
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 840,
+								"y": 120
+							}
+						]
+					}
+				]
+			},
+	
 			// Angel Dungeon
 			{
 				"name": "Angel Dungeon",
@@ -532,6 +545,32 @@
 						"map": "world",
 						"x": 940,
 						"y": 345
+					}
+				],
+				"children": [
+					{
+						"name": "Angel Dungeon - Kara's Paint",
+						"chest_unopened_img": "images/objectives/kara.png",
+						"chest_opened_img": "images/objectives/kara_unknown.png",
+						"access_rules": [
+							"kara_angel_dungeon"
+						],
+						"sections": [
+							{
+								"name": "Kara's Paint",
+								"access_rules": [
+									"psycho_slide, magic_dust"
+								],
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 940,
+								"y": 305
+							}
+						]
 					}
 				]
 			},
@@ -558,8 +597,7 @@
 					{
 						"name": "Sand Fanger",
 						"access_rules": [
-							"spin_dash, dark_friar",
-							"spin_dash, powerful_friar"
+							"spin_dash, dark_friar"
 						],
 						"hosted_item": "mystic_statue_4"
 					}
@@ -573,34 +611,28 @@
 				],
 				"children": [
 					{
-						"name": "Great Wall Dark Spaces",
+						"name": "Great Wall - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "Spin Dash Dark Space",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							},
 							{
 								"name": "Slide",
 								"access_rules": [
 									"dark_friar",
-									"powerful_friar",
 									"spin_dash"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							},
 							{
 								"name": "Statues Room",
 								"access_rules": [
-									"dark_friar",
-									"powerful_friar"
+									"dark_friar"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -621,19 +653,10 @@
 	{
 		"name": "North Continent",
 		"group": "North Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
 		"access_rules": [
-			"teapot, melody_memory",
-			"teapot, mu_key, will",
-			"letter_lola, will",
-			"letter_lola, melody_memory",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, crystal_ball:4, mu_key, will"
+			"@logic/north continent"
 		],
 		"children": [
 		
@@ -683,16 +706,17 @@
 				],
 				"children": [
 					{
-						"name": "Mt. Temple Dark Spaces",
+						"name": "Mt. Temple - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "Ascent Start",
+								"clear_as_group": false,
 								"access_rules": [
 									"spin_dash"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 2
 							},
 							{
@@ -700,8 +724,6 @@
 								"access_rules": [
 									"spin_dash, mushroom_drop:2"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -712,13 +734,37 @@
 								"y": 180
 							}
 						]
+					},
+					{
+						"name": "Mount Temple - Kara's Paint",
+						"chest_unopened_img": "images/objectives/kara.png",
+						"chest_opened_img": "images/objectives/kara_unknown.png",
+						"access_rules": [
+							"kara_mount_kress"
+						],
+						"sections": [
+							{
+								"name": "Kara's Paint",
+								"access_rules": [
+									"spin_dash, mushroom_drop:3, magic_dust"
+								],
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 510,
+								"y": 140
+							}
+						]
 					}
 				]
 			},
 			
-			// Ankor Vat
+			// Ankor Wat
 			{
-				"name": "Ankor Vat",
+				"name": "Ankor Wat",
 				"sections": [
 					{
 						"name": "Entrance",
@@ -737,8 +783,7 @@
 						"name": "Garden - Entrance",
 						"clear_as_group": false,
 						"access_rules": [
-							"psycho_slide, spin_dash, earthquaker",
-							"psycho_slide, spin_dash, powerful_friar",
+							"@logic/ankor garden"
 						],
 						"item_count": 1
 					},
@@ -746,8 +791,7 @@
 						"name": "Inner Garden",
 						"clear_as_group": false,
 						"access_rules": [
-							"psycho_slide, spin_dash, earthquaker",
-							"psycho_slide, spin_dash, powerful_friar",
+							"@logic/ankor garden"
 						],
 						"item_count": 1
 					},
@@ -755,8 +799,7 @@
 						"name": "Main Hall",
 						"clear_as_group": false,
 						"access_rules": [
-							"psycho_slide, spin_dash, earthquaker, black_glasses",
-							"psycho_slide, spin_dash, powerful_friar, black_glasses"
+							"@logic/ankor garden, black_glasses"
 						],
 						"item_count": 3
 					}
@@ -770,7 +813,9 @@
 				],
 				"children": [
 					{
-						"name": "Ankor Vat Dark Spaces",
+						"name": "Ankor Wat - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
 						"sections": [
 							{
@@ -778,29 +823,21 @@
 								"access_rules": [
 									"psycho_slide, spin_dash"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							},
 							{
 								"name": "Earthquaker Dark Space",
 								"access_rules": [
 									"psycho_slide, spin_dash, dark_friar",
-									"psycho_slide, spin_dash, powerful_friar",
 									"psycho_slide, spin_dash, aura"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							},
 							{
 								"name": "Main Hall",
 								"access_rules": [
-									"psycho_slide, spin_dash, earthquaker, black_glasses",
-									"psycho_slide, spin_dash, powerful_friar, black_glasses"
+									"@logic/ankor garden, black_glasses"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -809,6 +846,30 @@
 								"map": "world",
 								"x": 330,
 								"y": 330
+							}
+						]
+					},
+					{
+						"name": "Ankor Wat - Kara's Paint",
+						"chest_unopened_img": "images/objectives/kara.png",
+						"chest_opened_img": "images/objectives/kara_unknown.png",
+						"access_rules": [
+							"kara_ankor_wat"
+						],
+						"sections": [
+							{
+								"name": "Kara's Paint",
+								"access_rules": [
+									"@logic/ankor garden, black_glasses, magic_dust"
+								],
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 290,
+								"y": 290
 							}
 						]
 					}
@@ -821,25 +882,21 @@
 	{
 		"name": "North West Continent",
 		"group": "North West Continent",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
 		"access_rules": [
-			"teapot, mu_key, will, large_roast",
-			"teapot, melody_memory",
-			"letter_lola, will, large_roast",
-			"letter_lola, melody_memory",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will, large_roast",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, mu_key, will, large_roast",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, mu_key, will, large_roast",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory"
+			"@logic/north-west continent"
 		],
 		"children": [
 			// Pyramid
 			{
 				"name": "Pyramid",
 				"sections": [
+					{
+						"name": "Top Dark Space",
+						"clear_as_group": false,
+						"item_count": 1
+					},
 					{
 						"name": "Entrance",
 						"clear_as_group": false,
@@ -892,8 +949,7 @@
 						"name": "Zone 5",
 						"clear_as_group": false,
 						"access_rules": [
-							"aura",
-							"aura, earthquaker"
+							"aura"
 						],
 						"item_count": 2
 					},
@@ -922,13 +978,13 @@
 				],
 				"children": [
 					{
-						"name": "Pyramid Dark Spaces",
+						"name": "Pyramid - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
 						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
 						"sections": [
 							{
 								"name": "Entrance - Top",
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							},
 							{
@@ -936,8 +992,6 @@
 								"access_rules": [
 									"aura"
 								],
-								"chest_unopened_img": "images/dark_space.png",
-								"chest_opened_img": "images/dark_space_visited.png",
 								"item_count": 1
 							}
 						],
@@ -957,14 +1011,10 @@
 	// Babel
 	{
 		"name": "Babel",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
 		"access_rules": [
-			"teapot, melody_memory",
-			"letter_lola, melody_memory",
-			"diamond_block, psycho_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, psycho_slide, melody_wind, inca_statue_a, inca_statue_b, melody_memory",
-			"diamond_block, spin_dash, melody_wind, inca_statue_a, inca_statue_b, melody_memory"
+			"@logic/babel access"
 		],
 		"sections": [
 			{
@@ -986,24 +1036,27 @@
 				"map": "world",
 				"x": 495,
 				"y": 505
+			},
+			{
+				"map": "babel",
+				"x": 230,
+				"y": 165
 			}
 		],
 		"children": [
 			{
-				"name": "Babel Dark Spaces",
+				"name": "Babel - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
 				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
 				"sections": [
 					{
 						"name": "Entrance",
-						"chest_unopened_img": "images/dark_space.png",
-						"chest_opened_img": "images/dark_space_visited.png",
 						"item_count": 1
 					},
 					{
 						"name": "Entrance - Bottom",
 						"access_rules": [ "crystal_ring, aura" ],
-						"chest_unopened_img": "images/dark_space.png",
-						"chest_opened_img": "images/dark_space_visited.png",
 						"item_count": 1
 					}
 				],
@@ -1012,6 +1065,11 @@
 						"map": "world",
 						"x": 535,
 						"y": 505
+					},
+					{
+						"map": "babel",
+						"x": 310,
+						"y": 165
 					}
 				]
 			}
@@ -1021,8 +1079,8 @@
     // Jeweler's Mansion
     {
         "name": "Jeweler's Mansion",
-		"chest_unopened_img": "images/chest_unopened.png",
-		"chest_opened_img": "images/chest_opened.png",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
         "access_rules": [
 			"red_jewel:36, [red_jewel:50]"
 		],

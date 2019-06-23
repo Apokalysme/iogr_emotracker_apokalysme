@@ -3,7 +3,7 @@
     {
       "name": "Red Jewel",
       "type": "consumable",
-      "img": "images/red_jewel.png",
+      "img": "images/items/red_jewel.png",
       "codes": "red_jewel",
       "max_quantity": 50
     },
@@ -11,7 +11,7 @@
     {
       "name": "Herb",
       "type": "consumable",
-      "img": "images/herb.png",
+      "img": "images/items/herb.png",
       "codes": "herb",
       "max_quantity": 12
     },
@@ -22,12 +22,12 @@
 	  "type": "progressive_toggle",
       "stages": [
         {
-          "img": "images/melody_lola.png",
+          "img": "images/items/melody_lola.png",
 		  "codes": "melody_lola",
           "secondary_codes": "none"
         },
         {
-          "img": "images/melody_lola_used.png",
+          "img": "images/items/melody_lola_used.png",
           "codes": "melody_lola",
           "secondary_codes": "used"
         }
@@ -39,12 +39,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/prison_key.png",
+          "img": "images/items/prison_key.png",
 		  "codes": "prison_key",
           "secondary_codes": "none"
         },
         {
-          "img": "images/prison_key_used.png",
+          "img": "images/items/prison_key_used.png",
           "codes": "prison_key",
           "secondary_codes": "used"
         }
@@ -56,12 +56,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/large_roast.png",
+          "img": "images/items/large_roast.png",
 		  "codes": "large_roast",
           "secondary_codes": "none"
         },
         {
-          "img": "images/large_roast_given.png",
+          "img": "images/items/large_roast_given.png",
           "codes": "large_roast",
           "secondary_codes": "used"
         }
@@ -74,12 +74,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/diamond_block.png",
+          "img": "images/items/diamond_block.png",
 		  "codes": "diamond_block",
           "secondary_codes": "none"
         },
         {
-          "img": "images/diamond_block_used.png",
+          "img": "images/items/diamond_block_used.png",
           "codes": "diamond_block",
           "secondary_codes": "used"
         }
@@ -91,12 +91,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/inca_statue_a.png",
+          "img": "images/items/inca_statue_a.png",
 		  "codes": "inca_statue_a",
           "secondary_codes": "none"
         },
         {
-          "img": "images/inca_statue_a_used.png",
+          "img": "images/items/inca_statue_a_used.png",
           "codes": "inca_statue_a",
           "secondary_codes": "used"
         }
@@ -108,12 +108,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/inca_statue_b.png",
+          "img": "images/items/inca_statue_b.png",
 		  "codes": "inca_statue_b",
           "secondary_codes": "none"
         },
         {
-          "img": "images/inca_statue_b_used.png",
+          "img": "images/items/inca_statue_b_used.png",
           "codes": "inca_statue_b",
           "secondary_codes": "used"
         }
@@ -125,12 +125,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/melody_wind.png",
+          "img": "images/items/melody_wind.png",
 		  "codes": "melody_wind",
           "secondary_codes": "none"
         },
         {
-          "img": "images/melody_wind_used.png",
+          "img": "images/items/melody_wind_used.png",
           "codes": "melody_wind",
           "secondary_codes": "used"
         }
@@ -143,12 +143,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/mine_key_a.png",
+          "img": "images/items/mine_key_a.png",
 		  "codes": "mine_key_a",
           "secondary_codes": "none"
         },
         {
-          "img": "images/mine_key_a_used.png",
+          "img": "images/items/mine_key_a_used.png",
           "codes": "mine_key_a",
           "secondary_codes": "used"
         }
@@ -160,12 +160,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/mine_key_b.png",
+          "img": "images/items/mine_key_b.png",
 		  "codes": "mine_key_b",
           "secondary_codes": "none"
         },
         {
-          "img": "images/mine_key_b_used.png",
+          "img": "images/items/mine_key_b_used.png",
           "codes": "mine_key_b",
           "secondary_codes": "used"
         }
@@ -177,12 +177,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/elevator_key.png",
+          "img": "images/items/elevator_key.png",
 		  "codes": "elevator_key",
           "secondary_codes": "none"
         },
         {
-          "img": "images/elevator_key_used.png",
+          "img": "images/items/elevator_key_used.png",
           "codes": "elevator_key",
           "secondary_codes": "used"
         }
@@ -194,12 +194,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/melody_memory.png",
+          "img": "images/items/melody_memory.png",
 		  "codes": "melody_memory",
           "secondary_codes": "none"
         },
         {
-          "img": "images/melody_memory_used.png",
+          "img": "images/items/melody_memory_used.png",
           "codes": "melody_memory",
           "secondary_codes": "used"
         }
@@ -210,7 +210,7 @@
     {
       "name": "Crystal Ball",
       "type": "consumable",
-      "img": "images/crystal_ball.png",
+      "img": "images/items/crystal_ball.png",
       "codes": "crystal_ball",
       "max_quantity": 4
     },
@@ -221,12 +221,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/purity_stone.png",
+          "img": "images/items/purity_stone.png",
 		  "codes": "purity_stone",
           "secondary_codes": "none"
         },
         {
-          "img": "images/purity_stone_used.png",
+          "img": "images/items/purity_stone_used.png",
           "codes": "purity_stone",
           "secondary_codes": "used"
         }
@@ -238,12 +238,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/mu_key.png",
+          "img": "images/items/mu_key.png",
 		  "codes": "mu_key",
           "secondary_codes": "none"
         },
         {
-          "img": "images/mu_key_used.png",
+          "img": "images/items/mu_key_used.png",
           "codes": "mu_key",
           "secondary_codes": "used"
         }
@@ -254,7 +254,7 @@
     {
       "name": "Hope Statue",
       "type": "consumable",
-      "img": "images/hope_statue.png",
+      "img": "images/items/hope_statue.png",
       "codes": "hope_statue",
 	  "max_quantity": 2
     },
@@ -262,7 +262,7 @@
     {
       "name": "Rama Statue",
       "type": "consumable",
-      "img": "images/rama_statue.png",
+      "img": "images/items/rama_statue.png",
       "codes": "rama_statue",
 	  "max_quantity": 2
     },
@@ -271,7 +271,7 @@
     {
       "name": "Magic Dust",
       "type": "toggle",
-      "img": "images/magic_dust.png",
+      "img": "images/items/magic_dust.png",
       "codes": "magic_dust"
     },
 
@@ -279,7 +279,7 @@
     {
       "name": "Lance Letter",
       "type": "toggle",
-      "img": "images/letter_lance.png",
+      "img": "images/items/letter_lance.png",
       "codes": "letter_lance"
     },
     // Necklace
@@ -288,12 +288,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/necklace.png",
+          "img": "images/items/necklace.png",
 		  "codes": "necklace",
           "secondary_codes": "none"
         },
         {
-          "img": "images/necklace_given.png",
+          "img": "images/items/necklace_given.png",
           "codes": "necklace",
           "secondary_codes": "used"
         }
@@ -305,12 +305,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/will.png",
+          "img": "images/items/will.png",
 		  "codes": "will",
           "secondary_codes": "none"
         },
         {
-          "img": "images/will_used.png",
+          "img": "images/items/will_used.png",
           "codes": "will",
           "secondary_codes": "used"
         }
@@ -323,12 +323,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/apple.png",
+          "img": "images/items/apple.png",
 		  "codes": "apple",
           "secondary_codes": "none"
         },
         {
-          "img": "images/apple_used.png",
+          "img": "images/items/apple_used.png",
           "codes": "apple",
           "secondary_codes": "used"
         }
@@ -338,7 +338,7 @@
     {
       "name": "Mushroom Drop",
       "type": "consumable",
-      "img": "images/mushroom_drop.png",
+      "img": "images/items/mushroom_drop.png",
       "codes": "mushroom_drop",
 	  "max_quantity": 3
     },
@@ -348,12 +348,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/teapot.png",
+          "img": "images/items/teapot.png",
 		  "codes": "teapot",
           "secondary_codes": "none"
         },
         {
-          "img": "images/teapot_used.png",
+          "img": "images/items/teapot_used.png",
           "codes": "teapot",
           "secondary_codes": "used"
         }
@@ -366,12 +366,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/black_glasses.png",
+          "img": "images/items/black_glasses.png",
 		  "codes": "black_glasses",
           "secondary_codes": "none"
         },
         {
-          "img": "images/black_glasses_used.png",
+          "img": "images/items/black_glasses_used.png",
           "codes": "black_glasses",
           "secondary_codes": "used"
         }
@@ -383,12 +383,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/gorgon_flower.png",
+          "img": "images/items/gorgon_flower.png",
 		  "codes": "gorgon_flower",
           "secondary_codes": "none"
         },
         {
-          "img": "images/gorgon_flower_used.png",
+          "img": "images/items/gorgon_flower_used.png",
           "codes": "gorgon_flower",
           "secondary_codes": "used"
         }
@@ -401,12 +401,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/letter_lola.png",
+          "img": "images/items/letter_lola.png",
 		  "codes": "letter_lola",
           "secondary_codes": "none"
         },
         {
-          "img": "images/letter_lola_used.png",
+          "img": "images/items/letter_lola_used.png",
           "codes": "letter_lola",
           "secondary_codes": "used"
         }
@@ -416,7 +416,7 @@
     {
       "name": "Journal",
       "type": "toggle",
-      "img": "images/journal.png",
+      "img": "images/items/journal.png",
       "codes": "journal"
     },
   
@@ -424,7 +424,7 @@
     {
       "name": "Aura",
       "type": "toggle",
-      "img": "images/aura.png",
+      "img": "images/items/aura.png",
       "codes": "aura"
     },
 
@@ -432,7 +432,7 @@
     {
       "name": "Hieroglyph Count",
       "type": "consumable",
-      "img": "images/hieroglyph.png",
+      "img": "images/items/hieroglyph.png",
       "codes": "hieroglyph_count",
       "max_quantity": 6
     },
@@ -440,42 +440,42 @@
     {
       "name": "Hieroglyph 1",
       "type": "toggle",
-      "img": "images/hieroglyph_1.png",
+      "img": "images/items/hieroglyph_1.png",
       "codes": "hyeroglyph_1"
     },
 	// Hieroglyph 2
     {
       "name": "Hieroglyph 2",
       "type": "toggle",
-      "img": "images/hyeroglyph_2.png",
+      "img": "images/items/hyeroglyph_2.png",
       "codes": "hieroglyph_2"
     },
 	// Hieroglyph 3
     {
       "name": "Hieroglyph 3",
       "type": "toggle",
-      "img": "images/hieroglyph_3.png",
+      "img": "images/items/hieroglyph_3.png",
       "codes": "hieroglyph_3"
     },
 	// Hieroglyph 4
     {
       "name": "Hieroglyph 4",
       "type": "toggle",
-      "img": "images/hyeroglyph_4.png",
+      "img": "images/items/hyeroglyph_4.png",
       "codes": "hyeroglyph_4"
     },
 	// Hieroglyph 5
     {
       "name": "Hieroglyph 5",
       "type": "toggle",
-      "img": "images/hieroglyph_5.png",
+      "img": "images/items/hieroglyph_5.png",
       "codes": "hieroglyph_5"
     },
 	// Hieroglyph 6
     {
       "name": "Hieroglyph 6",
       "type": "toggle",
-      "img": "images/hieroglyph_6.png",
+      "img": "images/items/hieroglyph_6.png",
       "codes": "hieroglyph_6"
     },
 
@@ -483,77 +483,7 @@
     {
       "name": "Crystal Ring",
       "type": "toggle",
-      "img": "images/crystal_ring.png",
+      "img": "images/items/crystal_ring.png",
       "codes": "crystal_ring"
-    },
-	
-    // Psycho Dash
-    {
-      "name": "Psycho Dash",
-      "type": "toggle",
-      "img": "images/psycho_dash.png",
-      "codes": "psycho_dash"
-    },
-    // Psycho Slide
-    {
-      "name": "Psycho Slide",
-      "type": "progressive",
-	  "stages": [
-		{
-			"img": "images/psycho_slide.png",
-			"codes": "psycho_slide",
-			"secondary_codes": "none"
-		},
-		{
-			"img": "images/psycho_slide_powerful.png",
-			"codes": "powerful_slide",
-			"secondary_codes": "powerful"
-		}
-	  ]
-    },
-    // Spin Dash
-    {
-      "name": "Spin Dash",
-      "type": "toggle",
-      "img": "images/spin_dash.png",
-      "codes": "spin_dash"
-    },
-    // Dark Friar
-    {
-      "name": "Dark Friar",
-      "type": "progressive",
-	  "stages": [
-		{
-			"img": "images/dark_friar.png",
-			"codes": "dark_friar",
-			"secondary_codes": "none"
-		},
-		{
-			"img": "images/dark_friar_powerful.png",
-			"codes": "powerful_friar",
-			"secondary_codes": "powerful"
-		}
-	  ]
-    },
-    // Aura Barrier
-    {
-      "name": "Aura Barrier",
-      "type": "toggle",
-      "img": "images/aura_barrier.png",
-      "codes": "aura_barrier"
-    },
-    // Earthquaker
-    {
-      "name": "Earthquaker",
-      "type": "toggle",
-      "img": "images/earthquaker.png",
-      "codes": "earthquaker"
-    },
-	// Go Mode
-    {
-      "name": "Go Mode",
-      "type": "toggle",
-      "img": "images/go_mode.png",
-      "codes": "go_mode"
     }
   ]

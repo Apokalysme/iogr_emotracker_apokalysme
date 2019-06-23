@@ -1,0 +1,421 @@
+[
+	// Mystic Statue 1
+	{
+		"name": "Mystic Statue 1",
+		"type": "progressive_toggle",
+		"capturable": false,
+		"stages": [
+			{
+				"img": "images/objectives/mystic_statue_1.png",
+				"codes": "mystic_statue_1",
+				"secondary_codes": "mystic_statue"
+			},
+			{
+				"img": "images/objectives/mystic_statue_1_needed.png",
+				"codes": "mystic_statue_1",
+				"secondary_codes": "needed"
+			}
+			]
+	},
+	// Mystic Statue 2
+	{
+		"name": "Mystic Statue 2",
+		"capturable": false,
+		"type": "progressive_toggle",
+		"stages": [
+			{
+				"img": "images/objectives/mystic_statue_2.png",
+				"codes": "mystic_statue_2",
+				"secondary_codes": "mystic_statue"
+			},
+			{
+				"img": "images/objectives/mystic_statue_2_needed.png",
+				"codes": "mystic_statue_2",
+				"secondary_codes": "needed"
+			}
+		]
+	},
+	// Mystic Statue 3
+	{
+		"name": "Mystic Statue 3",
+		"capturable": false,
+		"type": "progressive_toggle",
+		"stages": [
+			{
+				"img": "images/objectives/mystic_statue_3.png",
+				"codes": "mystic_statue_3",
+				"secondary_codes": "mystic_statue"
+			},
+			{
+				"img": "images/objectives/mystic_statue_3_needed.png",
+				"codes": "mystic_statue_3",
+				"secondary_codes": "needed"
+			}
+		]
+	},
+	// Mystic Statue 4
+	{
+		"name": "Mystic Statue 4",
+		"capturable": false,
+		"type": "progressive_toggle",
+		"stages": [
+			{
+				"img": "images/objectives/mystic_statue_4.png",
+				"codes": "mystic_statue_4",
+				"secondary_codes": "mystic_statue"
+			},
+			{
+				"img": "images/objectives/mystic_statue_4_needed.png",
+				"codes": "mystic_statue_4",
+				"secondary_codes": "needed"
+			}
+		]
+	},
+	// Mystic Statue 5
+	{
+		"name": "Mystic Statue 5",
+		"capturable": false,
+		"type": "progressive_toggle",
+		"stages": [
+			{
+				"img": "images/objectives/mystic_statue_5.png",
+				"codes": "mystic_statue_5",
+				"secondary_codes": "mystic_statue"
+			},
+			{
+				"img": "images/objectives/mystic_statue_5_needed.png",
+				"codes": "mystic_statue_5",
+				"secondary_codes": "needed"
+			}
+		]
+	},
+	// Mystic Statue 6
+	{
+		"name": "Mystic Statue 6",
+		"capturable": false,
+		"type": "progressive_toggle",
+		"stages": [
+			{
+				"img": "images/objectives/mystic_statue_6.png",
+				"codes": "mystic_statue_6",
+				"secondary_codes": "mystic_statue"
+			},
+			{
+				"img": "images/objectives/mystic_statue_6_needed.png",
+				"codes": "mystic_statue_6",
+				"secondary_codes": "needed"
+			}
+		]
+	},
+	// Hieroglyph A
+	{
+		"name": "Hieroglyph A",
+		"type": "progressive_toggle",
+		"capturable": false,
+		"stages": [
+			{
+				"img": "images/objectives/H1.png",
+				"codes": "hieroglyph_a",
+				"secondary_codes": "h_a"
+			},
+			{
+				"img": "images/objectives/H2.png",
+				"codes": "hieroglyph_a",
+				"secondary_codes": "h_b"
+			},
+			{
+				"img": "images/objectives/H3.png",
+				"codes": "hieroglyph_a",
+				"secondary_codes": "h_c"
+			},
+			{
+				"img": "images/objectives/H4.png",
+				"codes": "hieroglyph_a",
+				"secondary_codes": "h_d"
+			},
+			{
+				"img": "images/objectives/H5.png",
+				"codes": "hieroglyph_a",
+				"secondary_codes": "h_e"
+			},
+			{
+				"img": "images/objectives/H6.png",
+				"codes": "hieroglyph_a",
+				"secondary_codes": "h_f"
+			}
+		]
+	},
+	// Hieroglyph B
+	{
+		"name": "Hieroglyph B",
+		"type": "progressive_toggle",
+		"capturable": false,
+		"stages": [
+			{
+				"img": "images/objectives/H1.png",
+				"codes": "hieroglyph_b",
+				"secondary_codes": "h_a"
+			},
+			{
+				"img": "images/objectives/H2.png",
+				"codes": "hieroglyph_b",
+				"secondary_codes": "h_b"
+			},
+			{
+				"img": "images/objectives/H3.png",
+				"codes": "hieroglyph_b",
+				"secondary_codes": "h_c"
+			},
+			{
+				"img": "images/objectives/H4.png",
+				"codes": "hieroglyph_b",
+				"secondary_codes": "h_d"
+			},
+			{
+				"img": "images/objectives/H5.png",
+				"codes": "hieroglyph_b",
+				"secondary_codes": "h_e"
+			},
+			{
+				"img": "images/objectives/H6.png",
+				"codes": "hieroglyph_b",
+				"secondary_codes": "h_f"
+			}
+		]
+	},
+	// Hieroglyph C
+	{
+		"name": "Hieroglyph C",
+		"type": "progressive_toggle",
+		"capturable": false,
+		"stages": [
+			{
+				"img": "images/objectives/H1.png",
+				"codes": "hieroglyph_c",
+				"secondary_codes": "h_a"
+			},
+			{
+				"img": "images/objectives/H2.png",
+				"codes": "hieroglyph_c",
+				"secondary_codes": "h_b"
+			},
+			{
+				"img": "images/objectives/H3.png",
+				"codes": "hieroglyph_c",
+				"secondary_codes": "h_c"
+			},
+			{
+				"img": "images/objectives/H4.png",
+				"codes": "hieroglyph_c",
+				"secondary_codes": "h_d"
+			},
+			{
+				"img": "images/objectives/H5.png",
+				"codes": "hieroglyph_c",
+				"secondary_codes": "h_e"
+			},
+			{
+				"img": "images/objectives/H6.png",
+				"codes": "hieroglyph_c",
+				"secondary_codes": "h_f"
+			}
+		]
+	},
+	// Hieroglyph D
+	{
+		"name": "Hieroglyph D",
+		"type": "progressive_toggle",
+		"capturable": false,
+		"stages": [
+			{
+				"img": "images/objectives/H1.png",
+				"codes": "hieroglyph_d",
+				"secondary_codes": "h_a"
+			},
+			{
+				"img": "images/objectives/H2.png",
+				"codes": "hieroglyph_d",
+				"secondary_codes": "h_b"
+			},
+			{
+				"img": "images/objectives/H3.png",
+				"codes": "hieroglyph_d",
+				"secondary_codes": "h_c"
+			},
+			{
+				"img": "images/objectives/H4.png",
+				"codes": "hieroglyph_d",
+				"secondary_codes": "h_d"
+			},
+			{
+				"img": "images/objectives/H5.png",
+				"codes": "hieroglyph_d",
+				"secondary_codes": "h_e"
+			},
+			{
+				"img": "images/objectives/H6.png",
+				"codes": "hieroglyph_d",
+				"secondary_codes": "h_f"
+			}
+		]
+	},
+	// Hieroglyph E
+	{
+		"name": "Hieroglyph E",
+		"type": "progressive_toggle",
+		"capturable": false,
+		"stages": [
+			{
+				"img": "images/objectives/H1.png",
+				"codes": "hieroglyph_e",
+				"secondary_codes": "h_a"
+			},
+			{
+				"img": "images/objectives/H2.png",
+				"codes": "hieroglyph_e",
+				"secondary_codes": "h_b"
+			},
+			{
+				"img": "images/objectives/H3.png",
+				"codes": "hieroglyph_e",
+				"secondary_codes": "h_c"
+			},
+			{
+				"img": "images/objectives/H4.png",
+				"codes": "hieroglyph_e",
+				"secondary_codes": "h_d"
+			},
+			{
+				"img": "images/objectives/H5.png",
+				"codes": "hieroglyph_e",
+				"secondary_codes": "h_e"
+			},
+			{
+				"img": "images/objectives/H6.png",
+				"codes": "hieroglyph_e",
+				"secondary_codes": "h_f"
+			}
+		]
+	},
+	// Hieroglyph F
+	{
+		"name": "Hieroglyph F",
+		"type": "progressive_toggle",
+		"capturable": false,
+		"stages": [
+			{
+				"img": "images/objectives/H1.png",
+				"codes": "hieroglyph_f",
+				"secondary_codes": "h_a"
+			},
+			{
+				"img": "images/objectives/H2.png",
+				"codes": "hieroglyph_f",
+				"secondary_codes": "h_b"
+			},
+			{
+				"img": "images/objectives/H3.png",
+				"codes": "hieroglyph_f",
+				"secondary_codes": "h_c"
+			},
+			{
+				"img": "images/objectives/H4.png",
+				"codes": "hieroglyph_f",
+				"secondary_codes": "h_d"
+			},
+			{
+				"img": "images/objectives/H5.png",
+				"codes": "hieroglyph_f",
+				"secondary_codes": "h_e"
+			},
+			{
+				"img": "images/objectives/H6.png",
+				"codes": "hieroglyph_f",
+				"secondary_codes": "h_f"
+			}
+		]
+	},
+	// Save Kara
+	{
+		"name": "Save Kara",
+		"type": "progressive_toggle",
+		"capturable": false,
+		"stages": [
+			{
+				"img": "images/objectives/kara.png",
+				"codes": "save_kara",
+				"secondary_codes": "kara_found"
+			},
+			{
+				"img": "images/objectives/kara_edwards_castle.png",
+				"codes": "save_kara",
+				"secondary_codes": "kara_edwards_castle"
+			},
+			{
+				"img": "images/objectives/kara_diamond_mine.png",
+				"codes": "save_kara",
+				"secondary_codes": "kara_diamond_mine"
+			},
+			{
+				"img": "images/objectives/kara_angel_dungeon.png",
+				"codes": "save_kara",
+				"secondary_codes": "kara_angel_dungeon"
+			},
+			{
+				"img": "images/objectives/kara_mount_kress.png",
+				"codes": "save_kara",
+				"secondary_codes": "kara_mount_kress"
+			},
+			{
+				"img": "images/objectives/kara_ankor_wat.png",
+				"codes": "save_kara",
+				"secondary_codes": "kara_ankor_wat"
+			}
+		]
+	},
+
+	// Kara's Paint Place
+	{
+		"name": "Kara's Paint Place",
+		"loop": true,
+		"type": "progressive",
+		"stages": [
+			{
+				"img": "images/objectives/kara_unknown.png",
+				"codes": "kara_place",
+				"secondary_codes": "unknown",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/objectives/kara_edwards_castle.png",
+				"codes": "kara_edwards_castle",
+				"secondary_codes": "kara_edwards_castle",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/objectives/kara_diamond_mine.png",
+				"codes": "kara_diamond_mine",
+				"secondary_codes": "kara_diamond_mine",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/objectives/kara_angel_dungeon.png",
+				"codes": "kara_angel_dungeon",
+				"secondary_codes": "kara_angel_dungeon",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/objectives/kara_mount_kress.png",
+				"codes": "kara_mount_kress",
+				"secondary_codes": "kara_mount_kress",
+				"inherit_codes": false
+			},
+			{
+				"img": "images/objectives/kara_ankor_wat.png",
+				"codes": "kara_ankor_wat",
+				"secondary_codes": "kara_ankor_wat",
+				"inherit_codes": false
+			}
+		]
+	},
+]
