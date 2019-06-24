@@ -1,0 +1,57 @@
+v1.3.0.0
+* General :
+  * Code reorganization and optimization
+* Item Tracker :
+  * Change : Separation between "Kara saved" icon and "Kara's Paint" location icon
+  * Fix : Mine keys, A and B, were switched
+  * Fix : Hieroglyphs 2 and 3 were switched
+* Map Tracker :
+  * Add : Kara's Paint will appear on the Map depending on Kara's Paint location icon (appearance for minor dungeons)
+  * Add : Kara's Paint will be considered accessible once magic dust is obtained (without it, it won't appear)
+  * Add : Including different world maps (Full and by continent)
+  * Add WIP : For each continent, including areas maps
+  * Fix : Logic to access Top of Babel
+
+v1.2.3.0 :
+* General :
+  * Code optimization
+* Map Tracker :
+  * Change : Move of "Pinned Location" tab in left part of Tracker Window
+  * Fix : Top Dark Space item was missing in Pyramid
+  * Fix : Euro (North-Center Continent) access and will can lead to Mu
+  * Add : Earthquaker sequence break added in Ankor Wat
+
+v1.2.2.0 :
+* General :
+  * Change : Change Package Name
+  * Add : IoG chest icon
+
+v1.2.1.0 :
+* Map Tracker :
+  * Fix : "Necklace given" icon
+  * Add : "Lola's Melody used" icon
+
+v1.2.0.0 :
+* Map Tracker :
+  * Fix : Logic corrections
+  * Add : variants for Kara's icon to permit to take note of which dungeon Kara is in
+
+v1.1.0.0 :
+* General :
+  * Add : Powerful Dark Friar (Freedan) and Powerful Psycho Slide (Will)
+Map Tracker :
+  * Fix : Many logic corrections
+
+v1.0.0.0 :
+Initial commit :
+* Item Tracker :
+  * You can count Red Jewels, Herbs, Hieroglyphs, Crystal Balls, Rama/Hope Statues obtained
+  * You can note Hieroglyphs order
+  * You can note needed Mystic Statues
+  * You can note used/given items for many of them
+* Map Tracker :
+  * Item tracking depending on pre-obtained items/abilities
+  * Dark Spaces tracking depending on pre-obtained items/abilities
+    * Off : No Dark Spaces tracking displayed
+    * Dungeons : Only display Dungeons Dark Spaces tracking
+    * All : Display all Dark Spaces tracking

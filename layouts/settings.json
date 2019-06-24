@@ -1,0 +1,20 @@
+[
+	// Dummy settings
+	{
+		"name": "Dummy",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 1,
+		"stages": [
+			{
+				"img": "images/icons/setting_dark_spaces_off.png",
+				"codes": "setting_dummy_off"
+			},
+			{
+				"img": "images/icons/setting_dark_spaces_all.png",
+				"codes": "setting_dummy_all"
+			}
+		]
+	}
+]

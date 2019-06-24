@@ -1,0 +1,62 @@
+[
+	//  Seaside Palace
+	{
+		"name": "Seaside Palace",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"@logic/seaside palace access"
+		],
+		"sections": [
+			{
+				"name": "Palace",
+				"clear_as_group": false,
+				"item_count": 3
+			},
+			{
+				"name": "Coffin",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic/lily"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Purified Palace",
+				"clear_as_group": false,
+				"access_rules": [
+					"purity_stone"
+				],
+				"item_count": 1
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 900,
+				"y": 135
+			}
+		],
+		"children": [
+			{
+				"name": "Seaside Palace - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+				"sections": [
+					{
+						"name": "Entrance",
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 940,
+						"y": 135
+					}
+				]
+			}
+		]
+	}
+]

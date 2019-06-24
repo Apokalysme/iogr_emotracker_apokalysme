@@ -1,0 +1,75 @@
+[
+	// Babel
+	{
+		"name": "Babel - Full",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"sections": [
+			{
+				"name": "Entrance",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic/babel access"
+				],
+				"item_count": 2
+			},
+			{
+				"name": "Babel - Top",
+				"access_rules": [
+					"@logic/babel access, crystal_ring, aura",
+					"red_jewel:36, [red_jewel:50], psycho_slide"
+				],
+				"hosted_item": "mystic_statue_6"
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 495,
+				"y": 505
+			},
+			{
+				"map": "babel",
+				"x": 230,
+				"y": 165
+			}
+		],
+		"children": [
+			{
+				"name": "Babel - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+				"sections": [
+					{
+						"name": "Entrance",
+						"access_rules": [
+							"@logic/babel access"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Top",
+						"access_rules": [
+							"@logic/babel access, crystal_ring, aura",
+							"red_jewel:36, [red_jewel:50], psycho_slide"
+						],
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 535,
+						"y": 505
+					},
+					{
+						"map": "babel",
+						"x": 310,
+						"y": 165
+					}
+				]
+			}
+		]
+	}
+]

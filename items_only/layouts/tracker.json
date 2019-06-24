@@ -9,7 +9,7 @@
 			[ "necklace", "will", "apple", "mushroom_drop", "teapot", "black_glasses", "gorgon_flower", "letter_lola", "journal" ],
 			[ "hieroglyph_count", "hieroglyph_a", "hieroglyph_b", "hieroglyph_c", "hieroglyph_d", "hieroglyph_e", "hieroglyph_f", "aura", "crystal_ring" ],
 			[ "psycho_dash", "psycho_slide", "spin_dash", "dark_friar", "aura_barrier", "earthquaker", "", "herb", "red_jewel" ],
-			[ "save_kara", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6", "go_mode" ]
+			[ "kara_place", "save_kara", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6", "go_mode" ]
         ]
     },
     "tracker_capture_item": {

@@ -1,0 +1,131 @@
+[
+	//  North West Continent
+	{
+		"name": "North West Continent",
+		"group": "North West Continent",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"@logic/north-west continent"
+		],
+		"children": [
+			// Pyramid
+			{
+				"name": "Pyramid",
+				"sections": [
+					{
+						"name": "Top Dark Space",
+						"clear_as_group": false,
+						"item_count": 1
+					},
+					{
+						"name": "Entrance",
+						"clear_as_group": false,
+						"access_rules": [
+							"aura"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Zone 1",
+						"clear_as_group": false,
+						"access_rules": [
+							"aura, spin_dash"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Zone 2",
+						"clear_as_group": false,
+						"access_rules": [
+							"aura"
+						],
+						"item_count": 2
+					},
+					{
+						"name": "Zone 3 - Entrance",
+						"clear_as_group": false,
+						"access_rules": [
+							"aura, spin_dash"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Zone 3",
+						"clear_as_group": false,
+						"access_rules": [
+							"aura"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Zone 4",
+						"clear_as_group": false,
+						"access_rules": [
+							"aura, spin_dash"
+						],
+						"item_count": 2
+					},
+					{
+						"name": "Zone 5",
+						"clear_as_group": false,
+						"access_rules": [
+							"aura"
+						],
+						"item_count": 2
+					},
+					{
+						"name": "Zone 6",
+						"clear_as_group": false,
+						"access_rules": [
+							"aura"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Mummy Queen",
+						"access_rules": [
+							"journal, hieroglyph_count:6"
+						],
+						"hosted_item": "mystic_statue_5"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 110,
+						"y": 165
+					}
+				],
+				"children": [
+					{
+						"name": "Pyramid - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
+						"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "Entrance - Top",
+								"item_count": 1
+							},
+							{
+								"name": "Entrance - Bottom",
+								"access_rules": [
+									"aura"
+								],
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 150,
+								"y": 165
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

@@ -1,0 +1,96 @@
+[
+    // Jeweler
+    {
+        "name": "Jeweler",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+        "access_rules": [ "red_jewel" ],
+        "sections": [
+            {
+                "name": "Gift 1",
+                "clear_as_group": false,
+				"access_rules": [
+					"red_jewel:1, [red_jewel:3]"
+				],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 2",
+                "clear_as_group": false,
+				"access_rules": [
+					"red_jewel:4, [red_jewel:6]"
+				],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 3",
+                "clear_as_group": false,
+				"access_rules": [
+					"red_jewel:7, [red_jewel:9]"
+				],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 4",
+                "clear_as_group": false,
+				"access_rules": [
+					"red_jewel:10, [red_jewel:14]"
+				],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 5",
+                "clear_as_group": false,
+				"access_rules": [
+					"red_jewel:15, [red_jewel:24]"
+				],
+                "item_count": 1
+            },
+			{
+                "name": "Gift 6",
+                "clear_as_group": false,
+				"access_rules": [
+					"red_jewel:25, [red_jewel:34]"
+				],
+                "item_count": 1
+            }
+        ],
+        "map_locations": [
+            {
+                "map": "world",
+                "x": 475,
+                "y": 50
+            }
+        ]
+    },
+
+	// Jeweler's Mansion
+    {
+        "name": "Jeweler's Mansion",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+        "access_rules": [
+			"red_jewel:36, [red_jewel:50]"
+		],
+        "sections": [
+            {
+                "name": "Mansion",
+                "clear_as_group": false,
+				"access_rules": [
+					"psycho_slide"
+				],
+                "item_count": 1
+            },
+			{
+				"name": "Solid Arm"
+			}
+        ],
+        "map_locations": [
+            {
+                "map": "world",
+                "x": 510,
+                "y": 50
+            }
+        ]
+    }
+]

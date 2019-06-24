@@ -1,0 +1,53 @@
+[
+	//  North West Continent
+	{
+		"name": "North West Continent",
+		"group": "North West Continent",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"@logic/north-west continent"
+		],
+		"children": [
+			// Dao
+			{
+				"name": "Dao",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 4
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 125,
+						"y": 265
+					}
+				],
+				"children": [
+					{
+						"name": "Dao - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 165,
+								"y": 265
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]
