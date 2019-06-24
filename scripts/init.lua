@@ -24,6 +24,7 @@ Tracker:AddLocations("locations/jeweler.json")
 -- South West Continent
 Tracker:AddLocations("locations/south_west/cities.json")
 Tracker:AddLocations("locations/south_west/dungeons.json")
+Tracker:AddLocations("locations/south_west/area_south_cape.json")
 -- South East Continent
 Tracker:AddLocations("locations/south_east/cities.json")
 Tracker:AddLocations("locations/south_east/dungeons.json")
