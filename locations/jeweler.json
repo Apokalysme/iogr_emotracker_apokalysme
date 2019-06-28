@@ -8,7 +8,7 @@
         "sections": [
             {
                 "name": "Gift 1",
-                "clear_as_group": false,
+                "capture_item": true,
 				"access_rules": [
 					"red_jewel:1, [red_jewel:3]"
 				],
@@ -16,7 +16,7 @@
             },
 			{
                 "name": "Gift 2",
-                "clear_as_group": false,
+                "capture_item": true,
 				"access_rules": [
 					"red_jewel:4, [red_jewel:6]"
 				],
@@ -24,7 +24,7 @@
             },
 			{
                 "name": "Gift 3",
-                "clear_as_group": false,
+                "capture_item": true,
 				"access_rules": [
 					"red_jewel:7, [red_jewel:9]"
 				],
@@ -32,7 +32,7 @@
             },
 			{
                 "name": "Gift 4",
-                "clear_as_group": false,
+                "capture_item": true,
 				"access_rules": [
 					"red_jewel:10, [red_jewel:14]"
 				],
@@ -40,7 +40,7 @@
             },
 			{
                 "name": "Gift 5",
-                "clear_as_group": false,
+                "capture_item": true,
 				"access_rules": [
 					"red_jewel:15, [red_jewel:24]"
 				],
@@ -48,7 +48,7 @@
             },
 			{
                 "name": "Gift 6",
-                "clear_as_group": false,
+                "capture_item": true,
 				"access_rules": [
 					"red_jewel:25, [red_jewel:34]"
 				],

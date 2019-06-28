@@ -415,9 +415,19 @@
     // Journal
     {
       "name": "Journal",
-      "type": "toggle",
-      "img": "images/items/journal.png",
-      "codes": "journal"
+      "type": "progressive_toggle",
+	  "stages": [
+			{
+				"img": "images/items/journal.png",
+				"codes": "journal",
+				"secondary_codes": "none"
+			},
+			{
+				"img": "images/items/journal_given.png",
+				"codes": "journal",
+				"secondary_codes": "used"
+			}
+		]
     },
   
     // Aura

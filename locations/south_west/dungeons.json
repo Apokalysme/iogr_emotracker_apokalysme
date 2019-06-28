@@ -76,8 +76,6 @@
 					},
 					{
 						"name": "Edward's Prison - Kara's Paint",
-						"chest_unopened_img": "images/objectives/kara.png",
-						"chest_opened_img": "images/objectives/kara_unknown.png",
 						"access_rules": [
 							"kara_edwards_castle"
 						],
@@ -87,7 +85,7 @@
 								"access_rules": [
 									"prison_key, @logic/lily, magic_dust"
 								],
-								"item_count": 1
+								"hosted_item": "save_kara"
 							}
 						],
 						"map_locations": [

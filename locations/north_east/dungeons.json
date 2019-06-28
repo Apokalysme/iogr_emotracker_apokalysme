@@ -89,8 +89,6 @@
 				"children": [
 					{
 						"name": "Angel Dungeon - Kara's Paint",
-						"chest_unopened_img": "images/objectives/kara.png",
-						"chest_opened_img": "images/objectives/kara_unknown.png",
 						"access_rules": [
 							"kara_angel_dungeon"
 						],
@@ -100,7 +98,7 @@
 								"access_rules": [
 									"psycho_slide, magic_dust"
 								],
-								"item_count": 1
+								"hosted_item": "save_kara"
 							}
 						],
 						"map_locations": [
@@ -162,8 +160,9 @@
 							{
 								"name": "Slide",
 								"access_rules": [
-									"dark_friar",
-									"spin_dash"
+									"setting_mode_completable",
+									"@logic/chaos, [spin_dash]",
+									"@logic/chaos, [psycho_slide]"
 								],
 								"item_count": 1
 							},

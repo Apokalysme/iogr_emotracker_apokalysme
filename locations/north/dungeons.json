@@ -87,8 +87,6 @@
 					},
 					{
 						"name": "Mount Temple - Kara's Paint",
-						"chest_unopened_img": "images/objectives/kara.png",
-						"chest_opened_img": "images/objectives/kara_unknown.png",
 						"access_rules": [
 							"kara_mount_kress"
 						],
@@ -98,7 +96,7 @@
 								"access_rules": [
 									"spin_dash, mushroom_drop:3, magic_dust"
 								],
-								"item_count": 1
+								"hosted_item": "save_kara"
 							}
 						],
 						"map_locations": [
@@ -201,8 +199,6 @@
 					},
 					{
 						"name": "Ankor Wat - Kara's Paint",
-						"chest_unopened_img": "images/objectives/kara.png",
-						"chest_opened_img": "images/objectives/kara_unknown.png",
 						"access_rules": [
 							"kara_ankor_wat"
 						],
@@ -212,7 +208,7 @@
 								"access_rules": [
 									"@logic/ankor garden, [black_glasses], magic_dust"
 								],
-								"item_count": 1
+								"hosted_item": "save_kara"
 							}
 						],
 						"map_locations": [

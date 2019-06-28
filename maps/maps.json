@@ -3,42 +3,42 @@
     "name": "world",
 	"location_size": 35,
     "location_border_thickness": 5,
-    "img": "images/maps/world.png"
+    "img": "images/maps/world_maps/world.png"
   },
   {
     "name": "south_west",
 	"location_size": 35,
     "location_border_thickness": 5,
-    "img": "images/maps/south_west.png"
+    "img": "images/maps/world_maps/south_west.png"
   },
   {
     "name": "south_east",
 	"location_size": 35,
     "location_border_thickness": 5,
-    "img": "images/maps/south_east.png"
+    "img": "images/maps/world_maps/south_east.png"
   },
   {
     "name": "north_east",
 	"location_size": 35,
     "location_border_thickness": 5,
-    "img": "images/maps/north_east.png"
+    "img": "images/maps/world_maps/north_east.png"
   },
   {
     "name": "north",
 	"location_size": 35,
     "location_border_thickness": 5,
-    "img": "images/maps/north.png"
+    "img": "images/maps/world_maps/north.png"
   },
   {
     "name": "north_west",
 	"location_size": 35,
     "location_border_thickness": 5,
-    "img": "images/maps/north_west.png"
+    "img": "images/maps/world_maps/north_west.png"
   },
   {
     "name": "babel",
 	"location_size": 35,
     "location_border_thickness": 5,
-    "img": "images/maps/babel.png"
+    "img": "images/maps/world_maps/babel.png"
   }
 ]

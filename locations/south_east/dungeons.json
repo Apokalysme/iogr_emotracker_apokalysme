@@ -92,8 +92,6 @@
 					},
 					{
 						"name": "Diamond Mine - Kara's Paint",
-						"chest_unopened_img": "images/objectives/kara.png",
-						"chest_opened_img": "images/objectives/kara_unknown.png",
 						"access_rules": [
 							"kara_diamond_mine"
 						],
@@ -103,7 +101,7 @@
 								"access_rules": [
 									"@logic/mine keys, magic_dust"
 								],
-								"item_count": 1
+								"hosted_item": "save_kara"
 							}
 						],
 						"map_locations": [
@@ -132,7 +130,8 @@
 						"name": "West",
 						"clear_as_group": false,
 						"access_rules": [
-							"dark_friar"
+							"dark_friar",
+							"aura_barrier"
 						],
 						"item_count": 2
 					},
@@ -148,8 +147,6 @@
 						"name": "South West - Top",
 						"clear_as_group": false,
 						"access_rules": [
-							"[dark_friar]",
-							"[powerful_friar]",
 							"[@logic/will ability]"
 						],
 						"item_count": 1
@@ -194,7 +191,7 @@
 							{
 								"name": "South West",
 								"access_rules": [
-									"dark_friar"
+									"[dark_friar]"
 								],
 								"item_count": 1
 							}

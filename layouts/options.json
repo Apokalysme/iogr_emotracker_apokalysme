@@ -1,0 +1,29 @@
+[
+	// Mode
+	{
+		"name": "Mode",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"stages": [
+			{
+				"name": "Completable",
+				"img": "images/icons/mode_completable.png",
+				"inherit_codes": "false",
+				"codes": "setting_mode_completable"
+			},
+			{
+				"name": "Beatable",
+				"img": "images/icons/mode_beatable.png",
+				"inherit_codes": "false",
+				"codes": "setting_mode_beatable"
+			},
+			{
+				"name": "Chaos",
+				"img": "images/icons/mode_chaos.png",
+				"inherit_codes": "false",
+				"codes": "setting_mode_chaos"
+			}
+		]
+	}
+]

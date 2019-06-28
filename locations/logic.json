@@ -91,6 +91,13 @@
 				],
 				"item_count": 1
 			},
+			{
+				"name": "chaos",
+				"access_rules": [
+					"setting_mode_chaos"
+				],
+				"item_count": 1
+			}
 		]
 	}
 ]

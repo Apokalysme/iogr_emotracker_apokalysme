@@ -1,16 +1,25 @@
 v1.3.0.0
 * General :
   * Code reorganization and optimization
+  * Change : Rename "Map Tracker" to "World Map Tracker"
 * Item Tracker :
-  * Change : Separation between "Kara saved" icon and "Kara's Paint" location icon
-  * Fix : Mine keys, A and B, were switched
-  * Fix : Hieroglyphs 2 and 3 were switched
+  * Fix : Mine keys, A and B, were switched to correspond to vanilla game order
+  * Fix : Hieroglyphs 2 and 3 were switched to correspond to vanilla game order
 * Map Tracker :
+  * Change : Separation between "Kara saved" icon and "Kara's Paint" location icon (Simple Item Tracker doesn't change)
+  * Change : Aura Barrier permits access to Sky Garden West section chests
+  * Change : Sequence break with Will's jump attack to access ramp chest in Sky Garden South West section
+  * Change : Sequence break with Will's jump attack to access Dark Space in Sky Garden South West section
+  * Change : Sequence break without black glasses to pass through Ankor Wat Main Hall
+  * Change : In Completable/Beatable mode, nothing is required to access first Dark Space in Great Wall
+  * Change : In Chaos mode, Spin Dash or Psycho Slider could be required to access first Dark Space in Great Wall (as Freedan transformation could be removed from Spin Dash Dark Space)
+  * Add : "Mode" Setting that permits to precise which mode has been chosen for players' seed
   * Add : Kara's Paint will appear on the Map depending on Kara's Paint location icon (appearance for minor dungeons)
   * Add : Kara's Paint will be considered accessible once magic dust is obtained (without it, it won't appear)
-  * Add : Including different world maps (Full and by continent)
-  * Add WIP : For each continent, including areas maps
-  * Fix : Logic to access Top of Babel
+  * Add : Mark which items Jeweler will gift
+  * Add : Variant with Father's journal, which need to be given to the guide in hieroglyph's room since IoGR v1.2.2
+  * Fix : Logic to access Top of Babel (with 36+ Red Jewels and Psycho Slide)
+  * Fix : Light Jewel is for Psycho Dash, not Psycho Slider
 
 v1.2.3.0 :
 * General :

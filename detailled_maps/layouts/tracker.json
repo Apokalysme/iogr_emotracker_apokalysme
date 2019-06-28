@@ -62,21 +62,6 @@
 						},
 						{
 							"type": "dock",
-							"dock": "top",
-							"width": 128,
-							"height": 32,
-							"h_alignment": "center",
-							"content": [
-								{
-									"type": "item",
-									"item": "setting_mode_completable",
-									"h_alignment": "center",
-									"v_alignment": "stretch",
-								}
-							]
-						},
-						{
-							"type": "dock",
 							"dock": "bottom",
 							"content": [
 								{
@@ -96,9 +81,88 @@
 					]
 				},
 				{
-					"type": "map",
-					"maps": [
-						"world"
+					"type": "tabbed",
+					"tabs": [
+						{
+							"title": "World Map",
+							"content": {
+								"type": "map",
+								"maps": [
+									"world"
+								]
+							}
+						},
+						{
+							"title": "South West",
+							"content": {
+								"type": "tabbed",
+								"tabs": [
+									{
+										"title": "Continent",
+										"content": {
+											"type": "map",
+											"maps": [
+												"south_west"
+											]
+										}
+									},
+									{
+										"title": "South Cape",
+										"content": {
+											"type": "map",
+											"maps": [
+												"south_cape"
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"title": "South East",
+							"content": {
+								"type": "map",
+								"maps": [
+									"south_east"
+								]
+							}
+						},
+						{
+							"title": "North East",
+							"content": {
+								"type": "map",
+								"maps": [
+									"north_east"
+								]
+							}
+						},
+						{
+							"title": "North",
+							"content": {
+								"type": "map",
+								"maps": [
+									"north"
+								]
+							}
+						},
+						{
+							"title": "North West",
+							"content": {
+								"type": "map",
+								"maps": [
+									"north_west"
+								]
+							}
+						},
+						{
+							"title": "Babel",
+							"content": {
+								"type": "map",
+								"maps": [
+									"babel"
+								]
+							}
+						}
 					]
 				}
 			]
@@ -138,21 +202,6 @@
 						},
 						{
 							"type": "dock",
-							"dock": "top",
-							"width": 128,
-							"height": 32,
-							"h_alignment": "center",
-							"content": [
-								{
-									"type": "item",
-									"item": "setting_mode_completable",
-									"h_alignment": "center",
-									"v_alignment": "stretch",
-								}
-							]
-						},
-						{
-							"type": "dock",
 							"dock": "bottom",
 							"content": [
 								{
@@ -172,9 +221,88 @@
 					]
 				},
 				{
-					"type": "map",
-					"maps": [
-						"world"
+					"type": "tabbed",
+					"tabs": [
+						{
+							"title": "World Map",
+							"content": {
+								"type": "map",
+								"maps": [
+									"world"
+								]
+							}
+						},
+						{
+							"title": "South West",
+							"content": {
+								"type": "tabbed",
+								"tabs": [
+									{
+										"title": "Continent",
+										"content": {
+											"type": "map",
+											"maps": [
+												"south_west"
+											]
+										}
+									},
+									{
+										"title": "South Cape",
+										"content": {
+											"type": "map",
+											"maps": [
+												"south_cape"
+											]
+										}
+									}
+								]
+							}
+						},
+						{
+							"title": "South East",
+							"content": {
+								"type": "map",
+								"maps": [
+									"south_east"
+								]
+							}
+						},
+						{
+							"title": "North East",
+							"content": {
+								"type": "map",
+								"maps": [
+									"north_east"
+								]
+							}
+						},
+						{
+							"title": "North",
+							"content": {
+								"type": "map",
+								"maps": [
+									"north"
+								]
+							}
+						},
+						{
+							"title": "North West",
+							"content": {
+								"type": "map",
+								"maps": [
+									"north_west"
+								]
+							}
+						},
+						{
+							"title": "Babel",
+							"content": {
+								"type": "map",
+								"maps": [
+									"babel"
+								]
+							}
+						}
 					]
 				}
 			]

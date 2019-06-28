@@ -350,6 +350,43 @@
 		"img": "images/objectives/kara.png",
 		"codes": "save_kara"
 	},
+	// Save Kara (Item only)
+	{
+		"name": "Save Kara",
+		"type": "progressive_toggle",
+		"stages": [
+			{
+				"img": "images/objectives/kara.png",
+				"codes": "save_kara2",
+				"secondary_codes": "unknown"
+			},
+			{
+				"img": "images/objectives/kara_edwards_castle.png",
+				"codes": "kara2_edwards_castle",
+				"secondary_codes": "kara_edwards_castle"
+			},
+			{
+				"img": "images/objectives/kara_diamond_mine.png",
+				"codes": "kara2_diamond_mine",
+				"secondary_codes": "kara_diamond_mine"
+			},
+			{
+				"img": "images/objectives/kara_angel_dungeon.png",
+				"codes": "kara2_angel_dungeon",
+				"secondary_codes": "kara_angel_dungeon"
+			},
+			{
+				"img": "images/objectives/kara_mount_kress.png",
+				"codes": "kara2_mount_kress",
+				"secondary_codes": "kara_mount_kress"
+			},
+			{
+				"img": "images/objectives/kara_ankor_wat.png",
+				"codes": "kara2_ankor_wat",
+				"secondary_codes": "kara_ankor_wat"
+			}
+		]
+	},
 	// Kara's Paint Place
 	{
 		"name": "Kara's Paint Place",

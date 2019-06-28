@@ -41,8 +41,8 @@ Tracker:AddLocations("locations/north_west/dungeons.json")
 -- Babel
 Tracker:AddLocations("locations/babel/dungeons.json")
 
--- Dummy settings (for the future)
--- Tracker:AddItems("layouts/settings.json")
+-- Options/Settings
+Tracker:AddItems("layouts/options.json")
 -- Settings grid
 Tracker:AddLayouts("layouts/options_grid.json")
 -- Layout
