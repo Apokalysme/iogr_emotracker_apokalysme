@@ -62,6 +62,21 @@
 						},
 						{
 							"type": "dock",
+							"dock": "top",
+							"width": 128,
+							"height": 32,
+							"h_alignment": "center",
+							"content": [
+								{
+									"type": "item",
+									"item": "setting_mode_completable",
+									"h_alignment": "center",
+									"v_alignment": "stretch",
+								}
+							]
+						},
+						{
+							"type": "dock",
 							"dock": "bottom",
 							"content": [
 								{
@@ -199,6 +214,21 @@
 								"type": "layout",
 								"key": "options_grid"
 							}
+						},
+						{
+							"type": "dock",
+							"dock": "top",
+							"width": 128,
+							"height": 32,
+							"h_alignment": "center",
+							"content": [
+								{
+									"type": "item",
+									"item": "setting_mode_completable",
+									"h_alignment": "center",
+									"v_alignment": "stretch",
+								}
+							]
 						},
 						{
 							"type": "dock",
