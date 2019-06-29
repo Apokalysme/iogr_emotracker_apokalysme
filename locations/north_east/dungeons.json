@@ -157,6 +157,7 @@
 								"name": "Slide",
 								"access_rules": [
 									"setting_mode_completable",
+									"setting_mode_beatable",
 									"@logic/chaos, [spin_dash]",
 									"@logic/chaos, [psycho_slide]"
 								],
