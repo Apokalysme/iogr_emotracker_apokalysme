@@ -1,3 +1,7 @@
+v1.4.0.0 :
+* Map Tracker
+  * Add : Hints setting to set if hints are displayed or not on the map
+
 v1.3.0.0
 * General :
   * Code reorganization and optimization
