@@ -27,54 +27,62 @@ U8_READ_CACHE_ADDRESS = 0
 U16_READ_CACHE = 0
 U16_READ_CACHE_ADDRESS = 0
 
-
+-- Item table
+-- each item has an unique value in inventory
 ITEM_TABLE = {
-	1 = "red_jewel"
-	2 = "prison_key"
-	3 = "inca_statue_a"
-	4 = "inca_statue_b"
-	6 = "herb"
-	7 = "diamond_block"
-	8 = "melody_wind"
-	9 = "melody_lola"
-	10 = "large_roast"
-	11 = "mine_key_a"
-	12 = "mine_key_b"
-	13 = "melody_memory"
-	14 = "cristal_ball"
-	15 = "elevator_key"
-	16 = "mu_key"
-	17 = "purity_stone"
-	18 = "hope_statue"
-	19 = "rama_statue"
-	20 = "magic_dust"
-	22 = "letter_lance"
-	23 = "necklace"
-	24 = "will"
-	25 = "teapot"
-	26 = "mushroom_drop"
-	28 = "black_glasses"
-	29 = "gorgon_flower"
-	30 = "hieroglyph_5"
-	31 = "hieroglyph_4"
-	32 = "hieroglyph_3"
-	33 = "hieroglyph_1"
-	34 = "hieroglyph_6"
-	35 = "hieroglyph_2"
-	36 = "aura"
-	37 = "letter_lola"
-	38 = "journal"
-	39 = "crystal_ring"
-	40 = "apple"
-	41 = "hp_jewel"
-	42 = "defense_jewel"
-	43 = "strength_jewel"
-	44 = "light_jewel"
-	45 = "dark_jewel"
-	46 = "2_red_jewels"
-	47 = "3_red_jewels"
-	56 = "???"
+	[2] = "prison_key",
+	[3] = "inca_statue_a",
+	[4] = "inca_statue_b",
+	[7] = "diamond_block",
+	[8] = "melody_wind",
+	[9] = "melody_lola",
+	[10] = "large_roast",
+	[11] = "mine_key_a",
+	[12] = "mine_key_b",
+	[13] = "melody_memory",
+	[15] = "elevator_key",
+	[16] = "mu_key",
+	[17] = "purity_stone",
+	[20] = "magic_dust",
+	[22] = "letter_lance",
+	[23] = "necklace",
+	[24] = "will",
+	[25] = "teapot",
+	[28] = "black_glasses",
+	[29] = "gorgon_flower",
+	[30] = "hieroglyph_5",
+	[31] = "hieroglyph_4",
+	[32] = "hieroglyph_3",
+	[33] = "hieroglyph_1",
+	[34] = "hieroglyph_6",
+	[35] = "hieroglyph_2",
+	[36] = "aura",
+	[37] = "letter_lola",
+	[38] = "journal",
+	[39] = "crystal_ring",
+	[40] = "apple"
 }
+
+-- global variables
+INVENTORY_COUNT = 0
+
+HERB_COUNT = 0
+HERB_USED = 0
+
+CRYSTAL_BALL_COUNT = 0
+CRYSTAL_BALL_USED = 0
+
+HOPE_STATUE_COUNT = 0
+HOPE_STATUE_USED = 0
+
+RAMA_STATUE_COUNT = 0
+RAMA_STATUE_USED = 0
+
+MUSHROOM_DROPS_COUNT = 0
+MUSHROOM_DROPS_USED = 0
+
+HIEROGLYPH_COUNT = 0
+HIEROGLYPH_USED = 0
 
 
 -- Reset cache addresses
@@ -89,7 +97,7 @@ function ReadU8(segment, address)
 		-- Read value
         U8_READ_CACHE = segment:ReadUInt8(address)
 		-- Save address
-        U8_READ_CACHE_ADDRESS = address        
+        U8_READ_CACHE_ADDRESS = address
     end
 
     return U8_READ_CACHE
@@ -107,129 +115,236 @@ end
 
 -- Check if game is running
 function isInGame()
-	-- Read address "0" in "0x7e0010" segment
-	-- check if value is greater than "0x05"
-    return AutoTracker:ReadU8(0x7e0010, 0) > 0x05
+	-- Read address "0" in "0x7e0061" segment
+	-- check if value is greater than "0x01"
+    return AutoTracker:ReadU8(0x7e0061, 0) >= 0x01
 end
 
 function lastItemAddedInInventory()
-	local value = ReadU8(segment, 0x7e0db8)
+	local value = AutoTracker:ReadU8(0x7e0db8, 0)
 	
-	item = whatItemIsIt(value)
+	local item = ITEM_TABLE[value]
 	
 	return item
 end
 
-function inventoryCount()
+function inventoryCount(segment)
+	-- inventory 0x7e0ab4 to 0x7e0ac3
+	local count = 0
+	local herb_count = 0
+	local crystal_ball_count = 0
+	local hope_statue_count = 0
+	local rama_statue_count = 0
+	local mushroom_drops_count = 0
+	local hieroglyph_count = 0
 	
+	for i = 0, 15 do
+		local value = ReadU8(segment, 0x7e0ab4 + i)
+
+		if value > 0 then
+			count = count + 1
+		end
+		
+		if value == 6 then
+			herb_count = herb_count + 1
+		elseif value == 14 then
+			crystal_ball_count = crystal_ball_count + 1
+		elseif value == 18 then
+			hope_statue_count = hope_statue_count + 1
+		elseif value == 19 then
+			rama_statue_count = rama_statue_count + 1
+		elseif value == 26 then
+			mushroom_drops_count = mushroom_drops_count + 1
+		elseif value == 30 or value == 31 or value == 32 or value == 33 or value == 34 or value == 35
+			hieroglyph_count = hieroglyph_count + 1
+		end
+		
+	end
+	
+	return count, herb_count, crystal_ball_count, hope_statue_count, rama_statue_count, mushroom_drops_count, hieroglyph_count
 end
 
+-- detect new item added into inventory
+function newItemInInventory(segment)
+	local count, herb_count, crystal_ball_count, hope_statue_count, rama_statue_count, mushroom_drops_count, hieroglyph_count = inventoryCount(segment)
+	
+	if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+		print("INVENTORY :")
+		print("Actual count : ", INVENTORY_COUNT)
+		print("New count : ", count)
+	end
+	
+	if count ~= INVENTORY_COUNT then
+		for i = 0, 15 do
+			local value = ReadU8(segment, 0x7e0ab4 + i)
+	
+			if (value > 0 and ITEM_TABLE[value]) then
+				updateToggleItem(ITEM_TABLE[value])
+			end
+		end
+	
+		INVENTORY_COUNT = count
+	end
+	
+	if herb_count ~= HERB_COUNT then
+		if herb_count + HERB_USED > HERB_COUNT then
+			HERB_COUNT = HERB_COUNT + 1
+			updateHerbs(segment)
+		elseif herb_count + HERB_USED < HERB_COUNT then
+			HERB_USED = HERB_USED + 1
+		end
+	end
+	
+	if crystal_ball_count ~= CRYSTAL_BALL_COUNT then
+		if crystal_ball_count + CRYSTAL_BALL_USED > CRYSTAL_BALL_COUNT then
+			CRYSTAL_BALL_COUNT = CRYSTAL_BALL_COUNT + 1
+			updateCrystalBalls(segment)
+		elseif crystal_ball_count + CRYSTAL_BALL_USED < CRYSTAL_BALL_COUNT then
+			CRYSTAL_BALL_USED = CRYSTAL_BALL_USED + 1
+		end
+	end
+	
+	if hope_statue_count ~= HOPE_STATUE_COUNT then
+		if hope_statue_count + HOPE_STATUE_USED > HOPE_STATUE_COUNT then
+			HOPE_STATUE_COUNT = HOPE_STATUE_COUNT + 1
+			updateHopeStatues(segment)
+		elseif hope_statue_count + HOPE_STATUE_USED < HOPE_STATUE_COUNT then
+			HOPE_STATUE_USED = HOPE_STATUE_USED + 1
+		end
+	end
+	
+	if rama_statue_count ~= RAMA_STATUE_COUNT then
+		if rama_statue_count + RAMA_STATUE_USED > RAMA_STATUE_COUNT then
+			RAMA_STATUE_COUNT = RAMA_STATUE_COUNT + 1
+			updateRamaStatues(segment)
+		elseif rama_statue_count + RAMA_STATUE_USED < RAMA_STATUE_COUNT then
+			RAMA_STATUE_USED = RAMA_STATUE_USED + 1
+		end
+	end
+	
+	if mushroom_drops_count ~= MUSHROOM_DROPS_COUNT then
+		if mushroom_drops_count + MUSHROOM_DROPS_COUNT > MUSHROOM_DROPS_COUNT then
+			MUSHROOM_DROPS_COUNT = MUSHROOM_DROPS_COUNT + 1
+			updateMushroomDrops(segment)
+		elseif mushroom_drops_count + MUSHROOM_DROPS_USED < MUSHROOM_DROPS_COUNT then
+			MUSHROOM_DROPS_USED = MUSHROOM_DROPS_USED + 1
+		end
+	end
+	
+	if hieroglyph_count ~= HIEROGLYPH_COUNT then
+		if hieroglyph_count + HIEROGLYPH_COUNT > HIEROGLYPH_COUNT then
+			HIEROGLYPH_COUNT = HIEROGLYPH_COUNT + 1
+			updateHieroglyphCount(segment)
+		elseif hieroglyph_count + HIEROGLYPH_USED < HIEROGLYPH_COUNT then
+			HIEROGLYPH_USED = HIEROGLYPH_USED + 1
+		end
+	end
+end
 
 -- update "progressive" item depending on memory state
 function updateProgressiveItemFromByte(segment, code, address, offset)
 	-- find tracker object from specified code
     local item = Tracker:FindObjectForCode(code)
+	
 	-- if item is found
     if item then
 		-- read item state in memory
         local value = ReadU8(segment, address)
 		-- update tracker with result
-        item.CurrentStage = value + (offset or 0)
+        item.CurrentStage = value + offset
     end
+end
+
+-- update Red Jewels count from count in memory
+function updateRedJewels(segment)
+    local item = Tracker:FindObjectForCode("red_jewel")
+    local actualCount = item.AcquiredCount
+    local newCount = tonumber(string.format("%04X", ReadU8(segment, 0x7e0ab0)))
+	
+	if (newCount - actualCount) > 0 then
+		item.AcquiredCount = newCount
+	end
+end
+
+function updateHerbs(segment)
+    local item = Tracker:FindObjectForCode("herb")
+    local actualCount = item.AcquiredCount
+    local newCount = HERB_COUNT
+	
+	if (newCount - actualCount) > 0 then
+		item.AcquiredCount = newCount
+	end
 end
 
 function updateCrystalBalls(segment)
     local item = Tracker:FindObjectForCode("crystal_ball")
-    local count = 0
-    for i = 0, 3, 1 do
-        if ReadU8(segment, 0x7ef35c + i) > 0 then
-            count = count + 1
-        end
-    end
-    item.CurrentStage = count
-end
-
-function updateHopeStatues(segment)
-    local item = Tracker:FindObjectForCode("hope_statue")    
-    local count = 0
-    for i = 0, 3, 1 do
-        if ReadU8(segment, 0x7ef35c + i) > 0 then
-            count = count + 1
-        end
-    end
-    item.CurrentStage = count
-end
-
-function updateRamaStatues(segment)
-    local item = Tracker:FindObjectForCode("rama_statue")    
-    local count = 0
-    for i = 0, 3, 1 do
-        if ReadU8(segment, 0x7ef35c + i) > 0 then
-            count = count + 1
-        end
-    end
-    item.CurrentStage = count
-end
-
-function updateMushroomDrops(segment)
-    local item = Tracker:FindObjectForCode("mushroom_drop")    
-    local count = 0
-    for i = 0, 3, 1 do
-        if ReadU8(segment, 0x7ef35c + i) > 0 then
-            count = count + 1
-        end
-    end
-    item.CurrentStage = count
-end
-
-function updateHieroglyphs(segment)
-    local item = Tracker:FindObjectForCode("hieroglyph_count")    
-    local count = 0
-    for i = 0, 3, 1 do
-        if ReadU8(segment, 0x7ef35c + i) > 0 then
-            count = count + 1
-        end
-    end
-    item.CurrentStage = count
-end
-
-function updateHerbs(segment)
-    local item = Tracker:FindObjectForCode("herb")    
-    local count = 0
-    for i = 0, 3, 1 do
-        if ReadU8(segment, 0x7ef35c + i) > 0 then
-            count = count + 1
-        end
-    end
-    item.CurrentStage = count
-end
-
--- OK
-function updateRedJewels(segment)
-    local item = Tracker:FindObjectForCode("red_jewel")
-    local actualCount = item.CurrentStage
-    local newCount = ReadU8(segment, 0x7efab0)
-
+    local actualCount = item.AcquiredCount
+    local newCount = CRYSTAL_BALL_COUNT
+	
 	if (newCount - actualCount) > 0 then
-		item.CurrentStage = newCount
+		item.AcquiredCount = newCount
 	end
 end
 
--- update bottles state
-function updateBottles(segment)
-    local item = Tracker:FindObjectForCode("bottle")    
-    local count = 0
-    for i = 0, 3, 1 do
-        if ReadU8(segment, 0x7ef35c + i) > 0 then
-            count = count + 1
-        end
-    end
-    item.CurrentStage = count
+function updateHopeStatues(segment)
+    local item = Tracker:FindObjectForCode("hope_statue")
+    local actualCount = item.AcquiredCount
+    local newCount = HOPE_STATUE_COUNT
+	
+	if (newCount - actualCount) > 0 then
+		item.AcquiredCount = newCount
+	end
+end
+
+function updateRamaStatues(segment)
+    local item = Tracker:FindObjectForCode("rama_statue")
+    local actualCount = item.AcquiredCount
+    local newCount = RAMA_STATUE_COUNT
+	
+	if (newCount - actualCount) > 0 then
+		item.AcquiredCount = newCount
+	end
+end
+
+function updateMushroomDrops(segment)
+    local item = Tracker:FindObjectForCode("mushroom_drop")
+    local actualCount = item.AcquiredCount
+    local newCount = MUSHROOM_DROPS_COUNT
+	
+	if (newCount - actualCount) > 0 then
+		item.AcquiredCount = newCount
+	end
+end
+
+function updateHieroglyphCount(segment)
+    local item = Tracker:FindObjectForCode("hieroglyph_count")
+    local actualCount = item.AcquiredCount
+    local newCount = HIEROGLYPH_COUNT
+	
+	if (newCount - actualCount) > 0 then
+		item.AcquiredCount = newCount
+	end
+end
+
+function updateToggleItem(code)
+	local item = Tracker:FindObjectForCode(code)
+	
+	if code ~= "red_jewel" and code ~= "herb" then
+		if (item and item.Active ~= true) then
+			if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+				print("Activated item : ", code)
+			end
+			item.Active = true
+		end
+	end
 end
 
 -- update "toggle" item depending on memory state
 function updateToggleItemFromByte(segment, code, address)
     local item = Tracker:FindObjectForCode(code)
+	
+	print(code)
+	
     if item then
         local value = ReadU8(segment, address)
         if value > 0 then
@@ -245,9 +360,6 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-            print(item.Name, code, flag)
-        end
 
         local flagTest = value & flag
 
@@ -259,107 +371,72 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
     end
 end
 
--- update "toggle" from memory state (mystic statues)
-function updateToggleFromRoomSlot(segment, code, slot)
-    local item = Tracker:FindObjectForCode(code)
+function updatePsychoDashFromByteAndFlag(segment, address, flag)
+    local item = Tracker:FindObjectForCode("psycho_dash")
+	
     if item then
-        local roomData = ReadU16(segment, 0x7ef000 + slot[1])
-        
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-            print(roomData)
-        end
-
-        item.Active = (roomData & (1 << slot[2])) ~= 0
-    end
-end
-
--- update Heart piece value
-function updateConsumableItemFromByte(segment, code, address)
-    local item = Tracker:FindObjectForCode(code)
-    if item then
-        local value = ReadU8(segment, address)
-        item.AcquiredCount = value
-    else
-        print("Couldn't find item: ", code)
-    end
-end
-
--- update pseudo "progressive" (case of shovel and mushroom, which are associated with flute and powder)
-function updatePseudoProgressiveItemFromByteAndFlag(segment, code, address, flag)
-    local item = Tracker:FindObjectForCode(code)
-    if item then
-        local value = ReadU8(segment, address)
-        local flagTest = value & flag
-
-        if flagTest ~= 0 then
-            item.CurrentStage = math.max(1, item.CurrentStage)
+		local value = ReadU8(segment, address)
+	
+		local flagTest = value & flag
+		
+		if flagTest ~= 0 then
+            item.CurrentStage = 1
         else
             item.CurrentStage = 0
-        end    
+		end
+		
+		local upgrade = AutoTracker:ReadU8(0x7e0b16, 0)
+		
+		local upgradeTest = upgrade & 0x01
+		
+		if upgradeTest ~= 0 then
+			item.CurrentStage = 2
+		end
     end
 end
 
--- update chests count
-function updateSectionChestCountFromByteAndFlag(segment, locationRef, address, flag, callback)
-    local location = Tracker:FindObjectForCode(locationRef)
-    if location then
-        -- Do not auto-track this the user has manually modified it
-        if location.Owner.ModifiedByUser then
-            return
-        end
-
-        local value = ReadU8(segment, address)
-        
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-            print(locationRef, value)
-        end
-
-        if (value & flag) ~= 0 then
-            location.AvailableChestCount = 0
-            if callback then
-                callback(true)
-            end
+function updateDarkFriarFromByteAndFlag(segment, address, flag)
+    local item = Tracker:FindObjectForCode("dark_friar")
+	
+    if item then
+		local value = ReadU8(segment, address)
+	
+		local flagTest = value & flag
+		
+		if flagTest ~= 0 then
+            item.CurrentStage = 1
         else
-            location.AvailableChestCount = location.ChestCount
-            if callback then
-                callback(false)
-            end
-        end
-    elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-        print("Couldn't find location", locationRef)
+            item.CurrentStage = 0
+		end
+		
+		local upgrade = AutoTracker:ReadU8(0x7e0b1c, 0)
+		
+		local upgradeTest = upgrade & 0x02
+		
+		if upgradeTest ~= 0 then
+			item.CurrentStage = 2
+		end
     end
 end
 
-function updateNPCItemFlagsFromMemorySegment(segment)
+function updateAbilitiesFromMemorySegment(segment)
 
     if not isInGame() then
         return false
     end
 
-    if not AUTOTRACKER_ENABLE_LOCATION_TRACKING then
-        return true
-    end
-
     InvalidateReadCaches()
 
-    updateSectionChestCountFromByteAndFlag(segment, "@Old Man/Bring Him Home", 0x7ef410, 0x01)
-    updateSectionChestCountFromByteAndFlag(segment, "@Zora Area/King Zora", 0x7ef410, 0x02)
-    updateSectionChestCountFromByteAndFlag(segment, "@Sick Kid/By The Bed", 0x7ef410, 0x04)
-    updateSectionChestCountFromByteAndFlag(segment, "@Haunted Grove/Stumpy", 0x7ef410, 0x08)
-    updateSectionChestCountFromByteAndFlag(segment, "@Sahasrala's Hut/Shabbadoo", 0x7ef410, 0x10)
-    updateSectionChestCountFromByteAndFlag(segment, "@Catfish/Ring of Stones", 0x7ef410, 0x20)
-    -- 0x40 is unused
-    updateSectionChestCountFromByteAndFlag(segment, "@Library/On The Shelf", 0x7ef410, 0x80)
-
-    updateSectionChestCountFromByteAndFlag(segment, "@Ether Tablet/Tablet", 0x7ef411, 0x01)
-    updateSectionChestCountFromByteAndFlag(segment, "@Bombos Tablet/Tablet", 0x7ef411, 0x02)
-    updateSectionChestCountFromByteAndFlag(segment, "@Dwarven Smiths/Bring Him Home", 0x7ef411, 0x04)
-    -- 0x08 is no longer relevant
-    updateSectionChestCountFromByteAndFlag(segment, "@Lost Woods/Mushroom Spot", 0x7ef411, 0x10)
-    updateSectionChestCountFromByteAndFlag(segment, "@Witch's Hut/Assistant", 0x7ef411, 0x20, updateMushroomStatus)
-    -- 0x40 is unused
-    updateSectionChestCountFromByteAndFlag(segment, "@Magic Bat/Magic Bowl", 0x7ef411, 0x80, updateBatIndicatorStatus)    
-
+    if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+        
+		updatePsychoDashFromByteAndFlag(segment, 0x7e0aa2, 0x01)
+		updateToggleItemFromByteAndFlag(segment, "psycho_slide", 0x7e0aa2, 0x02)
+		updateToggleItemFromByteAndFlag(segment, "spin_dash", 0x7e0aa2, 0x04)
+		updateDarkFriarFromByteAndFlag(segment, 0x7e0aa2, 0x10)
+		updateToggleItemFromByteAndFlag(segment, "aura_barrier", 0x7e0aa2, 0x20)
+		updateToggleItemFromByteAndFlag(segment, "earthquaker", 0x7e0aa2, 0x40)
+		
+    end
 end
 
 function updateItemsFromMemorySegment(segment)
@@ -372,63 +449,85 @@ function updateItemsFromMemorySegment(segment)
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
         
-        updateToggleItemFromByte(segment, "melody_lola", 0x7ef342)
-        updateToggleItemFromByte(segment, "prison_key", 0x7ef343)
-        updateToggleItemFromByte(segment, "large_roast", 0x7ef345)
-        updateToggleItemFromByte(segment, "diamond_block", 0x7ef346)
-        updateToggleItemFromByte(segment, "melody_wind", 0x7ef347)
-        updateToggleItemFromByte(segment, "inca_statue_a", 0x7ef348)
-        updateToggleItemFromByte(segment, "inca_statue_b", 0x7ef349)
-        updateToggleItemFromByte(segment, "mine_key_a", 0x7ef34a)
-        updateToggleItemFromByte(segment, "mine_key_b", 0x7ef34b)
-        updateToggleItemFromByte(segment, "elevator_key", 0x7ef34d)
-        updateToggleItemFromByte(segment, "melody_memory", 0x7ef34e)
-        updateToggleItemFromByte(segment, "purity_stone", 0x7ef350)
-        updateToggleItemFromByte(segment, "mu_key", 0x7ef351)
-        updateToggleItemFromByte(segment, "magic_dust", 0x7ef352)
-        updateToggleItemFromByte(segment, "letter_lance", 0x7ef353)
-        updateToggleItemFromByte(segment, "necklace", 0x7ef355)
-        updateToggleItemFromByte(segment, "will", 0x7ef356)
-        updateToggleItemFromByte(segment, "apple", 0x7ef357)
-        updateToggleItemFromByte(segment, "teapot", 0x7ef37b)
-		updateToggleItemFromByte(segment, "black_glasses", 0x7ef37b)
-		updateToggleItemFromByte(segment, "gorgon_flower", 0x7ef37b)
-		updateToggleItemFromByte(segment, "letter_lola", 0x7ef37b)
-		updateToggleItemFromByte(segment, "journal", 0x7ef37b)
-		updateToggleItemFromByte(segment, "aura", 0x7ef37b)
-		updateToggleItemFromByte(segment, "crystal_ring", 0x7ef37b)
-
-		updateToggleItemFromByte(segment, "psycho_dash", 0x7ef37b)
-		updateToggleItemFromByte(segment, "psycho_slide", 0x7ef37b)
-		updateToggleItemFromByte(segment, "spin_dash", 0x7ef37b)
-		updateToggleItemFromByte(segment, "dark_friar", 0x7ef37b)
-		updateToggleItemFromByte(segment, "aura_barrier", 0x7ef37b)
-		updateToggleItemFromByte(segment, "earthquaker", 0x7ef37b)
+		newItemInInventory(segment)
 		
-        updatePseudoProgressiveItemFromByteAndFlag(segment, "mushroom", 0x7ef38c, 0x20)
-        updatePseudoProgressiveItemFromByteAndFlag(segment, "shovel", 0x7ef38c, 0x04)
-
-        updateCrystalBalls(segment)
-        updateHopeStatues(segment)
-		updateRamaStatues(segment)
-		updateMushroomDrops(segment)
-		updateHieroglyphs(segment)
-		updateHerbs(segment)
 		updateRedJewels(segment)
+		
+		-- Hieroglyph Order: check ROM address $39e9a, this is the location of where the correct order is reported in Father's Journal.  Each hieroglyph character is defined with a two-byte tuple:
+		-- 1 = #$c0c1
+		-- 2 = #$c2c3
+		-- 3 = #$c4c5
+		-- 4 = #$c6c7
+		-- 5 = #$c8c9
+		-- 6 = #$cacb
+		-- You can find where this is handled programmatically in "iogr_rom.py", around line 1654
+		
+		-- Oh, do you need to know what the jeweler amounts are?  The seven award amounts are located, respectively, at $8cee0, $8cef1, $8cf02, $8cf13, $8cf24, $8cf35 and $8cf40.
+		-- This is handled around line 1744
+		
     end
-
-    if not AUTOTRACKER_ENABLE_LOCATION_TRACKING then
-        return true
-    end    
-
-    --  It may seem unintuitive, but these locations are controlled by flags stored adjacent to the item data,
-    --  which makes it more efficient to update them here.
-    updateSectionChestCountFromByteAndFlag(segment, "@Castle Secret Entrance/Uncle", 0x7ef3c6, 0x01)    
-    updateSectionChestCountFromByteAndFlag(segment, "@Hobo/Under The Bridge", 0x7ef3c9, 0x01)
-    updateSectionChestCountFromByteAndFlag(segment, "@Bottle Vendor/This Jerk", 0x7ef3c9, 0x02)
-    updateSectionChestCountFromByteAndFlag(segment, "@Purple Chest/Show To Gary", 0x7ef3c9, 0x10)
-
 end
 
-ScriptHost:AddMemoryWatch("IoG Item Data", 0x7ef340, 0x90, updateItemsFromMemorySegment)
-ScriptHost:AddMemoryWatch("IoG NPC Item Data", 0x7ef410, 2, updateNPCItemFlagsFromMemorySegment)
+function updateMysticStatuesFromMemorySegment(segment)
+
+    if not isInGame() then
+        return false
+    end
+
+    InvalidateReadCaches()
+
+    if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+	
+        updateToggleItemFromByteAndFlag(segment, "mystic_statue_1", 0x7e0a1f, 0x01)
+		updateToggleItemFromByteAndFlag(segment, "mystic_statue_2", 0x7e0a1f, 0x02)
+		updateToggleItemFromByteAndFlag(segment, "mystic_statue_3", 0x7e0a1f, 0x04)
+		updateToggleItemFromByteAndFlag(segment, "mystic_statue_4", 0x7e0a1f, 0x08)
+		updateToggleItemFromByteAndFlag(segment, "mystic_statue_5", 0x7e0a1f, 0x10)
+		updateToggleItemFromByteAndFlag(segment, "mystic_statue_6", 0x7e0a1f, 0x20)
+		
+		--For talking to the teacher
+		-- the first address of the teacher's text is $48aa8, so if you're able to track when that ROM address is read, that means the player has talked to the teacher.  (Line 1912)
+		
+		-- Mystic Statues Required: Check the following ROM addresses for the proper values to know which ones are required:
+		-- Statue 1: $8dd19 = #$f8 (or != #$10)
+		-- Statue 2: $8dd1f = #$f9 (or != #$10)
+		-- Statue 3: $8dd25 = #$fa (or != #$10)
+		-- Statue 4: $8dd2b  = #$fb (or != #$10)
+		-- Statue 5: $8dd31 = #$fc (or != #$10)
+		-- Statue 6: $8dd37 = #$fd (or != #$10)
+
+		-- Line 1817
+		
+    end
+end
+
+function updateKaraFromMemorySegment(segment)
+
+    if not isInGame() then
+        return false
+    end
+
+    InvalidateReadCaches()
+
+    if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+	
+        updateToggleItemFromByteAndFlag(segment, "save_kara2", 0x7e0a11, 0x04)
+		
+		-- Kara Location: Probably the easiest is to look at the text code for Lance's Letter.  So, look at $39520 -- this is the third character in the location, which is unique for each.  Kara's location can be inferred based on the value found there:
+		-- Edward's: #$a7
+		-- Diamond Mine: #$80
+		-- Angel: #$86
+		-- Mt. Kress: #$2a
+		-- Ankor Wat: #$8a
+		-- Line 1937
+		
+    end
+end
+
+ScriptHost:AddMemoryWatch("IoG Item Data", 0x7e0ab0, 0x16, updateItemsFromMemorySegment)
+ScriptHost:AddMemoryWatch("IoG Ability Data", 0x7e0aa2, 0x01, updateAbilitiesFromMemorySegment)
+ScriptHost:AddMemoryWatch("IoG Mystic Statue Data", 0x7e0a1f, 0x01, updateMysticStatuesFromMemorySegment)
+ScriptHost:AddMemoryWatch("IoG Kara Data", 0x7e0a11, 0x01, updateKaraFromMemorySegment)
+
+-- Do you have a plan to handle ROMs with headers/offsets?  You could check for the rando code location.  With this method, the ROM offset could be found by searching the ROM for the bit string "52 41 4E 44 4F 90 43 4F 44 45 90" and subtracting #$1da4c (which is where it should show up in an unheadered ROM).
+-- Line 80

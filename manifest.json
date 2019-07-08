@@ -2,7 +2,7 @@
   "name": "IoGR Map and Item Tracker",
   "game_name": "Illusion of Gaia Randomizer",
   "platform": "snes",
-  "package_version": "1.4.0.0",
+  "package_version": "1.5.0.0",
   "package_uid": "iogr_emotracker_apokalysme",
   "author": "Apokalysme",
   "variants": {
@@ -13,7 +13,10 @@
 		"display_name": "Detailled Map Tracker"
     },
 	"items_only": {
-		"display_name": "Item Tracker"
+		"display_name": "Item Tracker",
+		"flags": [
+            "autotracker"
+          ]
     }
   }
 }

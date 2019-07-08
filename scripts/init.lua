@@ -48,3 +48,9 @@ Tracker:AddLayouts("layouts/options_grid.json")
 -- Layout
 Tracker:AddLayouts("layouts/tracker.json")
 Tracker:AddLayouts("layouts/standard_broadcast.json")
+
+if _VERSION == "Lua 5.3" then
+    ScriptHost:LoadScript("autotracking/autotracking.lua")
+else
+    print("Auto-tracker is unsupported by your tracker version")
+end
