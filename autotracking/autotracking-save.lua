@@ -508,6 +508,7 @@ end
 function updateKaraIndicatorStatusFromLetter(segment, code, address, flag)
 	local item = Tracker:FindObjectForCode(code)
     if item then
+		-- address pre-1.3.3
 		KARA_LOCATION = AutoTracker:ReadU8(0x039523, 0)
 		
 		local value = ReadU8(segment, address)
@@ -776,7 +777,7 @@ function updateKaraFromMemorySegment(segment)
             updateToggleItemFromByteAndFlag(segment, "kara2_edwards_castle", 0x7e0a11, 0x04)
         elseif KARA_LOCATION_STAGE[KARA_LOCATION] == 2 then
 			updateToggleItemFromByteAndFlag(segment, "kara2_diamond_mine", 0x7e0a11, 0x04)
-			elseif KARA_LOCATION_STAGE[KARA_LOCATION] == 3 then
+        elseif KARA_LOCATION_STAGE[KARA_LOCATION] == 3 then
 			updateToggleItemFromByteAndFlag(segment, "kara2_angel_dungeon", 0x7e0a11, 0x04)
         elseif KARA_LOCATION_STAGE[KARA_LOCATION] == 4 then
 			updateToggleItemFromByteAndFlag(segment, "kara2_mount_kress", 0x7e0a11, 0x04)
@@ -784,11 +785,8 @@ function updateKaraFromMemorySegment(segment)
 			updateToggleItemFromByteAndFlag(segment, "kara2_ankor_wat", 0x7e0a11, 0x04)
         end
 		
-		updateToggleItemFromByteAndFlag(segment, "save_kara", 0x7e0a11, 0x04)
-		
 		if KARA_SET == 0 then
 			updateKaraIndicatorStatusFromLetter(segment, "save_kara2", 0x7e0a11, 0x40)
-			updateKaraIndicatorStatusFromLetter(segment, "kara_place", 0x7e0a11, 0x40)
 		end
     end
 end
@@ -812,7 +810,6 @@ function updateFromRoomSegment(segment)
 	
 		if KARA_SET == 0 then
 			updateKaraIndicatorStatusFromRoom(segment,"save_kara2", 0x7e0644)
-			updateKaraIndicatorStatusFromRoom(segment,"kara_place", 0x7e0644)
 		end
 		
     end

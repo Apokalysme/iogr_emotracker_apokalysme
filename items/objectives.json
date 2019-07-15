@@ -392,11 +392,13 @@
 		"name": "Kara's Paint Place",
 		"loop": true,
 		"type": "progressive",
+		"allow_disabled": "false",
 		"stages": [
 			{
 				"img": "images/objectives/kara_unknown.png",
 				"codes": "kara_place",
 				"secondary_codes": "unknown",
+				"img_mods": "@disabled",
 				"inherit_codes": false
 			},
 			{
