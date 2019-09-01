@@ -167,6 +167,9 @@
 					{
 						"name": "Trial",
 						"clear_as_group": false,
+						"access_rules": [
+							"@logic/will ability"
+						],
 						"item_count": 1
 					}
 				]

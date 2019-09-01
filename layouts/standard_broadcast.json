@@ -20,18 +20,6 @@
 							[ "psycho_dash", "psycho_slide", "spin_dash", "dark_friar", "aura_barrier", "earthquaker", "", "herb", "red_jewel" ],
 							[ "kara_place", "save_kara", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6" ]
                         ]
-                    },
-                    {
-                        "type": "container",
-                        "margin": "0,5,0,0",
-                        "content": {
-                            "type": "recentpins",
-                            "h_alignment": "stretch",
-                            "v_alignment": "stretch",
-                            "orientation": "vertical",
-                            "compact": true,
-                            "num_items": 2
-                        }
                     }
                 ]
             }

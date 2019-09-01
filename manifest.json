@@ -9,9 +9,9 @@
     "standard": {
 		"display_name": "World Map Tracker"
     },
-	"detailled_maps": {
-		"display_name": "Detailled Map Tracker"
-    },
+//	"detailled_maps": {
+//		"display_name": "Detailled Map Tracker"
+//    },
 	"items_only": {
 		"display_name": "Item Tracker",
 		"flags": [

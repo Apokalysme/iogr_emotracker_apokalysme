@@ -80,7 +80,8 @@
 				"name": "north-west continent",
 				"access_rules": [
 					"@logic/south-east continent, melody_memory",
-					"@logic/north continent, large_roast"
+					"@logic/north continent, large_roast",
+					"red_jewel:36, [red_jewel:50]"
 				],
 				"item_count": 1
 			},
@@ -88,6 +89,13 @@
 				"name": "babel access",
 				"access_rules": [
 					"@logic/south-east continent, melody_memory"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "top babel access",
+				"access_rules": [
+					"[red_jewel:50], psycho_slide"
 				],
 				"item_count": 1
 			},

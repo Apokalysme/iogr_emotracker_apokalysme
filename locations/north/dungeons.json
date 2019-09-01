@@ -39,7 +39,7 @@
 						"item_count": 1
 					},
 					{
-						"name": "Submit",
+						"name": "Summit",
 						"clear_as_group": false,
 						"access_rules": [
 							"spin_dash, mushroom_drop:3"

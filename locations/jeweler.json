@@ -76,9 +76,6 @@
             {
                 "name": "Mansion",
                 "clear_as_group": false,
-				"access_rules": [
-					"psycho_slide"
-				],
                 "item_count": 1
             },
 			{
