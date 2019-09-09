@@ -39,9 +39,6 @@ print("")
 
 -- GLOBAL VARIABLES -----------------------------------
 
--- Offset to add in case of headered ROMs
-OFFSET = 0x000000
-
 -- Memory Cache 
 U8_READ_CACHE = 0
 U8_READ_CACHE_ADDRESS = 0
@@ -766,7 +763,7 @@ function updateKaraIndicatorStatusFromLetter(segment, code, address, flag)
 	local item = Tracker:FindObjectForCode(code)
     if item then
 		-- Getting Kara's location in ROM address
-		KARA_LOCATION = AutoTracker:ReadU8(0x039523 + OFFSET, 0)
+		KARA_LOCATION = AutoTracker:ReadU8(0x039523, 0)
 		
 		local value = ReadU8(segment, address)
 		-- Check Lance's letter status (if read or not)
@@ -792,7 +789,7 @@ function updateKaraIndicatorStatusFromRoom(segment, code, address)
 	local item = Tracker:FindObjectForCode(code)
 	
 	-- Getting Kara's location in ROM address
-	KARA_LOCATION = AutoTracker:ReadU8(0x039523 + OFFSET, 0)
+	KARA_LOCATION = AutoTracker:ReadU8(0x039523, 0)
 	if item then
 		local value = ReadU8(segment, address)
 
@@ -1008,22 +1005,12 @@ function updateMysticStatuesFromMemorySegment(segment)
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 		if MYSTIC_STATUE_CHECK == 0 then
---[[
-Do you have a plan to handle ROMs with headers/offsets?
-You could check for the rando code location.
-With this method, the ROM offset could be found by searching the ROM for the bit
-string "52 41 4E 44 4F 90 43 4F 44 45 90" and subtracting #$1da4c
-(which is where it should show up in an unheadered ROM).
---]]
-	local offsetTest = AutoTracker:ReadUInt8(0x01da4c) --, 12, true)
-	print("OFFSET : ", offsetTest)
-		
-			local value1 = AutoTracker:ReadU8(0x08dd19 + OFFSET, 0)
-			local value2 = AutoTracker:ReadU8(0x08dd1f + OFFSET, 0)
-			local value3 = AutoTracker:ReadU8(0x08dd25 + OFFSET, 0)
-			local value4 = AutoTracker:ReadU8(0x08dd2b + OFFSET, 0)
-			local value5 = AutoTracker:ReadU8(0x08dd31 + OFFSET, 0)
-			local value6 = AutoTracker:ReadU8(0x08dd37 + OFFSET, 0)
+			local value1 = AutoTracker:ReadU8(0x08dd19, 0)
+			local value2 = AutoTracker:ReadU8(0x08dd1f, 0)
+			local value3 = AutoTracker:ReadU8(0x08dd25, 0)
+			local value4 = AutoTracker:ReadU8(0x08dd2b, 0)
+			local value5 = AutoTracker:ReadU8(0x08dd31, 0)
+			local value6 = AutoTracker:ReadU8(0x08dd37, 0)
 			MYSTIC_STATUE_NEEDED[1] = (value1 == tonumber(0xf8) or value1 ~= tonumber(0x10))
 			MYSTIC_STATUE_NEEDED[2] = (value2 == tonumber(0xf9) or value2 ~= tonumber(0x10))
 			MYSTIC_STATUE_NEEDED[3] = (value3 == tonumber(0xfa) or value3 ~= tonumber(0x10))
@@ -1124,12 +1111,12 @@ function updateFromSwitchesSegment(segment)
 
 		-- Check hieroglyph combination once and for all
 		if HIEROGLYPHS_CHECK == 0 then
-			HIEROGLYPHS_COMBINATION[1] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039e9a + OFFSET, 0)]
-			HIEROGLYPHS_COMBINATION[2] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039e9c + OFFSET, 0)]
-			HIEROGLYPHS_COMBINATION[3] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039e9e + OFFSET, 0)]
-			HIEROGLYPHS_COMBINATION[4] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039ea0 + OFFSET, 0)]
-			HIEROGLYPHS_COMBINATION[5] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039ea2 + OFFSET, 0)]
-			HIEROGLYPHS_COMBINATION[6] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039ea4 + OFFSET, 0)]
+			HIEROGLYPHS_COMBINATION[1] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039e9a, 0)]
+			HIEROGLYPHS_COMBINATION[2] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039e9c, 0)]
+			HIEROGLYPHS_COMBINATION[3] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039e9e, 0)]
+			HIEROGLYPHS_COMBINATION[4] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039ea0, 0)]
+			HIEROGLYPHS_COMBINATION[5] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039ea2, 0)]
+			HIEROGLYPHS_COMBINATION[6] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039ea4, 0)]
 			
 			-- Debug informations about hieroglyph combination
 			if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
