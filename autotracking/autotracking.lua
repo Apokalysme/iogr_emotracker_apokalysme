@@ -96,13 +96,7 @@ ITEM_TABLE = {
 	  Ankor Wat : #$8a
 --]]
 KARA_LOCATION = 0
-KARA_LOCATION_STAGE = {
-	[167] = 1,
-	[128] = 2,
-	[134] = 3,
-	[42] = 4,
-	[138] = 5
-}
+
 -- Kara's location mark state
 KARA_SET = 0
 
@@ -142,15 +136,10 @@ MYSTIC_STATUE_SET = 0
 -- Hieroglyphs detail
 -- Hieroglyphs check state
 HIEROGLYPHS_CHECK = 0
--- Hieroglyphs code
-HIEROGLYPHS_CODE = {
-	[49600] = 1,
-	[50114] = 2,
-	[50628] = 3,
-	[51142] = 4,
-	[51656] = 5,
-	[52170] = 6
-}
+
+-- Journal gotten
+JOURNAL_GOTTEN = 0
+
 -- Hieroglyphs combination check state
 HIEROGLYPHS_COMBINATION_SET = 0
 -- Hieroglyphs combination
@@ -375,6 +364,9 @@ function newItemInInventory(segment)
 			elseif value == 34 and HIEROGLYPHS_GOTTEN[6] ~= 1 then
 				HIEROGLYPHS_GOTTEN[6] = 1
 				updateHieroglyphCount()
+			elseif value == 38 then
+				JOURNAL_GOTTEN = 1
+				updateToggleItem(ITEM_TABLE[value])
 			elseif (value > 0 and ITEM_TABLE[value]) then
 				updateToggleItem(ITEM_TABLE[value])
 			end
@@ -742,12 +734,12 @@ function updateNeededStatues(segment, address, flag)
 		-- Update Tracker when player has talked to teacher in South Cape
 		local flagTest = value & flag
         if flagTest > 0 then
-            if (MYSTIC_STATUE_NEEDED[1]) then item1.CurrentStage = 1 end
-			if (MYSTIC_STATUE_NEEDED[2]) then item2.CurrentStage = 1 end
-			if (MYSTIC_STATUE_NEEDED[3]) then item3.CurrentStage = 1 end
-			if (MYSTIC_STATUE_NEEDED[4]) then item4.CurrentStage = 1 end
-			if (MYSTIC_STATUE_NEEDED[5]) then item5.CurrentStage = 1 end
-			if (MYSTIC_STATUE_NEEDED[6]) then item6.CurrentStage = 1 end
+            if (MYSTIC_STATUE_NEEDED[1] == 1) then item1.CurrentStage = 1 end
+			if (MYSTIC_STATUE_NEEDED[2] == 1) then item2.CurrentStage = 1 end
+			if (MYSTIC_STATUE_NEEDED[3] == 1) then item3.CurrentStage = 1 end
+			if (MYSTIC_STATUE_NEEDED[4] == 1) then item4.CurrentStage = 1 end
+			if (MYSTIC_STATUE_NEEDED[5] == 1) then item5.CurrentStage = 1 end
+			if (MYSTIC_STATUE_NEEDED[6] == 1) then item6.CurrentStage = 1 end
 			
 			MYSTIC_STATUE_SET = 1
         end
@@ -763,7 +755,7 @@ function updateKaraIndicatorStatusFromLetter(segment, code, address, flag)
 	local item = Tracker:FindObjectForCode(code)
     if item then
 		-- Getting Kara's location in ROM address
-		KARA_LOCATION = AutoTracker:ReadU8(0x039523, 0)
+		KARA_LOCATION = AutoTracker:ReadU8(0x7e0a5e, 0)
 		
 		local value = ReadU8(segment, address)
 		-- Check Lance's letter status (if read or not)
@@ -771,7 +763,7 @@ function updateKaraIndicatorStatusFromLetter(segment, code, address, flag)
 
 		-- If player read Lance's letter, update Tracker
         if flagTest ~= 0 then
-            item.CurrentStage = KARA_LOCATION_STAGE[KARA_LOCATION]
+            item.CurrentStage = KARA_LOCATION
 			-- Set Kara's mark status to prevent new useless check
 			KARA_SET = 1
         else
@@ -789,7 +781,7 @@ function updateKaraIndicatorStatusFromRoom(segment, code, address)
 	local item = Tracker:FindObjectForCode(code)
 	
 	-- Getting Kara's location in ROM address
-	KARA_LOCATION = AutoTracker:ReadU8(0x039523, 0)
+	KARA_LOCATION = AutoTracker:ReadU8(0x7e0a5e, 0)
 	if item then
 		local value = ReadU8(segment, address)
 
@@ -801,23 +793,23 @@ function updateKaraIndicatorStatusFromRoom(segment, code, address)
 				- Kress: #$a9
 				- Ankor Wat: #$bf
 		--]]
-        if value == 19 and KARA_LOCATION_STAGE[KARA_LOCATION] == 1 then
+        if value == 19 and KARA_LOCATION == 1 then
             item.CurrentStage = 1
 			-- Set Kara's mark status to prevent new useless check
 			KARA_SET = 1
-        elseif value == 71 and KARA_LOCATION_STAGE[KARA_LOCATION] == 2 then
+        elseif value == 71 and KARA_LOCATION == 2 then
 			item.CurrentStage = 2
 			-- Set Kara's mark status to prevent new useless check
 			KARA_SET = 1
-        elseif value == 116 and KARA_LOCATION_STAGE[KARA_LOCATION] == 3 then
+        elseif value == 116 and KARA_LOCATION == 3 then
 			item.CurrentStage = 3
 			-- Set Kara's mark status to prevent new useless check
 			KARA_SET = 1
-        elseif value == 169 and KARA_LOCATION_STAGE[KARA_LOCATION] == 4 then
+        elseif value == 169 and KARA_LOCATION == 4 then
 			item.CurrentStage = 4
 			-- Set Kara's mark status to prevent new useless check
 			KARA_SET = 1
-        elseif value == 191 and KARA_LOCATION_STAGE[KARA_LOCATION] == 5 then
+        elseif value == 191 and KARA_LOCATION == 5 then
 			item.CurrentStage = 5
 			-- Set Kara's mark status to prevent new useless check
 			KARA_SET = 1
@@ -906,21 +898,89 @@ function updateSlotFromByte(segment, address, slot)
 	end
 	
 	if item[1] and item[2] and item[3] and item[4] and item[5] and item[6] then
-		local value = ReadU16(segment, address)
-		if value == slot - 1 then
-			item[slot].Active = true
-			-- Debug information about successful placement
-			if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-				print("Filled successfully : true")
-				print("Value : ", value)
-				print("Slot : ",slot - 1)
+		local i = 0
+		local j = 1
+		while i <= 10 and j <= 6 do
+			
+			slot = j
+			local value = ReadU16(segment, 0x7e0b28 + i)
+			if value == slot - 1 then
+				item[slot].Active = true
+				-- Debug information about successful placement
+				if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+					print("Filled successfully : true")
+					print("Value : ", value)
+					print("Slot : ",slot - 1)
+				end
+			else
+				if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+					print("Filled successfully : false")
+					print("Value : ", value)
+					print("Slot : ",slot - 1)
+				end
 			end
-		else
-			if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-				print("Filled successfully : false")
-				print("Value : ", value)
-				print("Slot : ",slot - 1)
+			
+			i = i + 2
+			j = j + 1
+		end
+	end
+end
+
+--[[
+	Function : updateAllSlotFromByte()
+ Description : Update placed hieroglyphs
+   Arguments : segment, address, slot
+--]]
+function updateSlotWithJournal(segment, address, slot)
+	
+	local item = {
+		[1] = nil,
+		[2] = nil,
+		[3] = nil,
+		[4] = nil,
+		[5] = nil,
+		[6] = nil
+	}
+	
+	item[1] = Tracker:FindObjectForCode("hieroglyph_a")
+	item[2] = Tracker:FindObjectForCode("hieroglyph_b")
+	item[3] = Tracker:FindObjectForCode("hieroglyph_c")
+	item[4] = Tracker:FindObjectForCode("hieroglyph_d")
+	item[5] = Tracker:FindObjectForCode("hieroglyph_e")
+	item[6] = Tracker:FindObjectForCode("hieroglyph_f")
+
+	-- Debug informations about hieroglpyhs placement
+	if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+		print("Hieroglyph slot %d : ", slot, item[slot].Active)
+	end
+	
+	if item[1] and item[2] and item[3] and item[4] and item[5] and item[6] then
+		local i = 0
+		local j = 1
+		while i <= 10 and j <= 6 do
+			
+			slot = j
+			local value = ReadU16(segment, 0x7e0b28 + i)
+
+			if value == slot - 1 then
+				item[slot].CurrentStage = HIEROGLYPHS_COMBINATION[slot] - 1
+				item[slot].Active = true
+				-- Debug information about successful placement
+				if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+					print("Filled successfully : true")
+					print("Value : ", value)
+					print("Slot : ",slot - 1)
+				end
+			else
+				if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+					print("Filled successfully : false")
+					print("Value : ", value)
+					print("Slot : ",slot - 1)
+				end
 			end
+			
+			i = i + 2
+			j = j + 1
 		end
     end
 end
@@ -1005,18 +1065,25 @@ function updateMysticStatuesFromMemorySegment(segment)
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 		if MYSTIC_STATUE_CHECK == 0 then
-			local value1 = AutoTracker:ReadU8(0x08dd19, 0)
-			local value2 = AutoTracker:ReadU8(0x08dd1f, 0)
-			local value3 = AutoTracker:ReadU8(0x08dd25, 0)
-			local value4 = AutoTracker:ReadU8(0x08dd2b, 0)
-			local value5 = AutoTracker:ReadU8(0x08dd31, 0)
-			local value6 = AutoTracker:ReadU8(0x08dd37, 0)
-			MYSTIC_STATUE_NEEDED[1] = (value1 == tonumber(0xf8) or value1 ~= tonumber(0x10))
-			MYSTIC_STATUE_NEEDED[2] = (value2 == tonumber(0xf9) or value2 ~= tonumber(0x10))
-			MYSTIC_STATUE_NEEDED[3] = (value3 == tonumber(0xfa) or value3 ~= tonumber(0x10))
-			MYSTIC_STATUE_NEEDED[4] = (value4 == tonumber(0xfb) or value4 ~= tonumber(0x10))
-			MYSTIC_STATUE_NEEDED[5] = (value5 == tonumber(0xfc) or value5 ~= tonumber(0x10))
-			MYSTIC_STATUE_NEEDED[6] = (value6 == tonumber(0xfd) or value6 ~= tonumber(0x10))
+			local value = AutoTracker:ReadU8(0x7e0a5f, 0)
+			if ((value & 0x01) > 0) then
+				MYSTIC_STATUE_NEEDED[1] = 1
+			end
+			if ((value & 0x02) > 0) then
+				MYSTIC_STATUE_NEEDED[2] = 1
+			end
+			if ((value & 0x04) > 0) then
+				MYSTIC_STATUE_NEEDED[3] = 1
+			end
+			if ((value & 0x08) > 0) then
+				MYSTIC_STATUE_NEEDED[4] = 1
+			end
+			if ((value & 0x10) > 0) then
+				MYSTIC_STATUE_NEEDED[5] = 1
+			end
+			if ((value & 0x20) > 0) then
+				MYSTIC_STATUE_NEEDED[6] = 1
+			end
 
 			-- Debug informations about Needed mystic statues
 			if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
@@ -1082,6 +1149,13 @@ function updateHieroglyphsFromMemorySegment(segment)
 			updateSlotFromByte(segment, 0x7e0b2e, 4)
 			updateSlotFromByte(segment, 0x7e0b30, 5)
 			updateSlotFromByte(segment, 0x7e0b32, 6)
+		elseif JOURNAL_GOTTEN == 1 then
+			updateSlotWithJournal(segment, 0x7e0b28, 1)
+			updateSlotWithJournal(segment, 0x7e0b2a, 2)
+			updateSlotWithJournal(segment, 0x7e0b2c, 3)
+			updateSlotWithJournal(segment, 0x7e0b2e, 4)
+			updateSlotWithJournal(segment, 0x7e0b30, 5)
+			updateSlotWithJournal(segment, 0x7e0b32, 6)
 		end
     end
 end
@@ -1111,12 +1185,12 @@ function updateFromSwitchesSegment(segment)
 
 		-- Check hieroglyph combination once and for all
 		if HIEROGLYPHS_CHECK == 0 then
-			HIEROGLYPHS_COMBINATION[1] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039e9a, 0)]
-			HIEROGLYPHS_COMBINATION[2] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039e9c, 0)]
-			HIEROGLYPHS_COMBINATION[3] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039e9e, 0)]
-			HIEROGLYPHS_COMBINATION[4] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039ea0, 0)]
-			HIEROGLYPHS_COMBINATION[5] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039ea2, 0)]
-			HIEROGLYPHS_COMBINATION[6] = HIEROGLYPHS_CODE[AutoTracker:ReadU16(0x039ea4, 0)]
+			HIEROGLYPHS_COMBINATION[1] = AutoTracker:ReadU8(0x7e0a58, 0)
+			HIEROGLYPHS_COMBINATION[2] = AutoTracker:ReadU8(0x7e0a59, 0)
+			HIEROGLYPHS_COMBINATION[3] = AutoTracker:ReadU8(0x7e0a5a, 0)
+			HIEROGLYPHS_COMBINATION[4] = AutoTracker:ReadU8(0x7e0a5b, 0)
+			HIEROGLYPHS_COMBINATION[5] = AutoTracker:ReadU8(0x7e0a5c, 0)
+			HIEROGLYPHS_COMBINATION[6] = AutoTracker:ReadU8(0x7e0a5d, 0)
 			
 			-- Debug informations about hieroglyph combination
 			if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
@@ -1143,15 +1217,15 @@ function updateFromSwitchesSegment(segment)
 		end
 		
 		-- Update Kara's safety state on Tracker 
-        if KARA_LOCATION_STAGE[KARA_LOCATION] == 1 then
+        if KARA_LOCATION == 1 then
             updateToggleItemFromByteAndFlag(segment, "kara2_edwards_castle", 0x7e0a11, 0x04)
-        elseif KARA_LOCATION_STAGE[KARA_LOCATION] == 2 then
+        elseif KARA_LOCATION == 2 then
 			updateToggleItemFromByteAndFlag(segment, "kara2_diamond_mine", 0x7e0a11, 0x04)
-			elseif KARA_LOCATION_STAGE[KARA_LOCATION] == 3 then
+			elseif KARA_LOCATION == 3 then
 			updateToggleItemFromByteAndFlag(segment, "kara2_angel_dungeon", 0x7e0a11, 0x04)
-        elseif KARA_LOCATION_STAGE[KARA_LOCATION] == 4 then
+        elseif KARA_LOCATION == 4 then
 			updateToggleItemFromByteAndFlag(segment, "kara2_mount_kress", 0x7e0a11, 0x04)
-        elseif KARA_LOCATION_STAGE[KARA_LOCATION] == 5 then
+        elseif KARA_LOCATION == 5 then
 			updateToggleItemFromByteAndFlag(segment, "kara2_ankor_wat", 0x7e0a11, 0x04)
         end
 		-- Update in Map Tracker context

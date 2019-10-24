@@ -64,7 +64,8 @@
 				"name": "north continent",
 				"access_rules": [
 					"@logic/south-east continent, melody_memory",
-					"@logic/north-east continent, will"
+					"@logic/north-east continent, will",
+					"@logic/north-west continent"
 				],
 				"item_count": 1
 			},

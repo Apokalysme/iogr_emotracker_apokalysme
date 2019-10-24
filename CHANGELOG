@@ -1,4 +1,4 @@
-v1.4.0.0 :
+v2.0.0.0 (soon) :
 * General
   * Add : Item Autotracker that marks obtained items (not yet uses of them)
 * Map Tracker
@@ -6,6 +6,7 @@ v1.4.0.0 :
   * Fix : Jeweler's Mansion's chest does not need Psycho Slider
   * Fix : correct Mt Kress "Submit" to "Summit"
   * Change : Logic doesn't force to pass by Solid Arm to obtain 6th mystic statue anymore
+  * Change : Logic permits access to Euro area from Dao's one
 
 v1.3.0.0
 * General :
