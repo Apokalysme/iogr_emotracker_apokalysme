@@ -161,6 +161,8 @@ HIEROGLYPHS_GOTTEN = {
 	[6] = 0
 }
 
+HIEROGLYPHS_PLACED = 0
+
 -- Ability table
 ABILITY = {
 	["psycho_dash"] = 0,
@@ -345,6 +347,10 @@ function newItemInInventory(segment)
 		-- Update obtained items state
 		for i = 0, 15 do
 			local value = ReadU8(segment, 0x7e0ab4 + i)
+			if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+				print("Slot : ", i)
+				print("Item code : ", value)
+			end
 	
 			if value == 33 and HIEROGLYPHS_GOTTEN[1] ~= 1 then
 				HIEROGLYPHS_GOTTEN[1] = 1
@@ -494,6 +500,7 @@ function updateRedJewels(segment)
 	-- if there is change in red jewel count, update Tracker
 	if (newCount - actualCount) > 0 then
 		item.AcquiredCount = newCount
+		newItemInInventory(segment)
 	end
 end
 
@@ -730,10 +737,13 @@ function updateNeededStatues(segment, address, flag)
 	
 	if item1 and item2 and item3 and item4 and item5 and item6 then
 		local value = ReadU8(segment, address)
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+			print("Needed Statues : ", value)
+		end
 
 		-- Update Tracker when player has talked to teacher in South Cape
 		local flagTest = value & flag
-        if flagTest > 0 then
+        if flagTest > 0 and MYSTIC_STATUE_SET == 0 then
             if (MYSTIC_STATUE_NEEDED[1] == 1) then item1.CurrentStage = 1 end
 			if (MYSTIC_STATUE_NEEDED[2] == 1) then item2.CurrentStage = 1 end
 			if (MYSTIC_STATUE_NEEDED[3] == 1) then item3.CurrentStage = 1 end
@@ -756,6 +766,9 @@ function updateKaraIndicatorStatusFromLetter(segment, code, address, flag)
     if item then
 		-- Getting Kara's location in ROM address
 		KARA_LOCATION = AutoTracker:ReadU8(0x7e0a5e, 0)
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+			print("Kara from Letter : ", KARA_LOCATION)
+		end
 		
 		local value = ReadU8(segment, address)
 		-- Check Lance's letter status (if read or not)
@@ -782,6 +795,10 @@ function updateKaraIndicatorStatusFromRoom(segment, code, address)
 	
 	-- Getting Kara's location in ROM address
 	KARA_LOCATION = AutoTracker:ReadU8(0x7e0a5e, 0)
+	if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+		print("Kara from Room : ", KARA_LOCATION)
+	end
+	
 	if item then
 		local value = ReadU8(segment, address)
 
@@ -898,14 +915,20 @@ function updateSlotFromByte(segment, address, slot)
 	end
 	
 	if item[1] and item[2] and item[3] and item[4] and item[5] and item[6] then
-		local i = 0
-		local j = 1
-		while i <= 10 and j <= 6 do
+		local k = 0
+		local l = 1
+		local placed = 0
+		while k <= 10 and l <= 6 do
 			
-			slot = j
-			local value = ReadU16(segment, 0x7e0b28 + i)
+			slot = l
+			local value = ReadU16(segment, 0x7e0b28 + k)
+			if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+				print("Hieroglyph slot code : ", value)
+			end
+			
 			if value == slot - 1 then
 				item[slot].Active = true
+				placed = placed + 1
 				-- Debug information about successful placement
 				if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
 					print("Filled successfully : true")
@@ -920,9 +943,12 @@ function updateSlotFromByte(segment, address, slot)
 				end
 			end
 			
-			i = i + 2
-			j = j + 1
+			k = k + 2
+			l = l + 1
 		end
+		k = 0
+		l = 1
+		if placed == 6 then HIEROGLYPHS_PLACED = 1 end
 	end
 end
 
@@ -957,14 +983,19 @@ function updateSlotWithJournal(segment, address, slot)
 	if item[1] and item[2] and item[3] and item[4] and item[5] and item[6] then
 		local i = 0
 		local j = 1
+		local placed = 0
 		while i <= 10 and j <= 6 do
 			
 			slot = j
 			local value = ReadU16(segment, 0x7e0b28 + i)
+			if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+				print("Hieroglyph slot code : ", value)
+			end
 
 			if value == slot - 1 then
 				item[slot].CurrentStage = HIEROGLYPHS_COMBINATION[slot] - 1
 				item[slot].Active = true
+				placed = placed + 1
 				-- Debug information about successful placement
 				if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
 					print("Filled successfully : true")
@@ -982,6 +1013,9 @@ function updateSlotWithJournal(segment, address, slot)
 			i = i + 2
 			j = j + 1
 		end
+		i = 0
+		j = 1
+		if placed == 6 then HIEROGLYPHS_PLACED = 1 end
     end
 end
 ------------------------------------------ FUNCTIONS --
@@ -1142,14 +1176,14 @@ function updateHieroglyphsFromMemorySegment(segment)
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 		-- Update only when player has given Father's Journal to Pyramid's guide
-		if HIEROGLYPHS_COMBINATION_SET == 1 then
+		if HIEROGLYPHS_COMBINATION_SET == 1 and HIEROGLYPHS_PLACED ~= 1 then
 			updateSlotFromByte(segment, 0x7e0b28, 1)
 			updateSlotFromByte(segment, 0x7e0b2a, 2)
 			updateSlotFromByte(segment, 0x7e0b2c, 3)
 			updateSlotFromByte(segment, 0x7e0b2e, 4)
 			updateSlotFromByte(segment, 0x7e0b30, 5)
 			updateSlotFromByte(segment, 0x7e0b32, 6)
-		elseif JOURNAL_GOTTEN == 1 then
+		elseif JOURNAL_GOTTEN == 1 and HIEROGLYPHS_PLACED ~= 1 then
 			updateSlotWithJournal(segment, 0x7e0b28, 1)
 			updateSlotWithJournal(segment, 0x7e0b2a, 2)
 			updateSlotWithJournal(segment, 0x7e0b2c, 3)
@@ -1245,6 +1279,6 @@ ScriptHost:AddMemoryWatch("IoG Ability Data", 0x7e0aa2, 0x01, updateAbilitiesFro
 ScriptHost:AddMemoryWatch("IoG Ability Upgrade Data", 0x7e0b16, 0x08, upgradeAbilitiesFromMemorySegment)
 ScriptHost:AddMemoryWatch("IoG Mystic Statue Data", 0x7e0a1f, 0x01, updateMysticStatuesFromMemorySegment)
 ScriptHost:AddMemoryWatch("IoG Room Data", 0x7e0644, 0x01, updateFromRoomSegment)
-ScriptHost:AddMemoryWatch("IoG Hieroglyphs Data", 0x7e0b28, 0x10, updateHieroglyphsFromMemorySegment)
+ScriptHost:AddMemoryWatch("IoG Hieroglyphs Data", 0x7e0b28, 0x20, updateHieroglyphsFromMemorySegment)
 ScriptHost:AddMemoryWatch("IoG Switches Data", 0x7e0a07, 0x20, updateFromSwitchesSegment)
 ----------------------------------------------- MAIN --
