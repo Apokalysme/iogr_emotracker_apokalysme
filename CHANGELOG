@@ -1,3 +1,13 @@
+v2.0.0.0 :
+* General
+  * Add : Item Autotracker that marks obtained items (not yet uses of them)
+* Map Tracker
+  * Fix : Logic to acces Dao may need to pass by Jeweler's Mansion
+  * Fix : Jeweler's Mansion's chest does not need Psycho Slider
+  * Fix : correct Mt Kress "Submit" to "Summit"
+  * Change : Logic doesn't force to pass by Solid Arm to obtain 6th mystic statue anymore
+  * Change : Logic permits access to Euro area from Dao's one
+
 v1.3.0.0
 * General :
   * Code reorganization and optimization

@@ -17,7 +17,7 @@
 				"name": "Babel - Top",
 				"access_rules": [
 					"@logic/babel access, crystal_ring, aura",
-					"red_jewel:36, [red_jewel:50], psycho_slide"
+					"red_jewel:36, [@top babel access]"
 				],
 				"hosted_item": "mystic_statue_6"
 			}
@@ -52,7 +52,7 @@
 						"name": "Top",
 						"access_rules": [
 							"@logic/babel access, crystal_ring, aura",
-							"red_jewel:36, [red_jewel:50], psycho_slide"
+							"red_jewel:36, [@top babel access]"
 						],
 						"item_count": 1
 					}
