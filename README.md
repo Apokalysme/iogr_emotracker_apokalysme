@@ -7,6 +7,7 @@ Includes following :
   * You can note Hieroglyphs order
   * You can note needed Mystic Statues
   * You can note used/given items for many of them
+  * Autotracking of items (not yet their use)
 
 * Map Tracker :
   * Item tracking depending on pre-obtained items/abilities
