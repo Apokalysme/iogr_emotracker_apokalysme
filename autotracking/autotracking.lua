@@ -1264,10 +1264,109 @@ function updateFromSwitchesSegment(segment)
         end
 		-- Update in Map Tracker context
 		updateToggleItemFromByteAndFlag(segment, "save_kara", 0x7e0a11, 0x04)
-		
+
 		if KARA_SET == 0 then
 			updateKaraIndicatorStatusFromLetter(segment, "save_kara2", 0x7e0a11, 0x40)
 			updateKaraIndicatorStatusFromLetter(segment, "kara_place", 0x7e0a11, 0x40)
+		end
+	end
+end
+
+--[[
+	   Watch : updateHitPoints()
+ Description : Watch health segment to update value
+   Arguments : segment
+--]]
+function updateHitPoints(segment)
+	if not isInGame() then
+			return false
+	end
+
+	InvalidateReadCaches()
+
+	if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+	-- Update health value
+    local item = Tracker:FindObjectForCode("hit_points")
+		-- Getting actual count marked in Tracker
+    local actualCount = item.AcquiredCount
+		-- Getting new count in memory
+    local newCount = tonumber(ReadU8(segment, 0x7e0aca))
+
+		-- Debug informations about actual and new hit points
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+			print("MAX HIT POINTS :")
+			print("Actual count : ", actualCount)
+			print("New count : ", newCount)
+		end
+		-- if there is change in hit points, update Tracker
+		if (newCount - actualCount) > 0 then
+			item.AcquiredCount = newCount
+		end
+	end
+end
+
+--[[
+	   Watch : updateDefValue()
+ Description : Watch Def segment to update value
+   Arguments : segment
+--]]
+function updateDefValue(segment)
+	if not isInGame() then
+			return false
+	end
+
+	InvalidateReadCaches()
+
+	if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+	-- Update health value
+    local item = Tracker:FindObjectForCode("def_stat")
+		-- Getting actual count marked in Tracker
+    local actualCount = item.AcquiredCount
+		-- Getting new count in memory
+    local newCount = tonumber(ReadU8(segment, 0x7e0adc))
+
+		-- Debug informations about actual and new hit points
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+			print("MAX HIT POINTS :")
+			print("Actual count : ", actualCount)
+			print("New count : ", newCount)
+		end
+		-- if there is change in hit points, update Tracker
+		if (newCount - actualCount) > 0 then
+			item.AcquiredCount = newCount
+		end
+	end
+end
+
+--[[
+	   Watch : updateAtkValue()
+ Description : Watch Atk segment to update value
+   Arguments : segment
+--]]
+function updateAtkValue(segment)
+	if not isInGame() then
+			return false
+	end
+
+	InvalidateReadCaches()
+
+	if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+	-- Update health value
+    local item = Tracker:FindObjectForCode("atk_stat")
+		-- Getting actual count marked in Tracker
+    local actualCount = item.AcquiredCount
+		-- Getting new count in memory
+    local newCount = tonumber(ReadU8(segment, 0x7e0ade))
+
+		-- Debug informations about actual and new hit points
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+			print("MAX HIT POINTS :")
+			print("Actual count : ", actualCount)
+			print("New count : ", newCount)
+		end
+		-- if there is change in hit points, update Tracker
+		if (newCount - actualCount) > 0 then
+			item.AcquiredCount = newCount
 		end
 	end
 end
@@ -1281,4 +1380,7 @@ ScriptHost:AddMemoryWatch("IoG Mystic Statue Data", 0x7e0a1f, 0x01, updateMystic
 ScriptHost:AddMemoryWatch("IoG Room Data", 0x7e0644, 0x01, updateFromRoomSegment)
 ScriptHost:AddMemoryWatch("IoG Hieroglyphs Data", 0x7e0b28, 0x20, updateHieroglyphsFromMemorySegment)
 ScriptHost:AddMemoryWatch("IoG Switches Data", 0x7e0a07, 0x20, updateFromSwitchesSegment)
+ScriptHost:AddMemoryWatch("IoG max hit points", 0x7e0aca, 0x01, updateHitPoints)
+ScriptHost:AddMemoryWatch("IoG max hit points", 0x7e0ade, 0x01, updateAtkValue)
+ScriptHost:AddMemoryWatch("IoG max hit points", 0x7e0adc, 0x01, updateDefValue)
 ----------------------------------------------- MAIN --

@@ -15,6 +15,30 @@
       "codes": "herb",
       "max_quantity": 12
     },
+    // Hit points
+    {
+      "name": "Hit Points",
+      "type": "consumable",
+      "img": "images/stats/hp.png",
+      "codes": "hit_points",
+      "max_quantity": 40
+    },
+    // Atk value
+    {
+      "name": "Attack",
+      "type": "consumable",
+      "img": "images/stats/atk.png",
+      "codes": "atk_stat",
+      "max_quantity": 10
+    },
+    // Def value
+    {
+      "name": "Defense",
+      "type": "consumable",
+      "img": "images/stats/def.png",
+      "codes": "def_stat",
+      "max_quantity": 10
+    },
 
     // Lola's Melody
     {
