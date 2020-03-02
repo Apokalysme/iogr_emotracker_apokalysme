@@ -1,16 +1,114 @@
 [
+	// Will abilities
+    {
+		"name": "Will abilities",
+		"type": "progressive",
+		"initial_stage_idx": 0,
+		"stages": [
+			{
+				"img": "images/abilities/compact/will_no_ability.png",
+				//"img": "images/default.png",
+				"codes": "will_abilities",
+				"secondary_codes": "none"
+			},
+			{
+				"img": "images/abilities/compact/will_ability_dash.png",
+				"codes": "will_abilities",
+				"secondary_codes": "will_dash"
+			},
+			{
+				"img": "images/abilities/compact/will_ability_slider.png",
+				"codes": "will_abilities",
+				"secondary_codes": "will_slider"
+			},
+			{
+				"img": "images/abilities/compact/will_ability_spin.png",
+				"codes": "will_abilities",
+				"secondary_codes": "will_spin"
+			},
+			{
+				"img": "images/abilities/compact/will_abilities_dash_slider.png",
+				"codes": "will_abilities",
+				"secondary_codes": "will_dash_slider"
+			},
+			{
+				"img": "images/abilities/compact/will_abilities_dash_spin.png",
+				"codes": "will_abilities",
+				"secondary_codes": "will_dash_spin"
+			},
+			{
+				"img": "images/abilities/compact/will_abilities_slider_spin.png",
+				"codes": "will_abilities",
+				"secondary_codes": "will_slider_spin"
+			},
+			{
+				"img": "images/abilities/compact/will_all_abilities.png",
+				"codes": "will_abilities",
+				"secondary_codes": "will_all_abilities"
+			}
+		]
+    },
+	// Freedan abilities
+    {
+		"name": "Freedan abilities",
+		"type": "progressive",
+		"initial_stage_idx": 0,
+		"stages": [
+			{
+				"img": "images/abilities/compact/freedan_no_ability.png",
+				//"img": "images/default.png",
+				"codes": "freedan_abilities",
+				"secondary_codes": "none"
+			},
+			{
+				"img": "images/abilities/compact/freedan_ability_friar.png",
+				"codes": "freedan_abilities",
+				"secondary_codes": "freedan_friar"
+			},
+			{
+				"img": "images/abilities/compact/freedan_ability_barrier.png",
+				"codes": "freedan_abilities",
+				"secondary_codes": "freedan_barrier"
+			},
+			{
+				"img": "images/abilities/compact/freedan_ability_earth.png",
+				"codes": "freedan_abilities",
+				"secondary_codes": "freedan_earth"
+			},
+			{
+				"img": "images/abilities/compact/freedan_abilities_friar_barrier.png",
+				"codes": "freedan_abilities",
+				"secondary_codes": "freedan_friar_barrier"
+			},
+			{
+				"img": "images/abilities/compact/freedan_abilities_friar_earth.png",
+				"codes": "freedan_abilities",
+				"secondary_codes": "freedan_friar_earth"
+			},
+			{
+				"img": "images/abilities/compact/freedan_abilities_barrier_earth.png",
+				"codes": "freedan_abilities",
+				"secondary_codes": "freedan_barrier_earth"
+			},
+			{
+				"img": "images/abilities/compact/freedan_all_abilities.png",
+				"codes": "freedan_abilities",
+				"secondary_codes": "freedan_friar"
+			}
+		]
+    },
     // Psycho Dash
     {
 		"name": "Psycho Dash",
 		"type": "progressive",
 		"stages": [
 			{
-				"img": "images/abilities/will_psycho_dash.png",
+				"img": "images/abilities/full/will_psycho_dash.png",
 				"codes": "psycho_dash",
 				"secondary_codes": "none"
 			},
 			{
-				"img": "images/abilities/will_psycho_dash_powerful.png",
+				"img": "images/abilities/full/will_psycho_dash_powerful.png",
 				"codes": "powerful_dash",
 				"secondary_codes": "powerful"
 			}
@@ -20,14 +118,14 @@
     {
 		"name": "Psycho Slide",
 		"type": "toggle",
-		"img": "images/abilities/will_psycho_slide.png",
+		"img": "images/abilities/full/will_psycho_slide.png",
 		"codes": "psycho_slide"
     },
     // Spin Dash
     {
 		"name": "Spin Dash",
 		"type": "toggle",
-		"img": "images/abilities/will_spin_dash.png",
+		"img": "images/abilities/full/will_spin_dash.png",
 		"codes": "spin_dash"
     },
     // Dark Friar
@@ -36,12 +134,12 @@
 		"type": "progressive",
 		"stages": [
 			{
-				"img": "images/abilities/freedan_dark_friar.png",
+				"img": "images/abilities/full/freedan_dark_friar.png",
 				"codes": "dark_friar",
 				"secondary_codes": "none"
 			},
 			{
-				"img": "images/abilities/freedan_dark_friar_powerful.png",
+				"img": "images/abilities/full/freedan_dark_friar_powerful.png",
 				"codes": "powerful_friar",
 				"secondary_codes": "powerful"
 			}
@@ -51,14 +149,14 @@
 	{
 		"name": "Aura Barrier",
 		"type": "toggle",
-		"img": "images/abilities/freedan_aura_barrier.png",
+		"img": "images/abilities/full/freedan_aura_barrier.png",
 		"codes": "aura_barrier"
     },
     // Earthquaker
     {
 		"name": "Earthquaker",
 		"type": "toggle",
-		"img": "images/abilities/freedan_earthquaker.png",
+		"img": "images/abilities/full/freedan_earthquaker.png",
 		"codes": "earthquaker"
     },
 	// Go Mode

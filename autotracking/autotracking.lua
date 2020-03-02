@@ -1,20 +1,24 @@
 --[[
 	   Name : autotracking.lua
 Description : Program to track automatically items obtained during an IoG:R seed
-	 Author : Apokalysme
-	Version : 0.9.0
-Last Change : 24/08/2019
+	 Author : Apokalysme, Neomatamune
+	Version : 1.0.0
+Last Change : 14/01/2020
 
    Features :
-    * Item AutoTracking :
+    * Item AutoTracking : (Apokalysme)
 		- Items obtained (but not their use)
 		- Red Jewels
 		- Mystic Statues
 		- Kara's Paint location
+	* Stats AutoTracking : (Neomatamune)
+		- Hit Points
+		- Attack
+		- Defense
 --]]
 
 -- Configuration --------------------------------------
-AUTOTRACKER_ENABLE_DEBUG_LOGGING = true
+AUTOTRACKER_ENABLE_DEBUG_LOGGING = false
 -------------------------------------------------------
 
 -- Settings display -----------------------------------
@@ -83,6 +87,50 @@ ITEM_TABLE = {
 	[40] = "apple",
 	[46] = "",
 	[47] = ""
+}
+
+-- Inventory table
+-- each item gotten will pass to 1
+-- except for items that have more than 1 units
+INVENTORY_TABLE = {
+	[1] = 0,
+	[2] = 0,
+	[3] = 0,
+	[4] = 0,
+	[7] = 0,
+	[8] = 0,
+	[9] = 0,
+	[10] = 0,
+	[11] = 0,
+	[12] = 0,
+	[13] = 0,
+	[14] = 0, -- crystal ball
+	[15] = 0,
+	[16] = 0,
+	[17] = 0,
+	[18] = 0, -- hope statue
+	[19] = 0, -- rama statue
+	[20] = 0,
+	[22] = 0,
+	[23] = 0,
+	[24] = 0,
+	[25] = 0,
+	[26] = 0, -- mushroom drops
+	[28] = 0,
+	[29] = 0,
+	[30] = 0,
+	[31] = 0,
+	[32] = 0,
+	[33] = 0,
+	[34] = 0,
+	[35] = 0,
+	[36] = 0,
+	[37] = 0,
+	[38] = 0,
+	[39] = 0,
+	[40] = 0,
+	[46] = 0,
+	[47] = 0
 }
 
 --[[
@@ -1265,6 +1313,32 @@ function updateFromSwitchesSegment(segment)
 		-- Update in Map Tracker context
 		updateToggleItemFromByteAndFlag(segment, "save_kara", 0x7e0a11, 0x04)
 
+		-- Switches list for items
+		updateToggleItemFromByteAndFlag(segment, "inca_statue_a", 0x7e0a05, 0x20)
+		updateToggleItemFromByteAndFlag(segment, "melody_lola", 0x7e0a06, 0x20)
+		updateToggleItemFromByteAndFlag(segment, "melody_wind", 0x7e0a06, 0x04)
+		updateToggleItemFromByteAndFlag(segment, "roast", 0x7e0a08, 0x40)
+		updateToggleItemFromByteAndFlag(segment, "inca_statue_b", 0x7e0a09, 0x01)
+		updateToggleItemFromByteAndFlag(segment, "memory_melody", 0x7e0a0b, 0x40)
+		updateToggleItemFromByteAndFlag(segment, "mine_key_a", 0x7e0a0b, 0x20)
+		updateToggleItemFromByteAndFlag(segment, "hope_statue", 0x7e0a0f, 0x80)
+		updateToggleItemFromByteAndFlag(segment, "hope_statue", 0x7e0a0f, 0x02)
+		updateToggleItemFromByteAndFlag(segment, "mu_key", 0x7e0a10, 0x20)
+		updateToggleItemFromByteAndFlag(segment, "will", 0x7e0a12, 0x20)
+		updateToggleItemFromByteAndFlag(segment, "letter_lance", 0x7e0a12, 0x04)
+		updateToggleItemFromByteAndFlag(segment, "apple", 0x7e0a13, 0x04)
+		updateToggleItemFromByteAndFlag(segment, "gorgon_flower", 0x7e0a17, 0x40)
+		updateToggleItemFromByteAndFlag(segment, "aura", 0x7e0a17, 0x20)
+		updateToggleItemFromByteAndFlag(segment, "black_glasses", 0x7e0a17, 0x04)
+		updateToggleItemFromByteAndFlag(segment, "hieroglyph_6", 0x7e0a18, 0x80)
+		updateToggleItemFromByteAndFlag(segment, "hieroglyph_5", 0x7e0a18, 0x40)
+		updateToggleItemFromByteAndFlag(segment, "hieroglyph_4", 0x7e0a18, 0x20)
+		updateToggleItemFromByteAndFlag(segment, "hieroglyph_3", 0x7e0a18, 0x10)
+		updateToggleItemFromByteAndFlag(segment, "hieroglyph_2", 0x7e0a18, 0x08)
+		updateToggleItemFromByteAndFlag(segment, "hieroglyph_1", 0x7e0a18, 0x04)
+		updateToggleItemFromByteAndFlag(segment, "crystal_ring", 0x7e0a1b, 0x10)
+		
+
 		if KARA_SET == 0 then
 			updateKaraIndicatorStatusFromLetter(segment, "save_kara2", 0x7e0a11, 0x40)
 			updateKaraIndicatorStatusFromLetter(segment, "kara_place", 0x7e0a11, 0x40)
@@ -1287,9 +1361,9 @@ function updateHitPoints(segment)
 	if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 	-- Update health value
     local item = Tracker:FindObjectForCode("hit_points")
-		-- Getting actual count marked in Tracker
+	-- Getting actual count marked in Tracker
     local actualCount = item.AcquiredCount
-		-- Getting new count in memory
+	-- Getting new count in memory
     local newCount = tonumber(ReadU8(segment, 0x7e0aca))
 
 		-- Debug informations about actual and new hit points
@@ -1320,18 +1394,18 @@ function updateDefValue(segment)
 	if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 	-- Update health value
     local item = Tracker:FindObjectForCode("def_stat")
-		-- Getting actual count marked in Tracker
+	-- Getting actual count marked in Tracker
     local actualCount = item.AcquiredCount
-		-- Getting new count in memory
+	-- Getting new count in memory
     local newCount = tonumber(ReadU8(segment, 0x7e0adc))
 
 		-- Debug informations about actual and new hit points
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-			print("MAX HIT POINTS :")
+			print("DEFENSE :")
 			print("Actual count : ", actualCount)
 			print("New count : ", newCount)
 		end
-		-- if there is change in hit points, update Tracker
+		-- if there is change in attack stat, update Tracker
 		if (newCount - actualCount) > 0 then
 			item.AcquiredCount = newCount
 		end
@@ -1353,18 +1427,18 @@ function updateAtkValue(segment)
 	if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 	-- Update health value
     local item = Tracker:FindObjectForCode("atk_stat")
-		-- Getting actual count marked in Tracker
+	-- Getting actual count marked in Tracker
     local actualCount = item.AcquiredCount
-		-- Getting new count in memory
+	-- Getting new count in memory
     local newCount = tonumber(ReadU8(segment, 0x7e0ade))
 
 		-- Debug informations about actual and new hit points
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-			print("MAX HIT POINTS :")
+			print("ATTACK :")
 			print("Actual count : ", actualCount)
 			print("New count : ", newCount)
 		end
-		-- if there is change in hit points, update Tracker
+		-- if there is change in defense stat, update Tracker
 		if (newCount - actualCount) > 0 then
 			item.AcquiredCount = newCount
 		end
@@ -1380,7 +1454,7 @@ ScriptHost:AddMemoryWatch("IoG Mystic Statue Data", 0x7e0a1f, 0x01, updateMystic
 ScriptHost:AddMemoryWatch("IoG Room Data", 0x7e0644, 0x01, updateFromRoomSegment)
 ScriptHost:AddMemoryWatch("IoG Hieroglyphs Data", 0x7e0b28, 0x20, updateHieroglyphsFromMemorySegment)
 ScriptHost:AddMemoryWatch("IoG Switches Data", 0x7e0a07, 0x20, updateFromSwitchesSegment)
-ScriptHost:AddMemoryWatch("IoG max hit points", 0x7e0aca, 0x01, updateHitPoints)
-ScriptHost:AddMemoryWatch("IoG max hit points", 0x7e0ade, 0x01, updateAtkValue)
-ScriptHost:AddMemoryWatch("IoG max hit points", 0x7e0adc, 0x01, updateDefValue)
+ScriptHost:AddMemoryWatch("IoG Hit Points", 0x7e0aca, 0x01, updateHitPoints)
+ScriptHost:AddMemoryWatch("IoG Attack", 0x7e0ade, 0x01, updateAtkValue)
+ScriptHost:AddMemoryWatch("IoG Defense", 0x7e0adc, 0x01, updateDefValue)
 ----------------------------------------------- MAIN --

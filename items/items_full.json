@@ -15,31 +15,6 @@
       "codes": "herb",
       "max_quantity": 12
     },
-    // Hit points
-    {
-      "name": "Hit Points",
-      "type": "consumable",
-      "img": "images/stats/hp.png",
-      "codes": "hit_points",
-      "max_quantity": 40
-    },
-    // Atk value
-    {
-      "name": "Attack",
-      "type": "consumable",
-      "img": "images/stats/atk.png",
-      "codes": "atk_stat",
-      "max_quantity": 10
-    },
-    // Def value
-    {
-      "name": "Defense",
-      "type": "consumable",
-      "img": "images/stats/def.png",
-      "codes": "def_stat",
-      "max_quantity": 10
-    },
-
     // Lola's Melody
     {
       "name": "Lola's Melody",
@@ -115,7 +90,7 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/items/inca_statue_a.png",
+          "img": "images/items/full/inca_statue_a.png",
 		  "codes": "inca_statue_a",
           "secondary_codes": "none"
         },
@@ -132,7 +107,7 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/items/inca_statue_b.png",
+          "img": "images/items/full/inca_statue_b.png",
 		  "codes": "inca_statue_b",
           "secondary_codes": "none"
         },
@@ -167,12 +142,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/items/mine_key_a.png",
+          "img": "images/items/full/mine_key_a.png",
 		  "codes": "mine_key_a",
           "secondary_codes": "none"
         },
         {
-          "img": "images/items/mine_key_a_used.png",
+          "img": "images/items/full/mine_key_a_used.png",
           "codes": "mine_key_a",
           "secondary_codes": "used"
         }
@@ -184,12 +159,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/items/mine_key_b.png",
+          "img": "images/items/full/mine_key_b.png",
 		  "codes": "mine_key_b",
           "secondary_codes": "none"
         },
         {
-          "img": "images/items/mine_key_b_used.png",
+          "img": "images/items/full/mine_key_b_used.png",
           "codes": "mine_key_b",
           "secondary_codes": "used"
         }
@@ -238,19 +213,18 @@
       "codes": "crystal_ball",
       "max_quantity": 4
     },
-	
     // Purity Stone
     {
       "name": "Purity Stone",
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/items/purity_stone.png",
+          "img": "images/items/full/purity_stone.png",
 		  "codes": "purity_stone",
           "secondary_codes": "none"
         },
         {
-          "img": "images/items/purity_stone_used.png",
+          "img": "images/items/full/purity_stone_used.png",
           "codes": "purity_stone",
           "secondary_codes": "used"
         }
@@ -262,12 +236,12 @@
       "type": "progressive_toggle",
 	  "stages": [
         {
-          "img": "images/items/mu_key.png",
+          "img": "images/items/full/mu_key.png",
 		  "codes": "mu_key",
           "secondary_codes": "none"
         },
         {
-          "img": "images/items/mu_key_used.png",
+          "img": "images/items/full/mu_key_used.png",
           "codes": "mu_key",
           "secondary_codes": "used"
         }

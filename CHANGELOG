@@ -1,7 +1,42 @@
+v2.99.0.x :
+* WIP :
+  * Item Tracker - Compact :
+    * Item AutoTracking : add autotracking uses of items
+  * World Map Tracker :
+    * Add : hints
+    * Add : Open Mode setting
+	* Enemizer / Start Randomizer integration : make needed changes to Map Tracking (if possible)
+  * Map AutoTracking :
+    * Which needs some RAM hunt to complete triggers list to implement
+  * Detailled Map Tracker :
+    * Which need some tests for me to understand how I can use LUA script to "mod" EmoTracker to adjust some ways it works (to link World Maps and Area Maps I'll use)
+
+alpha v2.99.0.1
+* General :
+  * Replace "Item Tracker" by two variants : "Item Tracker - Full" and "Item Tracker - Compact"
+  * Keeping up "Item Tracker - Classic" for the moment
+  * Add Stats upgrades tracking and auto-tracking (Great thanks to Neomatamune)
+* Item Tracker - Full :
+  * Re-organization for items, organized by
+    * Item : songs, statues, keys and others dungeons items, quests items
+	* Hieroglyphs : Hieroglyphs, combinations and Father's Journal
+	* Abilities / Stats : Will/Freedan abilities and Stats upgrades
+	* Objectives : Mystic statues and Kara
+* Item Tracker - Compact :
+  * Based on Full tracker organization, but without separated frames
+  * Mine Keys are combined
+  * Inca Statues are combined
+  * Purity Stone and Mu key are combined
+  * Lola's Melody and Necklace are combined
+  * Wind Melody and Diamond Block are combined
+  * Lance Letter and Magic Dust are combined
+  * Will abilities are combined
+  * Freedan abilities are combined
+
 v2.0.0.0 :
-* General
+* General :
   * Add : Item Autotracker that marks obtained items (not yet uses of them)
-* Map Tracker
+* Map Tracker :
   * Fix : Logic to acces Dao may need to pass by Jeweler's Mansion
   * Fix : Jeweler's Mansion's chest does not need Psycho Slider
   * Fix : correct Mt Kress "Submit" to "Summit"

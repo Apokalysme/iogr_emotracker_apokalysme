@@ -4,30 +4,42 @@
         "h_alignment": "center",
         "item_margin": "1,2",
         "rows": [
-            [ "melody_lola", "prison_key", "large_roast", "diamond_block", "melody_wind", "inca_statue_a", "inca_statue_b", "mine_key_a", "mine_key_b" ],
-            [ "elevator_key", "melody_memory", "crystal_ball", "purity_stone", "mu_key", "hope_statue", "rama_statue", "magic_dust", "letter_lance" ],
-            [ "necklace", "will", "apple", "mushroom_drop", "teapot", "black_glasses", "gorgon_flower", "letter_lola", "journal" ],
-            [ "hieroglyph_count", "hieroglyph_a", "hieroglyph_b", "hieroglyph_c", "hieroglyph_d", "hieroglyph_e", "hieroglyph_f", "aura", "crystal_ring" ],
-            [ "psycho_dash", "psycho_slide", "spin_dash", "dark_friar", "aura_barrier", "earthquaker", "", "herb", "red_jewel" ],
-            [ "", "", "", "hit_points", "atk_stat", "def_stat", "", "", ""],
-            [ "kara_place", "save_kara", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6", "go_mode" ]
+			[ "prison_key", "mine_key_a", "mine_key_b", "elevator_key", "mu_key", "", "herb", "red_jewel" ],
+			[ "melody_lola", "melody_wind", "melody_memory", "", "inca_statue_a", "inca_statue_b", "hope_statue", "rama_statue" ],
+			[ "will", "teapot", "letter_lola", "", "letter_lance", "magic_dust", "aura", "crystal_ring" ],
+			[ "large_roast", "diamond_block", "crystal_ball", "purity_stone", "necklace", "mushroom_drop", "apple", "black_glasses", "gorgon_flower" ]
+        ]
+    },
+	"shared_stat_grid": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [
+			[ "psycho_dash", "psycho_slide", "spin_dash", "dark_friar", "aura_barrier", "earthquaker" ],
+            [ "", "hit_points", "", "atk_stat", "", "def_stat", "" ]
+        ]
+    },
+	"shared_hieroglyph_grid": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [
+			[ "hieroglyph_count", "hieroglyph_a", "hieroglyph_b", "hieroglyph_c", "hieroglyph_d", "hieroglyph_e", "hieroglyph_f", "journal" ]
+        ]
+    },
+	"shared_objective_grid": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [
+			[ "save_kara2", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6" ]
         ]
     },
     "tracker_capture_item": {
         "type": "container",
         "content": {
-            "type": "itemgrid",
-            "h_alignment": "center",
-            "item_margin": "1,2",
-            "rows": [
-                [ "melody_lola", "prison_key", "large_roast", "diamond_block", "melody_wind", "inca_statue_a", "inca_statue_b", "mine_key_a", "mine_key_b" ],
-				[ "elevator_key", "melody_memory", "crystal_ball", "purity_stone", "mu_key", "hope_statue", "rama_statue", "magic_dust", "letter_lance" ],
-				[ "necklace", "will", "apple", "mushroom_drop", "teapot", "black_glasses", "gorgon_flower", "letter_lola", "journal" ],
-				[ "hieroglyph_count", "hieroglyph_a", "hieroglyph_b", "hieroglyph_c", "hieroglyph_d", "hieroglyph_e", "hieroglyph_f", "aura", "crystal_ring" ],
-				[ "psycho_dash", "psycho_slide", "spin_dash", "dark_friar", "aura_barrier", "earthquaker", "", "herb", "red_jewel" ],
-        [ "", "", "", "hit_points", "atk_stat", "def_stat", "", "", ""],
-				[ "kara_place", "save_kara", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6", "go_mode" ]
-            ]
+            "type": "layout",
+            "key": "shared_item_grid"
         }
     },
     "tracker_default": {
@@ -51,6 +63,33 @@
 							"content": {
 								"type": "layout",
 								"key": "shared_item_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Hieroglyphs",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_hieroglyph_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Stats / Abilities",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_stat_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Objectives",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_objective_grid"
 							}
 						},
 						{
@@ -127,6 +166,33 @@
 							"content": {
 								"type": "layout",
 								"key": "shared_item_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Hieroglyphs",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_hieroglyph_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Stats / Abilities",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_stat_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Objectives",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_objective_grid"
 							}
 						},
 						{
