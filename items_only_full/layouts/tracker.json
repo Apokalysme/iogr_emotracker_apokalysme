@@ -1,0 +1,101 @@
+{
+    "shared_item_grid": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [
+			[ "prison_key", "mine_key_a", "mine_key_b", "elevator_key", "mu_key", "", "herb", "red_jewel" ],
+			[ "melody_lola", "melody_wind", "melody_memory", "", "inca_statue_a", "inca_statue_b", "hope_statue", "rama_statue" ],
+			[ "will", "teapot", "letter_lola", "", "letter_lance", "magic_dust", "aura", "crystal_ring" ],
+			[ "large_roast", "diamond_block", "crystal_ball", "purity_stone", "necklace", "mushroom_drop", "apple", "black_glasses", "gorgon_flower" ]
+        ]
+    },
+	"shared_stat_grid": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [
+			[ "psycho_dash", "psycho_slide", "spin_dash", "dark_friar", "aura_barrier", "earthquaker" ],
+            [ "", "hit_points", "", "atk_stat", "", "def_stat", "" ]
+        ]
+    },
+	"shared_hieroglyph_grid": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [
+			[ "hieroglyph_count", "hieroglyph_a", "hieroglyph_b", "hieroglyph_c", "hieroglyph_d", "hieroglyph_e", "hieroglyph_f", "journal" ]
+        ]
+    },
+	"shared_objective_grid": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [
+			[ "save_kara2", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6" ]
+        ]
+    },
+    "tracker_capture_item": {
+        "type": "container",
+        "content": {
+            "type": "layout",
+            "key": "shared_item_grid"
+        }
+    },
+    "tracker_default": {
+		"type": "container",
+		"background": "#212121",
+		"width": 330,
+		"content": {
+			"type": "dock",
+			"dropshadow": true,
+			"content": [
+				{
+					"type": "dock",
+					"dock": "left",
+					"h_alignment": "left",
+					"v_alignment": "stretch",
+					"margin": "0,0,3,0",
+					"content": [
+						{
+							"type": "group",
+							"header": "Items",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_item_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Hieroglyphs",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_hieroglyph_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Stats / Abilities",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_stat_grid"
+							}
+						},
+						{
+							"type": "group",
+							"header": "Objectives",
+							"dock": "top",
+							"content": {
+								"type": "layout",
+								"key": "shared_objective_grid"
+							}
+						}
+					]
+				}
+			]
+		}
+    }
+}

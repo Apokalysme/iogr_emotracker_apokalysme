@@ -1,0 +1,134 @@
+[
+	// Inca Statues
+    {
+		"name": "Inca Statues",
+		"type": "progressive",
+		"stages": [
+			{
+				"img": "images/items/compact/inca_statues_a.png",
+				"codes": "inca_statues",
+				"secondary_codes": "inca_statues_a"
+			},
+			{
+				"img": "images/items/compact/inca_statues_b.png",
+				"codes": "inca_statues",
+				"secondary_codes": "inca_statues_b"
+			},
+			{
+				"img": "images/items/compact/inca_statues.png",
+				"codes": "inca_statues",
+				"secondary_codes": "inca_statues_all"
+			}
+		]
+    },
+	// Mine Keys
+	{
+		"name": "Mine Keys",
+		"type": "progressive",
+		"stages": [
+			{
+				"img": "images/items/compact/mine_keys_a.png",
+				"codes": "mine_keys",
+				"secondary_codes": "mine_keys_a"
+			},
+			{
+				"img": "images/items/compact/mine_keys_b.png",
+				"codes": "mine_keys",
+				"secondary_codes": "mine_keys_b"
+			},
+			{
+				"img": "images/items/compact/mine_keys.png",
+				"codes": "mine_keys",
+				"secondary_codes": "mine_keys_all"
+			}
+		]
+    },
+	// Mu Key and Purity Stone
+    {
+      "name": "Mu Key / Purity Stone",
+      "type": "progressive",
+	  "stages": [
+			{
+				"img": "images/items/compact/not_mu_and_stone.png",
+				"codes": "mu_and_stone",
+				"secondary_codes": "not_mu_and_stone"
+			},
+			{
+				"img": "images/items/compact/mu_and_not_stone.png",
+				"codes": "mu_and_stone",
+				"secondary_codes": "mu_and_not_stone"
+			},
+			{
+				"img": "images/items/compact/mu_and_stone.png",
+				"codes": "mu_and_stone",
+				"secondary_codes": "mu_all"
+			}
+		]
+    },
+	// Lance Letter and Magic Dust
+    {
+      "name": "Lance Letter / Magic Dust",
+      "type": "progressive",
+	  "stages": [
+			{
+				"img": "images/items/compact/lancel_and_not_dust.png",
+				"codes": "lancel_and_dust",
+				"secondary_codes": "lancel_and_not_dust"
+			},
+			{
+				"img": "images/items/compact/not_lancel_and_dust.png",
+				"codes": "lancel_and_dust",
+				"secondary_codes": "not_lancel_and_dust"
+			},
+			{
+				"img": "images/items/compact/lancel_and_dust.png",
+				"codes": "lancel_and_dust",
+				"secondary_codes": "lance_letter_and_dust"
+			}
+		]
+    },
+	// Lola's Melody and Necklace
+    {
+      "name": "Lola's Melody / Necklace",
+      "type": "progressive",
+	  "stages": [
+			{
+				"img": "images/items/compact/lolam_and_not_necklace.png",
+				"codes": "lolam_and_necklace",
+				"secondary_codes": "lolam_and_not_necklace"
+			},
+			{
+				"img": "images/items/compact/not_lolam_and_necklace.png",
+				"codes": "lolam_and_necklace",
+				"secondary_codes": "not_lolam_and_necklace"
+			},
+			{
+				"img": "images/items/compact/lolam_and_necklace.png",
+				"codes": "lolam_and_necklace",
+				"secondary_codes": "lola_melody_and_necklace"
+			}
+		]
+    },
+	// Wind Melody and Diamond Block
+    {
+      "name": "Wind Melody / Diamond Block",
+      "type": "progressive",
+	  "stages": [
+			{
+				"img": "images/items/compact/windm_and_not_diamond.png",
+				"codes": "windm_and_diamond",
+				"secondary_codes": "windm_and_not_diamond"
+			},
+			{
+				"img": "images/items/compact/not_windm_and_diamond.png",
+				"codes": "windm_and_diamond",
+				"secondary_codes": "not_windm_and_diamond"
+			},
+			{
+				"img": "images/items/compact/windm_and_diamond.png",
+				"codes": "windm_and_diamond",
+				"secondary_codes": "wind_melody_and_diamond"
+			}
+		]
+    }
+  ]

@@ -2,13 +2,16 @@
 ScriptHost:LoadScript("scripts/settings.lua")
 
 -- Progression items
-Tracker:AddItems("items/items.json")
+Tracker:AddItems("items/items_full.json")
+Tracker:AddItems("items/items_compact.json")
 -- Characters' abilities
 Tracker:AddItems("items/abilities.json")
 -- Adventure's Objectives
 Tracker:AddItems("items/objectives.json")
 -- Dark Spaces
 Tracker:AddItems("items/dark_spaces.json")
+-- Stats
+Tracker:AddItems("items/stats.json")
 -- Labels (not used for now)
 Tracker:AddItems("items/labels.json")
 

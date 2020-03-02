@@ -1,0 +1,26 @@
+[
+    // Hit points
+    {
+      "name": "Hit Points",
+      "type": "consumable",
+      "img": "images/stats/hit_points.png",
+      "codes": "hit_points",
+      "max_quantity": 40
+    },
+    // Atk value
+    {
+      "name": "Attack",
+      "type": "consumable",
+      "img": "images/stats/attack.png",
+      "codes": "atk_stat",
+      "max_quantity": 10
+    },
+    // Def value
+    {
+      "name": "Defense",
+      "type": "consumable",
+      "img": "images/stats/defense.png",
+      "codes": "def_stat",
+      "max_quantity": 10
+    }
+]

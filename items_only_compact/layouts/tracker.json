@@ -1,0 +1,32 @@
+{
+    "shared_item_grid": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_margin": "1,2",
+        "rows": [
+			[ "prison_key", "mine_keys", "elevator_key", "mu_and_stone", "", "inca_statues", "hope_statue", "rama_statue", "", "red_jewel" ],
+			[ "large_roast", "will", "teapot", "letter_lola", "melody_memory", "", "lolam_and_necklace", "windm_and_diamond", ],
+			[ "crystal_ball", "mushroom_drop", "apple", "black_glasses", "gorgon_flower", "", "lancel_and_dust", "aura", "crystal_ring" ],
+			[ "hieroglyph_count", "hieroglyph_a", "hieroglyph_b", "hieroglyph_c", "hieroglyph_d", "hieroglyph_e", "hieroglyph_f", "journal" ],
+			[ "will_abilities", "freedan_abilities", "", "save_kara2", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6" ]
+        ]
+    },
+    "tracker_capture_item": {
+        "type": "container",
+        "content": {
+            "type": "layout",
+            "key": "shared_item_grid"
+        }
+    },
+    "tracker_default": {
+        "type": "container",
+        "width": 370,
+        "background": "#212121",
+        "content": {
+            "dropshadow": true,
+            "margin": 3,
+            "type": "layout",
+            "key": "shared_item_grid"
+        }
+    }
+}
