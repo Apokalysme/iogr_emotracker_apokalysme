@@ -1,0 +1,65 @@
+[
+	// Moon Tribe
+	{
+		"name": "Moon Tribe - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 145,
+				"y": 585
+			}//,
+			//{
+			//	"map": "south_west",
+			//	"x": 140,
+			//	"y": 80
+			//}
+		],
+		"sections": [
+			{
+				"name": "Trial",
+				"clear_as_group": false,
+				"access_rules": [
+					"southCape_churchRoof_start, [@logic_switches/will ability]",
+					"itory_village_start, [@logic_switches/will ability]",
+					"edwardsPrison_sewer_start, [@logic_switches/will ability]",
+					"incaRuins_windCliff_start, [@logic_switches/will ability]",
+					"incaRuins_middleSection_start, [@logic_switches/will ability]",
+					"freejia_emptyHouse_start, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"diamondMine_walledMiner_start, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"diamondMine_preFriar_start, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"skyGarden_entrance_start, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"skyGarden_westBottom_start, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"skyGarden_southEastRoom_start, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"seasidePalace_entrance_start, mu_key, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"angelVillage_room_start, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"watermia_emptyHouse_start, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"greatWall_thirdSection_start, spin_dash, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"greatWall_spinDash_start, spin_dash, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"euro_hotel_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"euro_hotel_start, @logic_transitions/n to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"mtTemple_Entrance_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"mtTemple_Entrance_start, @logic_transitions/n to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"mtTemple_room4_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"mtTemple_room4_start, @logic_transitions/n to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"nativesVillage_outdoor_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"nativesVillage_outdoor_start, @logic_transitions/n to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"ankorWat_gardenEntrance_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"ankorWat_gardenEntrance_start, @logic_transitions/n to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"ankorWat_mainHall_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"ankorWat_mainHall_start, @logic_transitions/n to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"dao_emptyHouse_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"dao_emptyHouse_start, @logic_transitions/nw to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"pyramid_entranceDown_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"pyramid_entranceDown_start, @logic_transitions/nw to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"babel_bottom_start, aura, crystal_ring, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"babel_bottom_start, aura, crystal_ring, @logic_transitions/nw to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"babel_top_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"babel_top_start, @logic_transitions/nw to se, @logic_transitions/se to sw, [@logic_switches/will ability]"
+				],
+				"item_count": 1
+			}
+		]
+	}
+]

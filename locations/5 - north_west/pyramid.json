@@ -1,0 +1,137 @@
+[
+	// Pyramid
+	{
+		"name": "Pyramid",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"sections": [
+			{
+				"name": "Top Dark Space",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/pyramid - out",
+					"pyramid_entranceDown_start"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Entrance",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, aura",
+					"pyramid_entranceDown_start, aura"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Room 1",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, aura, spin_dash",
+					"pyramid_entranceDown_start, spin_dash"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Room 2",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, aura",
+					"pyramid_entranceDown_start"
+				],
+				"item_count": 2
+			},
+			{
+				"name": "Room 3 - Entrance",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, aura, spin_dash",
+					"pyramid_entranceDown_start, spin_dash"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Room 3",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, aura, @logic_dungeons/pyramid - room 3",
+					"pyramid_entranceDown_start, @logic_dungeons/pyramid - room 3"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Room 4",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, aura, spin_dash",
+					"pyramid_entranceDown_start, aura, spin_dash"
+				],
+				"item_count": 2
+			},
+			{
+				"name": "Room 5",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, aura",
+					"pyramid_entranceDown_start, aura"
+				],
+				"item_count": 2
+			},
+			{
+				"name": "Room 6",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, aura",
+					"pyramid_entranceDown_start, aura"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Mummy Queen",
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, journal, hieroglyph_count:6",
+					"pyramid_entranceDown_start"
+				],
+				"hosted_item": "mystic_statue_5"
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 110,
+				"y": 165
+			}
+		],
+	},
+	{
+		"name": "Pyramid - Dark Spaces",
+		"chest_unopened_img": "images/icons/dark_space.png",
+		"chest_opened_img": "images/icons/dark_space_visited.png",
+		"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+		"sections": [
+			{
+				"name": "Entrance - Top",
+				"access_rules": [
+					"@logic_dungeons/pyramid - out",
+					"pyramid_entranceDown_start"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Entrance - Bottom",
+				"access_rules": [
+					"@logic_dungeons/pyramid - out, aura",
+					"pyramid_entranceDown_start"
+				],
+				"item_count": 1
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 150,
+				"y": 165
+			}
+		]
+	}
+]

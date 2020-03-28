@@ -1,0 +1,132 @@
+[
+	// Dao
+	{
+		"name": "Dao",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"southCape_churchRoof_start, @logic_transitions/sw to se, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"southCape_churchRoof_start, @logic_transitions/sw to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"southCape_churchRoof_start, @logic_transitions/sw to se, @logic_transitions/se to nw",
+			"southCape_churchRoof_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"itory_village_start, @logic_transitions/sw to se, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"itory_village_start, @logic_transitions/sw to se, @logic_transitions/se to nw",
+			"itory_village_start, @logic_transitions/sw to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"itory_village_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"edwardsPrison_sewer_start, @logic_transitions/sw to se, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"edwardsPrison_sewer_start, @logic_transitions/sw to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"edwardsPrison_sewer_start, @logic_transitions/sw to se, @logic_transitions/se to nw",
+			"edwardsPrison_sewer_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"incaRuins_windCliff_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"incaRuins_windCliff_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"incaRuins_windCliff_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to nw",
+			"incaRuins_windCliff_start, @logic_transitions/sw to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"incaRuins_windCliff_start, @logic_transitions/sw to se, @logic_transitions/se to nw",
+			"incaRuins_windCliff_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"incaRuins_middleSection_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"incaRuins_middleSection_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"incaRuins_middleSection_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to nw",
+			"incaRuins_middleSection_start, @logic_transitions/sw to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"incaRuins_middleSection_start, @logic_transitions/sw to se, @logic_transitions/se to nw",
+			"incaRuins_middleSection_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"freejia_emptyHouse_start, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"freejia_emptyHouse_start, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"freejia_emptyHouse_start, @logic_transitions/se to nw",
+			"diamondMine_walledMiner_start, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"diamondMine_walledMiner_start, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"diamondMine_walledMiner_start, @logic_transitions/se to nw",
+			"diamondMine_preFriar_start, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"diamondMine_preFriar_start, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"diamondMine_preFriar_start, @logic_transitions/se to nw",
+			"skyGarden_entrance_start, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"skyGarden_entrance_start, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"skyGarden_entrance_start, @logic_transitions/se to nw",
+			"skyGarden_westBottom_start, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"skyGarden_westBottom_start, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"skyGarden_westBottom_start, @logic_transitions/se to nw",
+			"skyGarden_southEastRoom_start, @logic_transitions/se to ne, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"skyGarden_southEastRoom_start, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"skyGarden_southEastRoom_start, @logic_transitions/se to nw",
+			"seasidePalace_entrance_start, mu_key, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"seasidePalace_entrance_start, mu_key, @logic_transitions/ne to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"seasidePalace_entrance_start, mu_key, @logic_transitions/ne to se, @logic_transitions/se to nw",
+			"angelVillage_room_start, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"angelVillage_room_start, @logic_transitions/ne to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"angelVillage_room_start, @logic_transitions/ne to se, @logic_transitions/se to nw",
+			"watermia_emptyHouse_start, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"watermia_emptyHouse_start, @logic_transitions/ne to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"watermia_emptyHouse_start, @logic_transitions/ne to se, @logic_transitions/se to nw",
+			"greatWall_thirdSection_start, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"greatWall_thirdSection_start, @logic_transitions/ne to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"greatWall_thirdSection_start, @logic_transitions/ne to se, @logic_transitions/se to nw",
+			"greatWall_spinDash_start, @logic_transitions/ne to n, @logic_transitions/n to nw",
+			"greatWall_spinDash_start, @logic_transitions/ne to se, @logic_transitions/se to n, @logic_transitions/n to nw",
+			"greatWall_spinDash_start, @logic_transitions/ne to se, @logic_transitions/se to nw",
+			"euro_hotel_start, @logic_transitions/n to nw",
+			"mtTemple_Entrance_start, @logic_transitions/n to nw",
+			"mtTemple_room4_start, @logic_transitions/n to nw",
+			"nativesVillage_outdoor_start, @logic_transitions/n to nw",
+			"ankorWat_gardenEntrance_start, @logic_transitions/n to nw",
+			"ankorWat_mainHall_start, @logic_transitions/n to nw",
+			"dao_emptyHouse_start",
+			"pyramid_entranceDown_start",
+			"babel_bottom_start, aura, crystal_ring",
+			"babel_top_start",
+			"[red_jewel:36], red_jewel:50"
+		],
+		"sections": [
+			{
+				"name": "City",
+				"clear_as_group": false,
+				"item_count": 4
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 125,
+				"y": 265
+			}
+		],
+		"children": [
+			{
+				"name": "Dao - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_all" ],
+				"sections": [
+					{
+						"name": "City",
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 165,
+						"y": 265
+					}
+				]
+			},
+			{
+				"name": "Dao - Hint",
+				"chest_unopened_img": "images/icons/hint.png",
+				"chest_opened_img": "images/icons/hint_gotten.png",
+				"access_rules": [ "setting_hints_visible" ],
+				"sections": [
+					{
+						"name": "Girl with Jackal Note",
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 165,
+						"y": 225
+					}
+				]
+			}
+		]
+	}
+]

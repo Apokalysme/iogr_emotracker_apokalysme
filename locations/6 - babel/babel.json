@@ -1,0 +1,94 @@
+[
+	// Babel - Items
+	{
+		"name": "Babel - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"sections": [
+			{
+				"name": "Entrance",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/babel - entrance"
+				],
+				"item_count": 2
+			},
+			{
+				"name": "Babel - Top",
+				"access_rules": [
+					"@logic_dungeons/babel - top"
+				],
+				"hosted_item": "mystic_statue_6"
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 495,
+				"y": 505
+			}//,
+			//{
+			//	"map": "babel",
+			//	"x": 230,
+			//	"y": 165
+			//}
+		]
+	},
+	// Babel
+	{
+		"name": "Babel - Dark Spaces",
+		"chest_unopened_img": "images/icons/dark_space.png",
+		"chest_opened_img": "images/icons/dark_space_visited.png",
+		"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+		"sections": [
+			{
+				"name": "Entrance",
+				"access_rules": [
+					"@logic_dungeons/babel - entrance"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Top",
+				"access_rules": [
+					"@logic_dungeons/babel - top"
+				],
+				"item_count": 1
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 535,
+				"y": 505
+			}//,
+			//{
+			//	"map": "babel",
+			//	"x": 310,
+			//	"y": 165
+			//}
+		]
+	},
+	{
+		"name": "Babel - Hint",
+		"chest_unopened_img": "images/icons/hint.png",
+		"chest_opened_img": "images/icons/hint_gotten.png",
+		"access_rules": [ "setting_hints_visible" ],
+		"sections": [
+			{
+				"name": "Spirit",
+				"access_rules": [
+					"@logic_dungeons/babel - entrance"
+				],
+				"item_count": 1
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 535,
+				"y": 465
+			}
+		]
+	}
+]

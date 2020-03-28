@@ -1,11 +1,6 @@
-v2.99.0.x :
-* WIP :
-  * Item Tracker - Compact :
+v3.99.0.1
+  * Item Tracker :
     * Item AutoTracking : add autotracking uses of items
-  * World Map Tracker :
-    * Add : hints
-    * Add : Open Mode setting
-	* Enemizer / Start Randomizer integration : make needed changes to Map Tracking (if possible)
   * Map AutoTracking :
     * Which needs some RAM hunt to complete triggers list to implement
   * Detailled Map Tracker :
@@ -13,9 +8,9 @@ v2.99.0.x :
 
 alpha v2.99.0.1
 * General :
-  * Replace "Item Tracker" by two variants : "Item Tracker - Full" and "Item Tracker - Compact"
-  * Keeping up "Item Tracker - Classic" for the moment
-  * Add Stats upgrades tracking and auto-tracking (Great thanks to Neomatamune)
+  * Change : Replace "Item Tracker" by two variants : "Item Tracker - Full" and "Item Tracker - Compact"
+  * Change : "Item Tracker - Classic" is available for the moment (for backward compatibility)
+  * Add : Stats upgrades tracking and auto-tracking (Great thanks to Neomatamune)
 * Item Tracker - Full :
   * Re-organization for items, organized by
     * Item : songs, statues, keys and others dungeons items, quests items
@@ -32,6 +27,11 @@ alpha v2.99.0.1
   * Lance Letter and Magic Dust are combined
   * Will abilities are combined
   * Freedan abilities are combined
+* World Map Tracker :
+  * Add : Open Mode setting
+  * Add : Random Starting Location integration
+  * Add : Hints
+  * Change : Pyramids items in Room 2 are accessible in Logic with Will if you start in Pyramid DS (Bottom)
 
 v2.0.0.0 :
 * General :

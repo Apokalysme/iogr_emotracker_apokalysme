@@ -32,7 +32,7 @@
         "h_alignment": "center",
         "item_margin": "1,2",
         "rows": [
-			[ "save_kara2", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6" ]
+			[ "kara_place", "save_kara", "", "mystic_statue_1", "mystic_statue_2", "mystic_statue_3", "mystic_statue_4", "mystic_statue_5", "mystic_statue_6" ]
         ]
     },
     "tracker_capture_item": {
@@ -96,24 +96,50 @@
 							"type": "group",
 							"header": "Settings",
 							"dock": "top",
-							"content": {
-								"type": "layout",
-								"key": "options_grid"
-							}
-						},
-						{
-							"type": "dock",
-							"dock": "top",
-							"width": 128,
-							"height": 32,
-							"h_alignment": "center",
 							"content": [
 								{
-									"type": "item",
-									"item": "setting_mode_completable",
+									"type": "dock",
+									"dock": "top",
 									"h_alignment": "center",
-									"v_alignment": "stretch",
-								}
+									"orientation": "vertical",
+									"content": [
+										{
+											"type": "itemgrid",
+											"dock": "top",
+											"max_height": 40,
+											"item_margin": "1,2",
+											"h_alignment": "center",
+											"v_alignment": "stretch",
+											"rows": [
+												[ "setting_dark_spaces_off", "setting_hints"]
+											]
+										},
+										{
+											"type": "item",
+											"dock": "top",
+											"max_height": 40,
+											"item": "setting_open_mode_OFF",
+											"h_alignment": "center",
+											"v_alignment": "stretch"
+										},
+										{
+											"type": "item",
+											"dock": "top",
+											"max_height": 40,
+											"item": "setting_mode_completable",
+											"h_alignment": "center",
+											"v_alignment": "stretch"
+										},
+										{
+											"type": "item",
+											"dock": "top",
+											"max_height": 40,
+											"item": "default_dark_space_start",
+											"h_alignment": "center",
+											"v_alignment": "stretch"
+										}
+									]
+								},
 							]
 						},
 						{
@@ -207,13 +233,40 @@
 						{
 							"type": "dock",
 							"dock": "top",
-							"width": 128,
-							"height": 32,
+							"height": 40,
 							"h_alignment": "center",
 							"content": [
 								{
 									"type": "item",
 									"item": "setting_mode_completable",
+									"h_alignment": "center",
+									"v_alignment": "stretch",
+								}
+							]
+						},
+						{
+							"type": "dock",
+							"dock": "top",
+							"height": 40,
+							"h_alignment": "center",
+							"content": [
+								{
+									"type": "item",
+									"item": "setting_open_mode_OFF",
+									"h_alignment": "center",
+									"v_alignment": "stretch",
+								}
+							]
+						},
+						{
+							"type": "dock",
+							"dock": "top",
+							"height": 40,
+							"h_alignment": "center",
+							"content": [
+								{
+									"type": "item",
+									"item": "default_dark_space_start",
 									"h_alignment": "center",
 									"v_alignment": "stretch",
 								}
