@@ -1,0 +1,132 @@
+[
+	// logic : Transitions
+    {
+        "name": "logic_transitions",
+		"sections": [
+			{
+				// Transition from South West to South East
+				"name": "sw to se",
+				"access_rules": [
+					"@logic_dungeons/inca",
+					"teapot",
+					"letter_lola",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from South West to North East
+				"name": "sw to ne",
+				"access_rules": [
+					"letter_lola",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from South East to South West
+				"name": "se to sw",
+				"access_rules": [
+					"teapot",
+					"letter_lola",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from South East to North East
+				"name": "se to ne",
+				"access_rules": [
+					"@logic_dungeons/sky garden, mu_key",
+					"teapot, mu_key",
+					"letter_lola",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from South East to North
+				"name": "se to n",
+				"access_rules": [
+					"melody_memory",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from South East to North West
+				"name": "se to nw",
+				"access_rules": [
+					"melody_memory",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition to babel
+				"name": "to babel",
+				"access_rules": [
+					"melody_memory",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from North East to North
+				"name": "ne to n",
+				"access_rules": [
+					"will",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from North East to South East
+				"name": "ne to se",
+				"access_rules": [
+					"letter_lola",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from North to North West
+				"name": "n to nw",
+				"access_rules": [
+					"large_roast",
+					"melody_memory",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from North to North East
+				"name": "n to ne",
+				"access_rules": [
+					"will",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from North to South East
+				"name": "n to se",
+				"access_rules": [
+					"large_roast",
+					"melody_memory",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from North West to South East
+				"name": "nw to se",
+				"access_rules": [
+					"melody_memory",
+					"@logic_settings/openMode"
+				],
+				"item_count": 1
+			}
+		]
+	}
+]

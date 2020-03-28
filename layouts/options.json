@@ -8,21 +8,258 @@
 		"stages": [
 			{
 				"name": "Completable",
-				"img": "images/icons/mode_completable.png",
+				"img": "images/settings/mode/mode_completable.png",
 				"inherit_codes": "false",
 				"codes": "setting_mode_completable"
 			},
 			{
 				"name": "Beatable",
-				"img": "images/icons/mode_beatable.png",
+				"img": "images/settings/mode/mode_beatable.png",
 				"inherit_codes": "false",
 				"codes": "setting_mode_beatable"
 			},
 			{
 				"name": "Chaos",
-				"img": "images/icons/mode_chaos.png",
+				"img": "images/settings/mode/mode_chaos.png",
 				"inherit_codes": "false",
 				"codes": "setting_mode_chaos"
+			}
+		]
+	},
+	// Hints
+	{
+		"name": "Hints",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"stages": [
+			{
+				"name": "Hints OFF",
+				"img": "images/settings/hints/setting_hints_OFF.png",
+				"inherit_codes": "false",
+				"codes": "setting_hints"
+			},
+			{
+				"name": "Hints ON",
+				"img": "images/settings/hints/setting_hints.png",
+				"inherit_codes": "false",
+				"codes": "setting_hints_visible"
+			}
+		]
+	},
+	// Open Mode ON/OFF
+	{
+		"name": "Open Mode",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"stages": [
+			{
+				"name": "Open Mode OFF",
+				"img": "images/settings/open_mode/open_mode_OFF.png",
+				"inherit_codes": "false",
+				"codes": "setting_open_mode_OFF"
+			},
+			{
+				"name": "Open Mode ON",
+				"img": "images/settings/open_mode/open_mode_ON.png",
+				"inherit_codes": "false",
+				"codes": "setting_open_mode_ON"
+			}
+		]
+	},
+	// Dark Spaces tracking settings
+	// default : all
+	{
+		"name": "Dark Spaces",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"initial_stage_idx": 2,
+		"stages": [
+			{
+				"img": "images/settings/dark_spaces/setting_dark_spaces_off.png",
+				"codes": "setting_dark_spaces_off"
+			},
+			{
+				"img": "images/settings/dark_spaces/setting_dark_spaces_dungeons.png",
+				"codes": "setting_dark_spaces_dungeons"
+			},
+			{
+				"img": "images/settings/dark_spaces/setting_dark_spaces_all.png",
+				"codes": "setting_dark_spaces_all"
+			}
+		]
+	},
+	{
+		"name": "Randomized Start - Cities",
+		"type": "progressive",
+		"allow_disabled": false,
+		"loop": true,
+		"stages": [
+			{
+				"name": "Starting Locations",
+				"img": "images/settings/random_start/StartingLocation.png",
+				"inherit_codes": "false",
+				"codes": "default_dark_space_start"
+			},
+			// Safe locations
+			{
+				"name": "South Cape",
+				"img": "images/settings/random_start/Safe-SouthCape.png",
+				"inherit_codes": "false",
+				"codes": "southCape_churchRoof_start"
+			},
+			{
+				"name": "Itoryville",
+				"img": "images/settings/random_start/Safe-Itoryville.png",
+				"inherit_codes": "false",
+				"codes": "itory_village_start"
+			},
+			{
+				"name": "Freejia",
+				"img": "images/settings/random_start/Safe-Freejia.png",
+				"inherit_codes": "false",
+				"codes": "freejia_emptyHouse_start"
+			},
+			{
+				"name": "Seaside Palace",
+				"img": "images/settings/random_start/Safe-SeasidePalace.png",
+				"inherit_codes": "false",
+				"codes": "seasidePalace_entrance_start"
+			},
+			{
+				"name": "Angel Village",
+				"img": "images/settings/random_start/Safe-AngelVillage.png",
+				"inherit_codes": "false",
+				"codes": "angelVillage_room_start"
+			},
+			{
+				"name": "Watermia",
+				"img": "images/settings/random_start/Safe-Watermia.png",
+				"inherit_codes": "false",
+				"codes": "watermia_emptyHouse_start"
+			},
+			{
+				"name": "Euro",
+				"img": "images/settings/random_start/Safe-Euro.png",
+				"inherit_codes": "false",
+				"codes": "euro_hotel_start"
+			},
+			{
+				"name": "Natives Village",
+				"img": "images/settings/random_start/Safe-NativesVillage.png",
+				"inherit_codes": "false",
+				"codes": "nativesVillage_outdoor_start"
+			},
+			{
+				"name": "Dao",
+				"img": "images/settings/random_start/Safe-Dao.png",
+				"inherit_codes": "false",
+				"codes": "dao_emptyHouse_start"
+			},
+			{
+				"name": "Babel - Top",
+				"img": "images/settings/random_start/Safe-BabelTop.png",
+				"inherit_codes": "false",
+				"codes": "babel_top_start"
+			},
+			// Unsafe locations
+			{
+				"name": "Edward's Prison - Sewer",
+				"img": "images/settings/random_start/Unsafe-EdwardsPrison.png",
+				"inherit_codes": "false",
+				"codes": "edwardsPrison_sewer_start"
+			},
+			{
+				"name": "Inca Ruins - Wind Cliff",
+				"img": "images/settings/random_start/Unsafe-Inca_WindCliff.png",
+				"inherit_codes": "false",
+				"codes": "incaRuins_windCliff_start"
+			},
+			{
+				"name": "Inca Ruins - Middle Section",
+				"img": "images/settings/random_start/Unsafe-Inca_Middle.png",
+				"inherit_codes": "false",
+				"codes": "incaRuins_middleSection_start"
+			},
+			{
+				"name": "Diamond Mine - Walled Miner",
+				"img": "images/settings/random_start/Unsafe-DiamondMine_WalledMiner.png",
+				"inherit_codes": "false",
+				"codes": "diamondMine_walledMiner_start"
+			},
+			{
+				"name": "Diamond Mine - Pre Friar",
+				"img": "images/settings/random_start/Unsafe-DiamondMine_PreFriar.png",
+				"inherit_codes": "false",
+				"codes": "diamondMine_preFriar_start"
+			},
+			{
+				"name": "Sky Garden - Entrance",
+				"img": "images/settings/random_start/Unsafe-SkyGarden_Entrance.png",
+				"inherit_codes": "false",
+				"codes": "skyGarden_entrance_start"
+			},
+			{
+				"name": "Sky Garden - West",
+				"img": "images/settings/random_start/Unsafe-SkyGarden_West.png",
+				"inherit_codes": "false",
+				"codes": "skyGarden_westBottom_start"
+			},
+			{
+				"name": "Sky Garden - South East Room",
+				"img": "images/settings/random_start/Unsafe-SkyGarden_SouthEast.png",
+				"inherit_codes": "false",
+				"codes": "skyGarden_southEastRoom_start"
+			},
+			{
+				"name": "Great Wall - Third Section",
+				"img": "images/settings/random_start/Unsafe-GreatWall_ThirdSection.png",
+				"inherit_codes": "false",
+				"codes": "greatWall_thirdSection_start"
+			},
+			{
+				"name": "Great Wall - Spin Dash",
+				"img": "images/settings/random_start/Unsafe-GreatWall_SpinDash.png",
+				"inherit_codes": "false",
+				"codes": "greatWall_spinDash_start"
+			},
+			{
+				"name": "Mt Temple - Entrance",
+				"img": "images/settings/random_start/Unsafe-MtTemple_Entrance.png",
+				"inherit_codes": "false",
+				"codes": "mtTemple_Entrance_start"
+			},
+			{
+				"name": "Mt Temple - Room 4",
+				"img": "images/settings/random_start/Unsafe-MtTemple_Room4.png",
+				"inherit_codes": "false",
+				"codes": "mtTemple_room4_start"
+			},
+			{
+				"name": "Ankor Wat - Garden",
+				"img": "images/settings/random_start/Unsafe-AnkorWat_Garden.png",
+				"inherit_codes": "false",
+				"codes": "ankorWat_gardenEntrance_start"
+			},
+			{
+				"name": "Ankor Wat - Main Hall",
+				"img": "images/settings/random_start/Unsafe-AnkorWat_MainHall.png",
+				"inherit_codes": "false",
+				"codes": "ankorWat_mainHall_start"
+			},
+			{
+				"name": "Pyramid - Bottom",
+				"img": "images/settings/random_start/Unsafe-Pyramid_Bottom.png",
+				"inherit_codes": "false",
+				"codes": "pyramid_entranceDown_start"
+			},
+			{
+				"name": "Babel - Entrance",
+				"img": "images/settings/random_start/Unsafe-Babel_Entrance.png",
+				"inherit_codes": "false",
+				"codes": "babel_bottom_start"
 			}
 		]
 	}

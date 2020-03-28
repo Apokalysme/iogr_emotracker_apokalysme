@@ -1,0 +1,151 @@
+[
+	// Mt. Temple
+	{
+		"name": "Mt. Temple - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"southCape_churchRoof_start, @logic_transitions/sw to se, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"southCape_churchRoof_start, @logic_transitions/sw to se, @logic_transitions/se to n, spin_dash",
+			"southCape_churchRoof_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, spin_dash",
+			"itory_village_start, @logic_transitions/sw to se, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"itory_village_start, @logic_transitions/sw to se, @logic_transitions/se to n, spin_dash",
+			"itory_village_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, spin_dash",
+			"edwardsPrison_sewer_start, @logic_transitions/sw to se, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"edwardsPrison_sewer_start, @logic_transitions/sw to se, @logic_transitions/se to n, spin_dash",
+			"edwardsPrison_sewer_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, spin_dash",
+			"incaRuins_windCliff_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"incaRuins_windCliff_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to n, spin_dash",
+			"incaRuins_windCliff_start, @logic_transitions/sw to se, @logic_transitions/se to n, spin_dash",
+			"incaRuins_windCliff_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, spin_dash",
+			"incaRuins_middleSection_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"incaRuins_middleSection_start, melody_wind, @logic_switches/incan statues, @logic_transitions/se to n, spin_dash",
+			"incaRuins_middleSection_start, @logic_transitions/sw to se, @logic_transitions/se to n, spin_dash",
+			"incaRuins_middleSection_start, @logic_transitions/sw to ne, @logic_transitions/ne to n, spin_dash",
+			"freejia_emptyHouse_start, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"freejia_emptyHouse_start, @logic_transitions/se to n, spin_dash",
+			"diamondMine_walledMiner_start, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"diamondMine_walledMiner_start, @logic_transitions/se to n, spin_dash",
+			"diamondMine_preFriar_start, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"diamondMine_preFriar_start, @logic_transitions/se to n, spin_dash",
+			"skyGarden_entrance_start, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"skyGarden_entrance_start, @logic_transitions/se to n, spin_dash",
+			"skyGarden_westBottom_start, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"skyGarden_westBottom_start, @logic_transitions/se to n, spin_dash",
+			"skyGarden_southEastRoom_start, @logic_transitions/se to ne, @logic_transitions/ne to n, spin_dash",
+			"skyGarden_southEastRoom_start, @logic_transitions/se to n, spin_dash",
+			"seasidePalace_entrance_start, mu_key, @logic_transitions/ne to n, spin_dash",
+			"seasidePalace_entrance_start, mu_key, @logic_transitions/ne to se, @logic_transitions/se to n, spin_dash",
+			"angelVillage_room_start, @logic_transitions/ne to n, spin_dash",
+			"angelVillage_room_start, @logic_transitions/ne to se, @logic_transitions/se to n, spin_dash",
+			"watermia_emptyHouse_start, @logic_transitions/ne to n, spin_dash",
+			"watermia_emptyHouse_start, @logic_transitions/ne to se, @logic_transitions/se to n, spin_dash",
+			"greatWall_thirdSection_start, @logic_transitions/ne to n, spin_dash",
+			"greatWall_thirdSection_start, @logic_transitions/ne to se, @logic_transitions/se to n, spin_dash",
+			"greatWall_spinDash_start, @logic_transitions/ne to n, spin_dash",
+			"greatWall_spinDash_start, @logic_transitions/ne to se, @logic_transitions/se to n, spin_dash",
+			"euro_hotel_start, spin_dash",
+			"mtTemple_Entrance_start",
+			"mtTemple_room4_start",
+			"nativesVillage_outdoor_start, spin_dash",
+			"ankorWat_gardenEntrance_start, spin_dash",
+			"ankorWat_mainHall_start, spin_dash",
+			"dao_emptyHouse_start, spin_dash",
+			"pyramid_entranceDown_start, spin_dash",
+			"babel_bottom_start, aura, crystal_ring, spin_dash",
+			"babel_top_start, spin_dash"
+		],
+		"sections": [
+			{
+				"name": "Entrance",
+				"clear_as_group": false,
+				"item_count": 2
+			},
+			{
+				"name": "Mushrooms",
+				"clear_as_group": false,
+				"access_rules": [
+					"mushroom_drop:1"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Slide",
+				"clear_as_group": false,
+				"access_rules": [
+					"mushroom_drop:2"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Summit",
+				"clear_as_group": false,
+				"access_rules": [
+					"mushroom_drop:3"
+				],
+				"item_count": 1
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 510,
+				"y": 180
+			}
+		],
+		"children": [
+			{
+				"name": "Mt. Temple - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+				"sections": [
+					{
+						"name": "Entrance",
+						"item_count": 1
+					},
+					{
+						"name": "Room 4",
+						"item_count": 1
+					},
+					{
+						"name": "SlideRoom",
+						"access_rules": [
+							"mushroom_drop:2"
+						],
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 550,
+						"y": 180
+					}
+				]
+			},
+			{
+				"name": "Mount Temple - Kara's Paint",
+				"access_rules": [
+					"kara_mount_kress"
+						],
+				"sections": [
+					{
+						"name": "Kara's Paint",
+						"access_rules": [
+							"mushroom_drop:3, magic_dust"
+						],
+						"hosted_item": "save_kara"
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 510,
+						"y": 140
+					}
+				]
+			}
+		]
+	}
+]

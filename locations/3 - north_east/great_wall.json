@@ -1,0 +1,103 @@
+[
+	// Great Wall - Items
+	{
+		"name": "Great Wall - Items",
+		"sections": [
+			{
+				"name": "Entrance",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/great wall - out",
+					"greatWall_thirdSection_start, spin_dash",
+					"greatWall_spinDash_start, spin_dash"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Fall Down",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/great wall - out",
+					"greatWall_thirdSection_start, spin_dash",
+					"greatWall_spinDash_start, spin_dash"
+				],
+				"item_count": 2
+			},
+			{
+				"name": "Slide",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/great wall - out",
+					"greatWall_thirdSection_start, spin_dash",
+					"greatWall_spinDash_start, spin_dash"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Sand Fanger",
+				"access_rules": [
+					"@logic_dungeons/great wall - out, spin_dash, dark_friar",
+					"greatWall_thirdSection_start, dark_friar",
+					"greatWall_spinDash_start"
+				],
+				"hosted_item": "mystic_statue_4"
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 650,
+				"y": 280
+			}
+		]
+	},
+	// Great Wall - Dark Spaces
+	{
+		"name": "Great Wall - Dark Spaces",
+		"chest_unopened_img": "images/icons/dark_space.png",
+		"chest_opened_img": "images/icons/dark_space_visited.png",
+		"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+		"sections": [
+			{
+				"name": "Slide",
+				"access_rules": [
+					"@logic_dungeons/great wall - out, @logic_settings/chaosMode, [spin_dash]",
+					"@logic_dungeons/great wall - out, @logic_settings/chaosMode, [psycho_slide]",
+					"greatWall_thirdSection_start",
+					"greatWall_spinDash_start, setting_mode_beatable",
+					"greatWall_spinDash_start, setting_mode_completable",
+					"greatWall_spinDash_start, @logic_settings/chaosMode, [spin_dash]",
+					"greatWall_spinDash_start, @logic_settings/chaosMode, [psycho_slide]",
+					"@logic_dungeons/great wall - out, setting_mode_completable",
+					"@logic_dungeons/great wall - out, setting_mode_beatable"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Spin Dash Dark Space",
+				"access_rules": [
+					"@logic_dungeons/great wall - out, dark_friar",
+					"greatWall_thirdSection_start, dark_friar",
+					"greatWall_spinDash_start"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Statues Room",
+				"access_rules": [
+					"@logic_dungeons/great wall - out, dark_friar",
+					"greatWall_thirdSection_start, dark_friar",
+					"greatWall_spinDash_start"
+				],
+				"item_count": 1
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 690,
+				"y": 280
+			}
+		]
+	}
+]

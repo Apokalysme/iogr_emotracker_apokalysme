@@ -13,7 +13,7 @@ Tracker:AddItems("items/dark_spaces.json")
 -- Stats
 Tracker:AddItems("items/stats.json")
 -- Labels (not used for now)
-Tracker:AddItems("items/labels.json")
+-- Tracker:AddItems("items/labels.json")
 
 -- World maps
 Tracker:AddMaps("maps/maps.json")
@@ -21,28 +21,40 @@ Tracker:AddMaps("maps/maps.json")
 Tracker:AddMaps("maps/areas.json")
 
 -- Global logic
-Tracker:AddLocations("locations/logic.json")
+Tracker:AddLocations("locations/0 - logic/logic_settings.json")
+Tracker:AddLocations("locations/0 - logic/logic_switches.json")
+Tracker:AddLocations("locations/0 - logic/logic_transitions.json")
+Tracker:AddLocations("locations/0 - logic/logic_dungeons.json")
 -- Jeweler's locations
 Tracker:AddLocations("locations/jeweler.json")
 -- South West Continent
-Tracker:AddLocations("locations/south_west/cities.json")
-Tracker:AddLocations("locations/south_west/dungeons.json")
-Tracker:AddLocations("locations/south_west/area_south_cape.json")
+Tracker:AddLocations("locations/1 - south_west/south_cape.json")
+Tracker:AddLocations("locations/1 - south_west/itoryville.json")
+Tracker:AddLocations("locations/1 - south_west/edwards_castle.json")
+Tracker:AddLocations("locations/1 - south_west/moon_tribe.json")
+Tracker:AddLocations("locations/1 - south_west/gold_ship.json")
+Tracker:AddLocations("locations/1 - south_west/edwards_prison.json")
+Tracker:AddLocations("locations/1 - south_west/inca_ruins.json")
+-- Tracker:AddLocations("locations/1 - south_west/area_south_cape.json")
 -- South East Continent
-Tracker:AddLocations("locations/south_east/cities.json")
-Tracker:AddLocations("locations/south_east/dungeons.json")
+Tracker:AddLocations("locations/2 - south_east/cities.json")
+Tracker:AddLocations("locations/2 - south_east/diamond_mine.json")
+Tracker:AddLocations("locations/2 - south_east/sky_garden.json")
 -- North East Continent
-Tracker:AddLocations("locations/north_east/seaside_palace.json")
-Tracker:AddLocations("locations/north_east/cities.json")
-Tracker:AddLocations("locations/north_east/dungeons.json")
+Tracker:AddLocations("locations/3 - north_east/seaside_palace.json")
+Tracker:AddLocations("locations/3 - north_east/cities.json")
+Tracker:AddLocations("locations/3 - north_east/mu.json")
+Tracker:AddLocations("locations/3 - north_east/wind_tunnel.json")
+Tracker:AddLocations("locations/3 - north_east/great_wall.json")
 -- North Continent
-Tracker:AddLocations("locations/north/cities.json")
-Tracker:AddLocations("locations/north/dungeons.json")
+Tracker:AddLocations("locations/4 - north/cities.json")
+Tracker:AddLocations("locations/4 - north/mt_temple.json")
+Tracker:AddLocations("locations/4 - north/ankor_wat.json")
 -- North West Continent
-Tracker:AddLocations("locations/north_west/cities.json")
-Tracker:AddLocations("locations/north_west/dungeons.json")
+Tracker:AddLocations("locations/5 - north_west/cities.json")
+Tracker:AddLocations("locations/5 - north_west/pyramid.json")
 -- Babel
-Tracker:AddLocations("locations/babel/dungeons.json")
+Tracker:AddLocations("locations/6 - babel/babel.json")
 
 -- Options/Settings
 Tracker:AddItems("layouts/options.json")

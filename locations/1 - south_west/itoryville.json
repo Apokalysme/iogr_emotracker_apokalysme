@@ -1,0 +1,118 @@
+[
+	// Itory
+	{
+		"name": "Itoryville - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"southCape_churchRoof_start, melody_lola",
+			"itory_village_start",
+			"edwardsPrison_sewer_start, melody_lola",
+			"incaRuins_windCliff_start, melody_lola",
+			"incaRuins_middleSection_start, melody_lola",
+			"freejia_emptyHouse_start, @logic_transitions/se to sw, melody_lola",
+			"diamondMine_walledMiner_start, @logic_transitions/se to sw, melody_lola",
+			"diamondMine_preFriar_start, @logic_transitions/se to sw, melody_lola",
+			"skyGarden_entrance_start, @logic_transitions/se to sw, melody_lola",
+			"skyGarden_westBottom_start, @logic_transitions/se to sw, melody_lola",
+			"skyGarden_southEastRoom_start, @logic_transitions/se to sw, melody_lola",
+			"seasidePalace_entrance_start, mu_key, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"angelVillage_room_start, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"watermia_emptyHouse_start, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"greatWall_thirdSection_start, spin_dash, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"greatWall_spinDash_start, spin_dash, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"euro_hotel_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"euro_hotel_start, @logic_transitions/n to se, @logic_transitions/se to sw, melody_lola",
+			"mtTemple_Entrance_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"mtTemple_Entrance_start, @logic_transitions/n to se, @logic_transitions/se to sw, melody_lola",
+			"mtTemple_room4_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"mtTemple_room4_start, @logic_transitions/n to se, @logic_transitions/se to sw, melody_lola",
+			"nativesVillage_outdoor_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"nativesVillage_outdoor_start, @logic_transitions/n to se, @logic_transitions/se to sw, melody_lola",
+			"ankorWat_gardenEntrance_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"ankorWat_gardenEntrance_start, @logic_transitions/n to se, @logic_transitions/se to sw, melody_lola",
+			"ankorWat_mainHall_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"ankorWat_mainHall_start, @logic_transitions/n to se, @logic_transitions/se to sw, melody_lola",
+			"dao_emptyHouse_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"dao_emptyHouse_start, @logic_transitions/nw to se, @logic_transitions/se to sw, melody_lola",
+			"pyramid_entranceDown_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"pyramid_entranceDown_start, @logic_transitions/nw to se, @logic_transitions/se to sw, melody_lola",
+			"babel_bottom_start, aura, crystal_ring, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"babel_bottom_start, aura, crystal_ring, @logic_transitions/nw to se, @logic_transitions/se to sw, melody_lola",
+			"babel_top_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, melody_lola",
+			"babel_top_start, @logic_transitions/nw to se, @logic_transitions/se to sw, melody_lola"
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 185,
+				"y": 680
+			}//,
+			//{
+			//	"map": "south_west",
+			//	"x": 215,
+			//	"y": 190
+			//}
+		],
+		"sections": [
+			{
+				"name": "City",
+				"clear_as_group": false,
+				"item_count": 1
+			},
+			{
+				"name": "Cave",
+				"clear_as_group": false,
+				"access_rules": [ 
+					"@logic_switches/will ability"
+				],
+				"item_count": 1
+			}
+		],
+		"children": [
+			{
+				"name": "Itoryville - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_all" ],
+				"sections": [
+					{
+						"name": "City",
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 225,
+						"y": 680
+					}//,
+					//{
+					//	"map": "south_west",
+					//	"x": 255,
+					//	"y": 190
+					//}
+				]
+			},
+			{
+				"name": "Itoryville - Hint",
+				"chest_unopened_img": "images/icons/hint.png",
+				"chest_opened_img": "images/icons/hint_gotten.png",
+				"access_rules": [ "setting_hints_visible" ],
+				"sections": [
+					{
+						"name": "Elder",
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 225,
+						"y": 640
+					}
+				]
+			}
+		]
+	}
+]
