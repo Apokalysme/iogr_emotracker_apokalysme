@@ -3,7 +3,7 @@
     {
 		"name": "Will abilities",
 		"type": "progressive",
-		"initial_stage_idx": 0,
+		"allow_disabled": false,
 		"stages": [
 			{
 				"img": "images/abilities/compact/will_no_ability.png",
@@ -52,7 +52,7 @@
     {
 		"name": "Freedan abilities",
 		"type": "progressive",
-		"initial_stage_idx": 0,
+		"allow_disabled": false,
 		"stages": [
 			{
 				"img": "images/abilities/compact/freedan_no_ability.png",

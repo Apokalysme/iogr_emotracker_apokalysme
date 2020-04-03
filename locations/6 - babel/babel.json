@@ -78,7 +78,7 @@
 			{
 				"name": "Spirit",
 				"access_rules": [
-					"@logic_dungeons/babel - entrance"
+					"@logic_dungeons/babel - top"
 				],
 				"item_count": 1
 			}

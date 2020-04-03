@@ -6,17 +6,17 @@
 		"stages": [
 			{
 				"img": "images/items/compact/inca_statues_a.png",
-				"codes": "inca_statues",
+				"codes": "inca_statues_a_inca_statues_b",
 				"secondary_codes": "inca_statues_a"
 			},
 			{
 				"img": "images/items/compact/inca_statues_b.png",
-				"codes": "inca_statues",
+				"codes": "inca_statues_a_inca_statues_b",
 				"secondary_codes": "inca_statues_b"
 			},
 			{
 				"img": "images/items/compact/inca_statues.png",
-				"codes": "inca_statues",
+				"codes": "inca_statues_a_inca_statues_b",
 				"secondary_codes": "inca_statues_all"
 			}
 		]
@@ -28,17 +28,17 @@
 		"stages": [
 			{
 				"img": "images/items/compact/mine_keys_a.png",
-				"codes": "mine_keys",
+				"codes": "mine_key_a_mine_key_b",
 				"secondary_codes": "mine_keys_a"
 			},
 			{
 				"img": "images/items/compact/mine_keys_b.png",
-				"codes": "mine_keys",
+				"codes": "mine_key_a_mine_key_b",
 				"secondary_codes": "mine_keys_b"
 			},
 			{
 				"img": "images/items/compact/mine_keys.png",
-				"codes": "mine_keys",
+				"codes": "mine_key_a_mine_key_b",
 				"secondary_codes": "mine_keys_all"
 			}
 		]
@@ -50,17 +50,17 @@
 	  "stages": [
 			{
 				"img": "images/items/compact/not_mu_and_stone.png",
-				"codes": "mu_and_stone",
+				"codes": "mu_key_purity_stone",
 				"secondary_codes": "not_mu_and_stone"
 			},
 			{
 				"img": "images/items/compact/mu_and_not_stone.png",
-				"codes": "mu_and_stone",
+				"codes": "mu_key_purity_stone",
 				"secondary_codes": "mu_and_not_stone"
 			},
 			{
 				"img": "images/items/compact/mu_and_stone.png",
-				"codes": "mu_and_stone",
+				"codes": "mu_key_purity_stone",
 				"secondary_codes": "mu_all"
 			}
 		]
@@ -72,17 +72,17 @@
 	  "stages": [
 			{
 				"img": "images/items/compact/lancel_and_not_dust.png",
-				"codes": "lancel_and_dust",
+				"codes": "letter_lance_magic_dust",
 				"secondary_codes": "lancel_and_not_dust"
 			},
 			{
 				"img": "images/items/compact/not_lancel_and_dust.png",
-				"codes": "lancel_and_dust",
+				"codes": "letter_lance_magic_dust",
 				"secondary_codes": "not_lancel_and_dust"
 			},
 			{
 				"img": "images/items/compact/lancel_and_dust.png",
-				"codes": "lancel_and_dust",
+				"codes": "letter_lance_magic_dust",
 				"secondary_codes": "lance_letter_and_dust"
 			}
 		]
@@ -94,17 +94,17 @@
 	  "stages": [
 			{
 				"img": "images/items/compact/lolam_and_not_necklace.png",
-				"codes": "lolam_and_necklace",
+				"codes": "melody_lola_necklace",
 				"secondary_codes": "lolam_and_not_necklace"
 			},
 			{
 				"img": "images/items/compact/not_lolam_and_necklace.png",
-				"codes": "lolam_and_necklace",
+				"codes": "melody_lola_necklace",
 				"secondary_codes": "not_lolam_and_necklace"
 			},
 			{
 				"img": "images/items/compact/lolam_and_necklace.png",
-				"codes": "lolam_and_necklace",
+				"codes": "melody_lola_necklace",
 				"secondary_codes": "lola_melody_and_necklace"
 			}
 		]
@@ -116,17 +116,17 @@
 	  "stages": [
 			{
 				"img": "images/items/compact/windm_and_not_diamond.png",
-				"codes": "windm_and_diamond",
+				"codes": "melody_wind_diamond_block",
 				"secondary_codes": "windm_and_not_diamond"
 			},
 			{
 				"img": "images/items/compact/not_windm_and_diamond.png",
-				"codes": "windm_and_diamond",
+				"codes": "melody_wind_diamond_block",
 				"secondary_codes": "not_windm_and_diamond"
 			},
 			{
 				"img": "images/items/compact/windm_and_diamond.png",
-				"codes": "windm_and_diamond",
+				"codes": "melody_wind_diamond_block",
 				"secondary_codes": "wind_melody_and_diamond"
 			}
 		]

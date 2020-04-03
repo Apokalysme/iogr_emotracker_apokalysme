@@ -56,12 +56,12 @@
 	  "stages": [
         {
           "img": "images/items/large_roast.png",
-		  "codes": "large_roast,setting_open_mode_ON",
+		  "codes": "large_roast",
           "secondary_codes": "none"
         },
         {
           "img": "images/items/large_roast_given.png",
-          "codes": "large_roast,setting_open_mode_ON",
+          "codes": "large_roast",
           "secondary_codes": "used"
         }
       ]
@@ -194,12 +194,12 @@
 	  "stages": [
         {
           "img": "images/items/melody_memory.png",
-		  "codes": "melody_memory,setting_open_mode_ON",
+		  "codes": "melody_memory",
           "secondary_codes": "none"
         },
         {
           "img": "images/items/melody_memory_used.png",
-          "codes": "melody_memory,setting_open_mode_ON",
+          "codes": "melody_memory",
           "secondary_codes": "used"
         }
       ]
@@ -304,12 +304,12 @@
 	  "stages": [
         {
           "img": "images/items/will.png",
-		  "codes": "will,setting_open_mode_ON",
+		  "codes": "will",
           "secondary_codes": "none"
         },
         {
           "img": "images/items/will_used.png",
-          "codes": "will,setting_open_mode_ON",
+          "codes": "will",
           "secondary_codes": "used"
         }
       ]
@@ -347,12 +347,12 @@
 	  "stages": [
         {
           "img": "images/items/teapot.png",
-		  "codes": "teapot,setting_open_mode_ON",
+		  "codes": "teapot",
           "secondary_codes": "none"
         },
         {
           "img": "images/items/teapot_used.png",
-          "codes": "teapot,setting_open_mode_ON",
+          "codes": "teapot",
           "secondary_codes": "used"
         }
       ]
@@ -400,12 +400,12 @@
 	  "stages": [
         {
           "img": "images/items/letter_lola.png",
-		  "codes": "letter_lola,setting_open_mode_ON",
+		  "codes": "letter_lola",
           "secondary_codes": "none"
         },
         {
           "img": "images/items/letter_lola_used.png",
-          "codes": "letter_lola,setting_open_mode_ON",
+          "codes": "letter_lola",
           "secondary_codes": "used"
         }
       ]
