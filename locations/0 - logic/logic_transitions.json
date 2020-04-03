@@ -112,7 +112,6 @@
 				// Transition from North to South East
 				"name": "n to se",
 				"access_rules": [
-					"large_roast",
 					"melody_memory",
 					"@logic_settings/openMode"
 				],

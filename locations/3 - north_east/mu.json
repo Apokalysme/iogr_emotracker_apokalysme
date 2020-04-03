@@ -47,7 +47,7 @@
 				"name": "Middle Level",
 				"clear_as_group": false,
 				"access_rules": [
-					"hope_statue:1"
+					"hope_statue:1, psycho_slide"
 				],
 				"item_count": 1
 			},

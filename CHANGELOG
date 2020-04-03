@@ -1,12 +1,10 @@
-v3.99.0.1
-  * Item Tracker :
-    * Item AutoTracking : add autotracking uses of items
+TODO :
   * Map AutoTracking :
     * Which needs some RAM hunt to complete triggers list to implement
   * Detailled Map Tracker :
     * Which need some tests for me to understand how I can use LUA script to "mod" EmoTracker to adjust some ways it works (to link World Maps and Area Maps I'll use)
 
-alpha v2.99.0.1
+alpha_v3 - v2.7.0.1 :
 * General :
   * Change : Replace "Item Tracker" by two variants : "Item Tracker - Full" and "Item Tracker - Compact"
   * Change : "Item Tracker - Classic" is available for the moment (for backward compatibility)
@@ -26,7 +24,11 @@ alpha v2.99.0.1
   * Wind Melody and Diamond Block are combined
   * Lance Letter and Magic Dust are combined
   * Will abilities are combined
-  * Freedan abilities are combined
+  * Freedan abilities are combined  
+* Autotracker - Items :
+  * Add : autotracking uses of items
+  * Change : Full and Compact autotracking integration
+  * Change : Optimization for consistency (information retrieval after a crash)
 * World Map Tracker :
   * Add : Open Mode setting
   * Add : Random Starting Location integration
