@@ -6,17 +6,17 @@
 		"stages": [
 			{
 				"img": "images/items/compact/inca_statues_a.png",
-				"codes": "inca_statues_a_inca_statues_b",
+				"codes": "inca_statue_a_inca_statue_b",
 				"secondary_codes": "inca_statues_a"
 			},
 			{
 				"img": "images/items/compact/inca_statues_b.png",
-				"codes": "inca_statues_a_inca_statues_b",
+				"codes": "inca_statue_a_inca_statue_b",
 				"secondary_codes": "inca_statues_b"
 			},
 			{
 				"img": "images/items/compact/inca_statues.png",
-				"codes": "inca_statues_a_inca_statues_b",
+				"codes": "inca_statue_a_inca_statue_b",
 				"secondary_codes": "inca_statues_all"
 			}
 		]
@@ -49,14 +49,14 @@
       "type": "progressive",
 	  "stages": [
 			{
-				"img": "images/items/compact/not_mu_and_stone.png",
-				"codes": "mu_key_purity_stone",
-				"secondary_codes": "not_mu_and_stone"
-			},
-			{
 				"img": "images/items/compact/mu_and_not_stone.png",
 				"codes": "mu_key_purity_stone",
 				"secondary_codes": "mu_and_not_stone"
+			},
+			{
+				"img": "images/items/compact/not_mu_and_stone.png",
+				"codes": "mu_key_purity_stone",
+				"secondary_codes": "not_mu_and_stone"
 			},
 			{
 				"img": "images/items/compact/mu_and_stone.png",

@@ -39,8 +39,8 @@
 				"name": "Sand Fanger",
 				"access_rules": [
 					"@logic_dungeons/great wall - out, spin_dash, dark_friar",
-					"greatWall_thirdSection_start, dark_friar",
-					"greatWall_spinDash_start"
+					"greatWall_thirdSection_start, spin_dash, dark_friar",
+					"greatWall_spinDash_start, spin_dash, dark_friar"
 				],
 				"hosted_item": "mystic_statue_4"
 			}
@@ -78,8 +78,8 @@
 			{
 				"name": "Spin Dash Dark Space",
 				"access_rules": [
-					"@logic_dungeons/great wall - out, dark_friar",
-					"greatWall_thirdSection_start, dark_friar",
+					"@logic_dungeons/great wall - out",
+					"greatWall_thirdSection_start",
 					"greatWall_spinDash_start"
 				],
 				"item_count": 1
@@ -89,7 +89,7 @@
 				"access_rules": [
 					"@logic_dungeons/great wall - out, dark_friar",
 					"greatWall_thirdSection_start, dark_friar",
-					"greatWall_spinDash_start"
+					"greatWall_spinDash_start, dark_friar"
 				],
 				"item_count": 1
 			}

@@ -61,7 +61,9 @@
 					"babel_bottom_start, aura, crystal_ring, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
 					"babel_bottom_start, aura, crystal_ring, @logic_transitions/nw to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
 					"babel_top_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
-					"babel_top_start, @logic_transitions/nw to se, @logic_transitions/se to sw, [@logic_switches/will ability]"
+					"babel_top_start, @logic_transitions/nw to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"red_jewel:36, [red_jewel:50], @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw, [@logic_switches/will ability]",
+					"red_jewel:36, [red_jewel:50], @logic_transitions/nw to se, @logic_transitions/se to sw, [@logic_switches/will ability]"
 				],
 				"item_count": 1
 			}

@@ -72,7 +72,7 @@
 			"pyramid_entranceDown_start",
 			"babel_bottom_start, aura, crystal_ring",
 			"babel_top_start",
-			"[red_jewel:36], red_jewel:50"
+			"red_jewel:36, [red_jewel:50]"
 		],
 		"sections": [
 			{

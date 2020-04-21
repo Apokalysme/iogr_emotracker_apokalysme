@@ -26,9 +26,9 @@ alpha_v3 - v2.7.0.1 :
   * Will abilities are combined
   * Freedan abilities are combined  
 * Autotracker - Items :
-  * Add : autotracking uses of items
+  * Add : autotracking uses of some items, for information retrieval after a crash/reset
   * Change : Full and Compact autotracking integration
-  * Change : Optimization for consistency (information retrieval after a crash)
+  * Change : Global optimization
 * World Map Tracker :
   * Add : Open Mode setting
   * Add : Random Starting Location integration
