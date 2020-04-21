@@ -45,7 +45,9 @@
 					"babel_bottom_start, aura, crystal_ring, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw",
 					"babel_bottom_start, aura, crystal_ring, @logic_transitions/nw to se, @logic_transitions/se to sw",
 					"babel_top_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw",
-					"babel_top_start, @logic_transitions/nw to se, @logic_transitions/se to sw"
+					"babel_top_start, @logic_transitions/nw to se, @logic_transitions/se to sw",
+					"red_jewel:36, [red_jewel:50], @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw",
+					"red_jewel:36, [red_jewel:50], @logic_transitions/nw to se, @logic_transitions/se to sw"
 				],
 				"item_count": 1
 			},
@@ -97,7 +99,9 @@
 					"babel_bottom_start, aura, crystal_ring, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw",
 					"babel_bottom_start, aura, crystal_ring, @logic_transitions/nw to se, @logic_transitions/se to sw",
 					"babel_top_start, @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw",
-					"babel_top_start, @logic_transitions/nw to se, @logic_transitions/se to sw"
+					"babel_top_start, @logic_transitions/nw to se, @logic_transitions/se to sw",
+					"red_jewel:36, [red_jewel:50], @logic_transitions/n to ne, @logic_transitions/ne to se, @logic_transitions/se to sw",
+					"red_jewel:36, [red_jewel:50], @logic_transitions/nw to se, @logic_transitions/se to sw"
 				],
 				"item_count": 1
 			},
@@ -105,7 +109,7 @@
 				"name": "inca ruins - in",
 				"access_rules": [
 					"incaRuins_windCliff_start",
-					"incaRuins_middleSection_start",
+					"incaRuins_middleSection_start"
 				],
 				"item_count": 1
 			},
@@ -140,7 +144,8 @@
 					"dao_emptyHouse_start, @logic_transitions/n to ne",
 					"pyramid_entranceDown_start, @logic_transitions/n to ne",
 					"babel_bottom_start, aura, crystal_ring, @logic_transitions/n to ne",
-					"babel_top_start, @logic_transitions/n to ne"
+					"babel_top_start, @logic_transitions/n to ne",
+					"red_jewel:36, [red_jewel:50], @logic_transitions/n to ne"
 				],
 				"item_count": 1
 			},
@@ -214,7 +219,8 @@
 					"dao_emptyHouse_start",
 					"pyramid_entranceDown_start",
 					"babel_bottom_start, aura, crystal_ring",
-					"babel_top_start"
+					"babel_top_start",
+					"red_jewel:36, [red_jewel:50]"
 				],
 				"item_count": 1
 			},
@@ -310,7 +316,8 @@
 					"ankorWat_mainHall_start, @logic_transitions/n to nw",
 					"dao_emptyHouse_start",
 					"babel_bottom_start, aura, crystal_ring",
-					"babel_top_start"
+					"babel_top_start",
+					"red_jewel:36, [red_jewel:50]"
 				],
 				"item_count": 1
 			},
@@ -372,7 +379,7 @@
 					"pyramid_entranceDown_start, @logic_transitions/to babel",
 					"babel_bottom_start",
 					"babel_top_start, @logic_transitions/to babel",
-					"[red_jewel:36], psycho_slide, @logic_transitions/to babel"
+					"red_jewel:36, [red_jewel:50], @logic_transitions/to babel"
 				],
 				"item_count": 1
 			},

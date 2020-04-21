@@ -38,7 +38,8 @@
 			"dao_emptyHouse_start, @logic_transitions/n to ne",
 			"pyramid_entranceDown_start, @logic_transitions/n to ne",
 			"babel_bottom_start, aura, crystal_ring, @logic_transitions/n to ne",
-			"babel_top_start, @logic_transitions/n to ne"
+			"babel_top_start, @logic_transitions/n to ne",
+			"red_jewel:36, [red_jewel:50], @logic_transitions/n to ne"
 		],
         "children": [
 

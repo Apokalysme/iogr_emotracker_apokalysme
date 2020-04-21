@@ -53,7 +53,8 @@
 			"dao_emptyHouse_start, spin_dash",
 			"pyramid_entranceDown_start, spin_dash",
 			"babel_bottom_start, aura, crystal_ring, spin_dash",
-			"babel_top_start, spin_dash"
+			"babel_top_start, spin_dash",
+			"red_jewel:36, [red_jewel:50]"
 		],
 		"sections": [
 			{
