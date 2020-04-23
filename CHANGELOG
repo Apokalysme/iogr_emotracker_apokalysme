@@ -8,10 +8,10 @@ alpha_v3 - v2.7.0.1 :
 * General :
   * Change : Replace "Item Tracker" by two variants : "Item Tracker - Full" and "Item Tracker - Compact"
   * Change : "Item Tracker - Classic" is available for the moment (for backward compatibility)
-  * Add : Stats upgrades tracking and auto-tracking (Great thanks to Neomatamune)
+  * Add : Stats upgrades tracking (Great thanks to Neomatamune)
 * Item Tracker - Full :
   * Re-organization for items, organized by
-    * Item : songs, statues, keys and others dungeons items, quests items
+    * Item : Songs, statues, keys and others dungeons items, quests items
 	* Hieroglyphs : Hieroglyphs, combinations and Father's Journal
 	* Abilities / Stats : Will/Freedan abilities and Stats upgrades
 	* Objectives : Mystic statues and Kara
@@ -26,7 +26,9 @@ alpha_v3 - v2.7.0.1 :
   * Will abilities are combined
   * Freedan abilities are combined  
 * Autotracker - Items :
-  * Add : autotracking uses of some items, for information retrieval after a crash/reset
+  * Add : Autotracking use of items
+  * Add : Stats autotracking (Great thanks to Neomatamune)
+  * Change : Can retrieve all informations after a crash / reset of EmoTracker (except Herbs)
   * Change : Full and Compact autotracking integration
   * Change : Global optimization
 * World Map Tracker :

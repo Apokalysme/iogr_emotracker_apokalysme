@@ -2,13 +2,13 @@
 
 Includes following :
 
-* Item Tracker :
+* Item Tracker (Full, Compact and Classic):
   * You can count Red Jewels, Herbs, Hieroglyphs, Crystal Balls, Rama/Hope Statues obtained
   * You can note Hieroglyphs order
   * You can note needed Mystic Statues
   * You can note used/given items for many of them
   * You can note stats you got
-  * Autotracking of items (not yet their use) and stats
+  * Autotracking of items and stats
 
 * Map Tracker :
   * Item tracking depending on pre-obtained items/abilities

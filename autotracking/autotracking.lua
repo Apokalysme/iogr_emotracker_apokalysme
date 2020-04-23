@@ -1,17 +1,18 @@
 --[[
 	   Name : autotracking.lua
-Description : Program to track automatically items obtained during an IoG:R seed
+Description : Program to track automatically items obtained and used during an IoG:R seed
 	Authors : Apokalysme, Neomatamune
 	Version : 3.0.0
-Last Change : 04/04/2020
+Last Change : 23/04/2020
 
    Features :
     * Item AutoTracking : (Apokalysme)
-		- Items obtained (but not their use)
+		- Items obtained and used
 		- Red Jewels
 		- Mystic Statues
 		- Kara's Paint location
-	* Stats AutoTracking : (Neomatamune)
+		- Work after a crash or reset of EmoTracker (except for Herbs)
+	* Stats AutoTracking : (Apokalysme/Neomatamune)
 		- Hit Points
 		- Attack
 		- Defense
@@ -19,13 +20,13 @@ Last Change : 04/04/2020
 
 -- Configuration --------------------------------------
 AUTOTRACKER_ENABLE_DEBUG_LOGGING = true
-AUTOTRACKER_ENABLE_INVENTORY_DEBUG = false
+AUTOTRACKER_ENABLE_INVENTORY_DEBUG = true
 AUTOTRACKER_ENABLE_ITEMS_DEBUG = true
-AUTOTRACKER_ENABLE_COUNTS_DEBUG = false
-AUTOTRACKER_ENABLE_HIEROGLYPHS_DEBUG = false
-AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG = false
-AUTOTRACKER_ENABLE_ABILITIES_DEBUG = false
-AUTOTRACKER_ENABLE_STATS_DEBUG = false
+AUTOTRACKER_ENABLE_COUNTS_DEBUG = true
+AUTOTRACKER_ENABLE_HIEROGLYPHS_DEBUG = true
+AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG = true
+AUTOTRACKER_ENABLE_ABILITIES_DEBUG = true
+AUTOTRACKER_ENABLE_STATS_DEBUG = true
 -------------------------------------------------------
 
 -- Settings display -----------------------------------
@@ -33,15 +34,16 @@ print("")
 print("Active Auto-Tracker Configuration")
 print("---------------------------------------------------------------------")
 print("Enable Item Tracking:        ", AUTOTRACKER_ENABLE_ITEM_TRACKING)
+print("---------------------------------------------------------------------")
+print("Enable Debug Logging:        ", AUTOTRACKER_ENABLE_DEBUG_LOGGING)
 if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-    print("    Enable General Debug Logging:        ", AUTOTRACKER_ENABLE_DEBUG_LOGGING)
-	print("    Enable Inventory Debug:        ", AUTOTRACKER_ENABLE_INVENTORY_DEBUG)
-	print("    Enable Unique Items Debug:        ", AUTOTRACKER_ENABLE_ITEMS_DEBUG)
-	print("    Enable Item Counts Debug:        ", AUTOTRACKER_ENABLE_COUNTS_DEBUG)
-	print("    Enable Hieroglyphs Debug:        ", AUTOTRACKER_ENABLE_HIEROGLYPHS_DEBUG)
-	print("    Enable Objectives Debug:        ", AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG)
-	print("    Enable Abilities Debug:        ", AUTOTRACKER_ENABLE_ABILITIES_DEBUG)
-	print("    Enable Stats Debug:            ", AUTOTRACKER_ENABLE_STATS_DEBUG)
+	print("  - Enable Inventory Debug:        ", AUTOTRACKER_ENABLE_INVENTORY_DEBUG)
+	print("  - Enable Unique Items Debug:        ", AUTOTRACKER_ENABLE_ITEMS_DEBUG)
+	print("  - Enable Item Counts Debug:        ", AUTOTRACKER_ENABLE_COUNTS_DEBUG)
+	print("  - Enable Hieroglyphs Debug:        ", AUTOTRACKER_ENABLE_HIEROGLYPHS_DEBUG)
+	print("  - Enable Objectives Debug:        ", AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG)
+	print("  - Enable Abilities Debug:        ", AUTOTRACKER_ENABLE_ABILITIES_DEBUG)
+	print("  - Enable Stats Debug:            ", AUTOTRACKER_ENABLE_STATS_DEBUG)
 end
 print("---------------------------------------------------------------------")
 print("")
@@ -67,38 +69,24 @@ U16_READ_CACHE_ADDRESS = 0
 -- Items table
 -- each item has an unique value in inventory
 ITEM_TABLE = {
-	-- [1] = "red_jewel",
 	[2] = "prison_key",
-	[3] = "inca_statue_a",
-	[4] = "inca_statue_b",
-	-- [6] = "herb",
+	[3] = "inca_statue_a", [4] = "inca_statue_b",
 	[7] = "diamond_block",
 	[8] = "melody_wind",
 	[9] = "melody_lola",
 	[10] = "large_roast",
-	[11] = "mine_key_a",
-	[12] = "mine_key_b",
+	[11] = "mine_key_a", [12] = "mine_key_b",
 	[13] = "melody_memory",
-	-- [14] = "crystal_ball",
 	[15] = "elevator_key",
 	[16] = "mu_key",
 	[17] = "purity_stone",
-	-- [18] = "hope_statue",
-	-- [19] = "rama_statue",
 	[20] = "magic_dust",
 	[22] = "letter_lance",
 	[23] = "necklace",
 	[24] = "will",
 	[25] = "teapot",
-	-- [26] = "mushroom_drop",
 	[28] = "black_glasses",
 	[29] = "gorgon_flower",
-	-- [30] = "hieroglyph_5",
-	-- [31] = "hieroglyph_4",
-	-- [32] = "hieroglyph_3",
-	-- [33] = "hieroglyph_1",
-	-- [34] = "hieroglyph_6",
-	-- [35] = "hieroglyph_2",
 	[36] = "aura",
 	[37] = "letter_lola",
 	[38] = "journal",
@@ -118,7 +106,6 @@ INVENTORY_COUNT = 0
 -- table is used this way :
 --  * INVENTORY_TABLE[item][1]
 --  * INVENTORY_TABLE[item][2]
-
 INVENTORY_TABLE = {}
 
 INVENTORY_TABLE["prison_key"] = {0 , 0}
@@ -155,7 +142,6 @@ INVENTORY_TABLE["apple"] = {0 , 0}
 
 --[[
 	Kara's paint location
-
 	Address $0x039523
 	 - Edward's : #$a7
    Diamond Mine : #$80
@@ -169,14 +155,7 @@ KARA_LOCATION = 0
 KARA_SET = 0
 
 -- Mystic statues
-MYSTIC_STATUE_NEEDED = {
-	[1] = 0,
-	[2] = 0,
-	[3] = 0,
-	[4] = 0,
-	[5] = 0,
-	[6] = 0
-}
+MYSTIC_STATUE_NEEDED = { [1] = 0, [2] = 0, [3] = 0, [4] = 0, [5] = 0, [6] = 0 }
 -- Mystic statues check state
 MYSTIC_STATUE_CHECK = 0
 -- Mystic statues mark state
@@ -189,19 +168,16 @@ HIEROGLYPHS_CHECK = 0
 -- Hieroglyphs combination check state
 HIEROGLYPHS_COMBINATION_SET = 0
 -- Hieroglyphs combination
-HIEROGLYPHS_COMBINATION = {
-	[1] = 0,
-	[2] = 0,
-	[3] = 0,
-	[4] = 0,
-	[5] = 0,
-	[6] = 0
-}
+HIEROGLYPHS_COMBINATION = { [1] = 0, [2] = 0, [3] = 0, [4] = 0, [5] = 0, [6] = 0 }
 
 HIEROGLYPHS_PLACED = 0
 
 -- Ability table
--- 
+--  * first value is for ability obtained or not
+--  * second value is for ability upgraded or not
+-- table is used this way :
+--  * ABILITY[ability][1]
+--  * ABILITY[ability][2]
 ABILITY = {}
 
 ABILITY["psycho_dash"] = {0 , 0}
@@ -343,9 +319,7 @@ function newItemInInventory(segment)
 	
 	-- Debug informations about actual and new inventory count
 	if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_INVENTORY_DEBUG then
-		print("INVENTORY :")
-		print("Actual count : ", INVENTORY_COUNT)
-		print("New count : ", count)
+		print("INVENTORY : actual ", INVENTORY_COUNT, " - new ", count)
 	end
 	
 	-- If there is some change in inventory count
@@ -355,8 +329,7 @@ function newItemInInventory(segment)
 		for i = 0, 15 do
 			local value = ReadU8(segment, 0x7e0ab4 + i)
 			if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_INVENTORY_DEBUG then
-				print("Slot : ", i)
-				print("Item code : ", value)
+				print("Slot : ", i, " - item code : ", value)
 			end
 
 			-- Don't manage Hieroglyphs
@@ -400,18 +373,15 @@ function checkCountChange(new_count, code)
 	if new_count + INVENTORY_TABLE[code][2] ~= INVENTORY_TABLE[code][1] then
 		-- Debug informations about actual and new count
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_COUNTS_DEBUG then
-			print(code, " count :")
-			print("Actual count : ", INVENTORY_TABLE[code][1])
-			print("New count : ", new_count)
-			print("Quantity USED : ", INVENTORY_TABLE[code][2])
+			print(code, " count : actual ", INVENTORY_TABLE[code][1], " - new ", new_count, " - used ", INVENTORY_TABLE[code][2])
 		end
 		-- If there is a new in inventory, add 1
 		if new_count + INVENTORY_TABLE[code][2] > INVENTORY_TABLE[code][1] then
-			INVENTORY_TABLE[code][1] = INVENTORY_TABLE[code][1] + 1
+			INVENTORY_TABLE[code][1] = new_count + INVENTORY_TABLE[code][2]
 			updateTrackerCountedItem(code)
 		-- If there is one less, add 1 to used ones
 		elseif new_count + INVENTORY_TABLE[code][2] < INVENTORY_TABLE[code][1] then
-			INVENTORY_TABLE[code][2] = INVENTORY_TABLE[code][2] + 1
+			INVENTORY_TABLE[code][2] = INVENTORY_TABLE[code][1] - new_count
 		end
 	end
 end
@@ -435,6 +405,46 @@ function updateTrackerCountedItem(code)
 end
 
 --[[
+	Function : updateTrackerUsedCountedItem()
+ Description : update count from used flags in memory
+   Arguments : segment, code, array, max_count
+--]]
+function updateTrackerUsedCountedItem(segment, code, array, max_count)
+    local item = Tracker:FindObjectForCode(code)
+	
+	if item then
+		local count = 0
+		local i = 1
+		
+		-- checking through all addresses in memory for uses for these counted items
+		while i <= max_count do
+			local value = 0
+			local flagTest = 0
+		
+			value = ReadU8(segment, array[i][1])
+			-- Check if concerned flag is set
+			flagTest = value & array[i][2]
+
+			if flagTest > 0 then count = count + 1 end
+			i = i + 1
+		end
+	
+		-- if used items count is more than tracker has, update Tracker
+		if count > 0 then
+			-- Debug informations about actual and new count
+			if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_COUNTS_DEBUG then
+				print(code, " used count : actual ", INVENTORY_TABLE[code][2], " - new ", count)
+			end
+			INVENTORY_TABLE[code][2] = count
+			if item.AcquiredCount == 0 and INVENTORY_TABLE[code][1] == 0 then
+				item.AcquiredCount = count
+				INVENTORY_TABLE[code][1] = INVENTORY_TABLE[code][2]
+			end
+		end
+	end
+end
+
+--[[
 	Function : updateTrackerItems()
  Description : update items on Tracker (basic items)
    Arguments : <none>
@@ -447,9 +457,8 @@ function updateTrackerItems()
 			
 			if INVENTORY_TABLE[code][1] == 1 and item then
 				-- Debug information about new item obtained
-				if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_ITEMS_DEBUG then
-					print("Item : ", code)
-					print("Item gotten :", INVENTORY_TABLE[code][1])
+				if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_ITEMS_DEBUG and item.Active ~= true then
+					print("Item : ", code, " - flag ", INVENTORY_TABLE[code][1])
 				end
 				item.Active = true
 			end
@@ -464,22 +473,22 @@ end
 --]]
 function updateTrackerRedJewels(segment)
     local item = Tracker:FindObjectForCode("red_jewel")
-	-- Getting actual count marked in Tracker
-    local actualCount = item.AcquiredCount
-	-- Getting new count in memory (BCD format)
-    local newCount = tonumber(string.format("%04X", ReadU8(segment, 0x7e0ab0)))
+	if item then
+		-- Getting actual count marked in Tracker
+		local actualCount = item.AcquiredCount
+		-- Getting new count in memory (BCD format)
+		local newCount = tonumber(string.format("%04X", ReadU8(segment, 0x7e0ab0)))
 	
-	-- Debug informations about actual and new red jewels count
-	if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-		print("RED JEWELS COUNT :")
-		print("Actual count : ", actualCount)
-		print("New count : ", newCount)
-	end
+		-- Debug informations about actual and new red jewels count
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+			print("RED JEWELS COUNT : actual count ", actualCount, " - new ", newCount)
+		end
 	
-	-- if there is change in red jewel count, update Tracker
-	if (newCount - actualCount) > 0 then
-		item.AcquiredCount = newCount
-		newItemInInventory(segment)
+		-- if there is change in red jewel count, update Tracker
+		if (newCount - actualCount) > 0 then
+			item.AcquiredCount = newCount
+			newItemInInventory(segment)
+		end
 	end
 end
 
@@ -493,7 +502,7 @@ function updateTrackerCompactItems(code1, code2)
 	
 	local item = Tracker:FindObjectForCode(compact_code)
 
-    if item then
+    if item and item.CurrentStage ~= 2 then
         local value1 = INVENTORY_TABLE[code1][1]
 		local value2 = INVENTORY_TABLE[code2][1]
 		
@@ -525,19 +534,17 @@ function updateTrackerUsedItems(segment, code, address, flag)
 		-- Check if concerned flag is set
         local flagTest = value & flag
 		-- Debug information about flag state
-		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_ITEMS_DEBUG then
-			print("Used item : ", code)
-			print("Value : ", value)
-			print("Flag Test : ", flagTest)
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_ITEMS_DEBUG and item.Active ~= true then
+			print("Used item : code ", code, " - value : ", value, " - flag : ", flagTest)
 		end
 		
 		-- if correct flag is ok, update Tracker
-        if flagTest ~= 0 then
+        if flagTest ~= 0 and INVENTORY_TABLE[code][2] ~= 1 then
 			INVENTORY_TABLE[code][1] = 1
 			INVENTORY_TABLE[code][2] = 1
             item.Active = true
 			if code ~= "letter_lance" and code ~= "magic_dust" and code ~= "crystal_ring" and code ~= "aura" then
-				item.CurrentStage = 2
+				item.CurrentStage = 1
 			end
         end
     end
@@ -556,25 +563,24 @@ function updateTrackerAbilities(segment, code, address, flag)
 		-- Check if concerned flag is set
         local flagTest = value & flag
 		-- Debug information about flag state
-		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_ABILITIES_DEBUG then
-			print("Ability : ", code)
-			print("Value : ", value)
-			print("Flag Test : ", flagTest)
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_ABILITIES_DEBUG and ABILITY[code][1] ~= 1 then
+			print("Ability : code ", code, " - value ", value, " - flag ", flagTest)
 		end
 		
 		-- if ability is obtained, update Tracker
-        if flagTest ~= 0 then
+        if flagTest ~= 0 and ABILITY[code][1] ~= 1 then
 			ABILITY[code][1] = 1
-            if code == "psycho_dash" or code == "dark_friar" then item.CurrentStage = 1
+            if code == "psycho_dash" or code == "dark_friar" then
+				item.CurrentStage = 1
+				-- if we already have an upgrade for this ability, update Tracker
+				if ABILITY[code][2] == 1 then
+					item.CurrentStage = 2
+				end
 			else item.Active = true
 			end
 			
 			updateTrackerCompactAbilities("will_abilities","psycho_dash","psycho_slide","spin_dash")
 			updateTrackerCompactAbilities("freedan_abilities","dark_friar","aura_barrier","earthquaker")
-				
-			-- if we already have an upgrade for this ability, update Tracker
-			if ABILITY[code][2] == 1 then item.CurrentStage = 2
-			end
         end
     end
 end
@@ -593,27 +599,20 @@ function updateTrackerCompactAbilities(compact_code, code1, code2, code3)
 		local value3 = ABILITY[code3][1]
 		
 		-- if correct flag are ok, update Tracker
-        if value1 == 1 and value2 == 1 and value3 == 1 then
-			-- all abilities are obtained
-			item.CurrentStage = 7
-		elseif value1 == 1 and value2 == 0 and value3 == 0 then
-			-- only the first ability
-			item.CurrentStage = 1
-		elseif value1 == 0 and value2 == 1 and value3 == 0 then
-			-- only the second ability
-			item.CurrentStage = 2
-		elseif value1 == 0 and value2 == 0 and value3 == 1 then
-			-- only the third ability
-			item.CurrentStage = 3
-		elseif value1 == 1 and value2 == 1 and value3 == 0 then
-			-- first and second abilities
-			item.CurrentStage = 4
-		elseif value1 == 1 and value2 == 0 and value3 == 1 then
-			-- first and third abilities
-			item.CurrentStage = 5
-		elseif value1 == 0 and value2 == 1 and value3 == 1 then
-			-- second and third abilities
-			item.CurrentStage = 6
+		-- all abilities are obtained
+        if value1 == 1 and value2 == 1 and value3 == 1 then item.CurrentStage = 7
+		-- only the first ability
+		elseif value1 == 1 and value2 == 0 and value3 == 0 then item.CurrentStage = 1
+		-- only the second ability
+		elseif value1 == 0 and value2 == 1 and value3 == 0 then item.CurrentStage = 2
+		-- only the third ability
+		elseif value1 == 0 and value2 == 0 and value3 == 1 then item.CurrentStage = 3
+		-- first and second abilities
+		elseif value1 == 1 and value2 == 1 and value3 == 0 then item.CurrentStage = 4
+		-- first and third abilities
+		elseif value1 == 1 and value2 == 0 and value3 == 1 then item.CurrentStage = 5
+		-- second and third abilities
+		elseif value1 == 0 and value2 == 1 and value3 == 1 then item.CurrentStage = 6
         end
     end
 end
@@ -628,13 +627,10 @@ function upgradeTrackerAbilityUpgrades(segment, code, address, flag)
 	
     if item then
 		local value = ReadU8(segment, address)
-	
 		local upgradeTest = value & flag
 		
-		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_ABILITIES_DEBUG then
-			print("Ability Upgrade : ", code)
-			print("Value : ", value)
-			print("Upgrade Test : ", upgradeTest)
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_ABILITIES_DEBUG and ABILITY[code][2] ~= 1 then
+			print("Ability Upgrade : code ", code, " - value ", value, " - flag ", upgradeTest)
 		end
 
 		if upgradeTest ~= 0 then
@@ -643,8 +639,7 @@ function upgradeTrackerAbilityUpgrades(segment, code, address, flag)
 				item.CurrentStage = 2
 				ABILITY[code][2] = 1
 			-- if we don't have yet, just update ABILITY table
-			else
-				ABILITY[code][2] = 1
+			else ABILITY[code][2] = 1
 			end
 		end
     end
@@ -660,21 +655,17 @@ function updateTrackerObjectives(segment, code, address, flag)
 	
     if item then
         local value = ReadU8(segment, address)
-
 		-- Check if concerned flag is set
         local flagTest = value & flag
+		
 		-- Debug information about flag state
-		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG then
-			print("Objective code : ", code)
-			print("Value : ", value)
-			print("Flag Test : ", flagTest)
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG and item.Active ~= true then
+			print("Objective : code ", code, " - value ", value, " - flag ", flagTest)
 		end
 		
 		-- if objective is reached, update Tracker
-        if flagTest ~= 0 then
-            item.Active = true
-        else
-            item.Active = false
+        if flagTest ~= 0 then item.Active = true
+        else item.Active = false
         end
     end
 end
@@ -694,6 +685,7 @@ function updateTrackerNeededStatues(segment, address, flag)
 	
 	if item1 and item2 and item3 and item4 and item5 and item6 then
 		local value = ReadU8(segment, address)
+		
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG then
 			print("Needed Statues : ", value)
 		end
@@ -707,7 +699,7 @@ function updateTrackerNeededStatues(segment, address, flag)
 			if (MYSTIC_STATUE_NEEDED[4] == 1) then item4.CurrentStage = 1 end
 			if (MYSTIC_STATUE_NEEDED[5] == 1) then item5.CurrentStage = 1 end
 			if (MYSTIC_STATUE_NEEDED[6] == 1) then item6.CurrentStage = 1 end
-			
+			-- Set this variable to not do this check again
 			MYSTIC_STATUE_SET = 1
         end
     end
@@ -734,10 +726,9 @@ function updateTrackerKaraPlaceFromLetter(segment, code, address, flag)
 		-- If player read Lance's letter, update Tracker
         if flagTest ~= 0 then
             item.CurrentStage = KARA_LOCATION
-			-- Set Kara's mark status to prevent new useless check
+			-- Set Kara's mark status to prevent new useless checks
 			KARA_SET = 1
-        else
-            item.CurrentStage = 0
+        else item.CurrentStage = 0
         end
     end
 end
@@ -849,14 +840,7 @@ end
    Arguments : segment, address, slot
 --]]
 function updateTrackerHieroglyphSlots(segment, address, slot)
-	local item = {
-		[1] = nil,
-		[2] = nil,
-		[3] = nil,
-		[4] = nil,
-		[5] = nil,
-		[6] = nil
-	}
+	local item = { [1] = nil, [2] = nil, [3] = nil, [4] = nil, [5] = nil, [6] = nil }
 	
 	item[1] = Tracker:FindObjectForCode("hieroglyph_a")
 	item[2] = Tracker:FindObjectForCode("hieroglyph_b")
@@ -915,8 +899,13 @@ function updateTrackerHieroglyphSlots(segment, address, slot)
 		end
 		k = 0
 		l = 1
-		if placed == 6 then HIEROGLYPHS_PLACED = 1 end
-		-- INVENTORY_TABLE["hieroglyphs"][2] = used
+		if placed == 6 then
+			HIEROGLYPHS_PLACED = 1
+			-- in case of crash or tracker restart, this allows to retrieve informations
+			INVENTORY_TABLE["hieroglyph_count"][1] = 6
+			INVENTORY_TABLE["hieroglyph_count"][2] = 6
+			checkCountChange(INVENTORY_TABLE["hieroglyph_count"][1], "hieroglyph_count")
+		end
 	end
 end
 
@@ -926,14 +915,7 @@ end
    Arguments : segment, address, slot
 --]]
 function updateSlotWithJournal(segment, address, slot)
-	local item = {
-		[1] = nil,
-		[2] = nil,
-		[3] = nil,
-		[4] = nil,
-		[5] = nil,
-		[6] = nil
-	}
+	local item = { [1] = nil, [2] = nil, [3] = nil, [4] = nil, [5] = nil, [6] = nil }
 	
 	item[1] = Tracker:FindObjectForCode("hieroglyph_a")
 	item[2] = Tracker:FindObjectForCode("hieroglyph_b")
@@ -982,7 +964,13 @@ function updateSlotWithJournal(segment, address, slot)
 		end
 		i = 0
 		j = 1
-		if placed == 6 then HIEROGLYPHS_PLACED = 1 end
+		if placed == 6 then
+			HIEROGLYPHS_PLACED = 1
+			-- in case of crash or tracker restart, this allows to retrieve informations
+			INVENTORY_TABLE["hieroglyph_count"][1] = 6
+			INVENTORY_TABLE["hieroglyph_count"][2] = 6
+			checkCountChange(INVENTORY_TABLE["hieroglyph_count"][1], "hieroglyph_count")
+		end
     end
 end
 
@@ -1002,9 +990,7 @@ function updateStatsPoints(address, code)
 
 		-- Debug informations about actual and new hit points
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_STATS_DEBUG then
-			print(code, " :")
-			print("Actual count : ", actualCount)
-			print("New count : ", newCount)
+			print(code, " : actual ", actualCount, " - new : ", newCount)
 		end
 		
 		-- if there is change in stat points, update Tracker
@@ -1035,38 +1021,6 @@ function watchItemsFromInventorySegment(segment)
 		
 		-- Information for the future
 		-- The seven jeweler award amounts are located, respectively, at $8cee0, $8cef1, $8cf02, $8cf13, $8cf24, $8cf35 and $8cf40
-    end
-end
-
---[[
-	   Watch : watchHieroglyphsFromMemorySegment()
- Description : Watch for memory to update hieroglyph placement
-   Arguments : segment
---]]
-function watchHieroglyphsFromMemorySegment(segment)
-	if not isInGame() then
-        return false
-    end
-
-    InvalidateReadCaches()
-
-    if AUTOTRACKER_ENABLE_ITEM_TRACKING then
-		-- Update only when player has given Father's Journal to Pyramid's guide
-		if HIEROGLYPHS_COMBINATION_SET == 1 and HIEROGLYPHS_PLACED ~= 1 then
-			updateTrackerHieroglyphSlots(segment, 0x7e0b28, 1)
-			updateTrackerHieroglyphSlots(segment, 0x7e0b2a, 2)
-			updateTrackerHieroglyphSlots(segment, 0x7e0b2c, 3)
-			updateTrackerHieroglyphSlots(segment, 0x7e0b2e, 4)
-			updateTrackerHieroglyphSlots(segment, 0x7e0b30, 5)
-			updateTrackerHieroglyphSlots(segment, 0x7e0b32, 6)
-		elseif INVENTORY_TABLE["journal"][1] == 1 and HIEROGLYPHS_PLACED ~= 1 then
-			updateSlotWithJournal(segment, 0x7e0b28, 1)
-			updateSlotWithJournal(segment, 0x7e0b2a, 2)
-			updateSlotWithJournal(segment, 0x7e0b2c, 3)
-			updateSlotWithJournal(segment, 0x7e0b2e, 4)
-			updateSlotWithJournal(segment, 0x7e0b30, 5)
-			updateSlotWithJournal(segment, 0x7e0b32, 6)
-		end
     end
 end
 
@@ -1202,19 +1156,20 @@ function watchSwitchesFromMemorySegment(segment)
 		
 		updateTrackerUsedItems(segment, "melody_lola", 0x7e0a08, 0x01)
 		updateTrackerUsedItems(segment, "melody_wind", 0x7e0a22, 0x04)
-		updateTrackerUsedItems(segment, "memory_melody", 0x7e0a02, 0x10)
+		updateTrackerUsedItems(segment, "melody_memory", 0x7e0a02, 0x10)
 		
 		updateTrackerUsedItems(segment, "inca_statue_a", 0x7e0a06, 0x01)
 		updateTrackerUsedItems(segment, "inca_statue_b", 0x7e0a06, 0x02)
 		
-		-- updateTrackerUsedItems(segment, "will", 0x7e0a12, 0x10)
+		updateTrackerUsedItems(segment, "will", 0x7e0a03, 0x80)
 		updateTrackerUsedItems(segment, "teapot", 0x7e0a05, 0x04)
 		updateTrackerUsedItems(segment, "letter_lola", 0x7e0a02, 0x02)
 		
 		updateTrackerUsedItems(segment, "letter_lance", 0x7e0a11, 0x40)
 		updateTrackerUsedItems(segment, "magic_dust", 0x7e0a11, 0x04)
+		updateTrackerUsedItems(segment, "crystal_ring", 0x7e0a07, 0x40)
 		
-		updateTrackerUsedItems(segment, "roast", 0x7e0a08, 0x02)
+		updateTrackerUsedItems(segment, "large_roast", 0x7e0a08, 0x02)
 		updateTrackerUsedItems(segment, "diamond_block", 0x7e0a05, 0x80)
 		updateTrackerUsedItems(segment, "purity_stone", 0x7e0a0e, 0x01)
 		updateTrackerUsedItems(segment, "necklace", 0x7e0a0d, 0x80)
@@ -1223,6 +1178,30 @@ function watchSwitchesFromMemorySegment(segment)
 		updateTrackerUsedItems(segment, "gorgon_flower", 0x7e0a1c, 0x40)
 		
 		updateTrackerUsedItems(segment, "journal", 0x7e0a1d, 0x80)
+		
+		crystal_ball_add = {}
+		crystal_ball_add[1] = { 0x7e0a0c , 0x01 }
+		crystal_ball_add[2] = { 0x7e0a0c , 0x02 }
+		crystal_ball_add[3] = { 0x7e0a0c , 0x04 }
+		crystal_ball_add[4] = { 0x7e0a0c , 0x08 }
+		
+		hope_statue_add = {}
+		hope_statue_add[1] = { 0x7e0a0f , 0x08 }
+		hope_statue_add[2] = { 0x7e0a0f , 0x40 }
+		
+		rama_statue_add = {}
+		rama_statue_add[1] = { 0x7e0a10 , 0x01 }
+		rama_statue_add[2] = { 0x7e0a10 , 0x02 }
+		
+		mushroom_drop_add = {}
+		mushroom_drop_add[1] = { 0x7e0a2b , 0x02 }
+		mushroom_drop_add[2] = { 0x7e0a2b , 0x80 }
+		mushroom_drop_add[3] = { 0x7e0a2c , 0x80 }
+		
+		updateTrackerUsedCountedItem(segment, "crystal_ball", crystal_ball_add, 4)
+		updateTrackerUsedCountedItem(segment, "hope_statue", hope_statue_add, 2)
+		updateTrackerUsedCountedItem(segment, "rama_statue", rama_statue_add, 2)
+		updateTrackerUsedCountedItem(segment, "mushroom_drop", mushroom_drop_add, 3)
 		
 		-- Information for the future
 		-- The seven jeweler award amounts are located, respectively, at $8cee0, $8cef1, $8cf02, $8cf13, $8cf24, $8cf35 and $8cf40
@@ -1253,7 +1232,6 @@ function watchSwitchesFromMemorySegment(segment)
 				print("Hieroglyph 5 : ", HIEROGLYPHS_COMBINATION[5])
 				print("Hieroglyph 6 : ", HIEROGLYPHS_COMBINATION[6])
 			end
-			
 			-- Once checked, this mark is set up to prevent new useless checks
 			HIEROGLYPHS_CHECK = 1
 		end
@@ -1288,6 +1266,38 @@ function watchSwitchesFromMemorySegment(segment)
 end
 
 --[[
+	   Watch : watchHieroglyphsFromMemorySegment()
+ Description : Watch for memory to update hieroglyph placement
+   Arguments : segment
+--]]
+function watchHieroglyphsFromMemorySegment(segment)
+	if not isInGame() then
+        return false
+    end
+
+    InvalidateReadCaches()
+
+    if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+		-- Update only when player has given Father's Journal to Pyramid's guide
+		if HIEROGLYPHS_COMBINATION_SET == 1 and HIEROGLYPHS_PLACED ~= 1 then
+			updateTrackerHieroglyphSlots(segment, 0x7e0b28, 1)
+			updateTrackerHieroglyphSlots(segment, 0x7e0b2a, 2)
+			updateTrackerHieroglyphSlots(segment, 0x7e0b2c, 3)
+			updateTrackerHieroglyphSlots(segment, 0x7e0b2e, 4)
+			updateTrackerHieroglyphSlots(segment, 0x7e0b30, 5)
+			updateTrackerHieroglyphSlots(segment, 0x7e0b32, 6)
+		elseif INVENTORY_TABLE["journal"][1] == 1 and HIEROGLYPHS_PLACED ~= 1 then
+			updateSlotWithJournal(segment, 0x7e0b28, 1)
+			updateSlotWithJournal(segment, 0x7e0b2a, 2)
+			updateSlotWithJournal(segment, 0x7e0b2c, 3)
+			updateSlotWithJournal(segment, 0x7e0b2e, 4)
+			updateSlotWithJournal(segment, 0x7e0b30, 5)
+			updateSlotWithJournal(segment, 0x7e0b32, 6)
+		end
+    end
+end
+
+--[[
 	   Watch : watchStatsFromMemorySegment()
  Description : Watch health address to update value
    Arguments : address
@@ -1312,8 +1322,6 @@ end
 
 ---- Items watchers -----------------------------------
 ScriptHost:AddMemoryWatch("IoG Inventory Data", 0x7e0ab0, 0x16, watchItemsFromInventorySegment)
----- Hieroglyphs watchers -----------------------------
-ScriptHost:AddMemoryWatch("IoG Hieroglyphs Data", 0x7e0b28, 0x20, watchHieroglyphsFromMemorySegment)
 ---- Abilities watchers -------------------------------
 ScriptHost:AddMemoryWatch("IoG Ability Data", 0x7e0aa2, 0x01, watchAbilitiesFromMemorySegment)
 ScriptHost:AddMemoryWatch("IoG Ability Upgrade Data", 0x7e0b16, 0x08, watchAbilityUpgradesFromMemorySegment)
@@ -1321,7 +1329,9 @@ ScriptHost:AddMemoryWatch("IoG Ability Upgrade Data", 0x7e0b16, 0x08, watchAbili
 ScriptHost:AddMemoryWatch("IoG Mystic Statue Data", 0x7e0a1f, 0x01, watchMysticStatuesFromMemorySegment)
 ScriptHost:AddMemoryWatch("IoG Kara's Paint Data", 0x7e0644, 0x01, watchKaraFromRoomSegment)
 ---- Switches watchers --------------------------------
-ScriptHost:AddMemoryWatch("IoG Switches Data", 0x7e0a02, 0x2a, watchSwitchesFromMemorySegment)
+ScriptHost:AddMemoryWatch("IoG Switches Data", 0x7e0a02, 0x2b, watchSwitchesFromMemorySegment)
+---- Hieroglyphs watchers -----------------------------
+ScriptHost:AddMemoryWatch("IoG Hieroglyphs Data", 0x7e0b28, 0x20, watchHieroglyphsFromMemorySegment)
 ---- Stats watchers -----------------------------------
 ScriptHost:AddMemoryWatch("IoG Stats Data", 0x7e0aca, 0x14, watchStatsFromMemorySegment)
 ----------------------------------------------- MAIN --
