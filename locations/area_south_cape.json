@@ -2,7 +2,7 @@
 	// South Cape - Area
     {
 		"name": "South Cape - Area",
-		"parent": "South Cape",
+		"parent": "@South Cape - Items/City",
 		"sections": [
 			{
 				"name": "Bell tower",

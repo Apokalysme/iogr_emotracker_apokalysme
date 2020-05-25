@@ -7,10 +7,19 @@
 				// Transition from South West to South East
 				"name": "sw to se",
 				"access_rules": [
-					"@logic_dungeons/inca",
+					"$incaDungeon",
 					"teapot",
 					"letter_lola",
-					"@logic_settings/openMode"
+					"$openModeON"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from South West to Seaside Palace
+				"name": "sw to seaside",
+				"access_rules": [
+					"@logic_transitions/sw to se, $skyGarden",
+					"@logic_regions/seaside palace"
 				],
 				"item_count": 1
 			},
@@ -19,7 +28,7 @@
 				"name": "sw to ne",
 				"access_rules": [
 					"letter_lola",
-					"@logic_settings/openMode"
+					"$openModeON"
 				],
 				"item_count": 1
 			},
@@ -29,7 +38,16 @@
 				"access_rules": [
 					"teapot",
 					"letter_lola",
-					"@logic_settings/openMode"
+					"$openModeON"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from South East to Seaside Palace
+				"name": "se to seaside",
+				"access_rules": [
+					"@logic_regions/seaside palace",
+					"$skyGarden"
 				],
 				"item_count": 1
 			},
@@ -37,10 +55,10 @@
 				// Transition from South East to North East
 				"name": "se to ne",
 				"access_rules": [
-					"@logic_dungeons/sky garden, mu_key",
+					"$skyGarden, mu_key",
 					"teapot, mu_key",
 					"letter_lola",
-					"@logic_settings/openMode"
+					"$openModeON"
 				],
 				"item_count": 1
 			},
@@ -49,7 +67,7 @@
 				"name": "se to n",
 				"access_rules": [
 					"melody_memory",
-					"@logic_settings/openMode"
+					"$openModeON"
 				],
 				"item_count": 1
 			},
@@ -58,7 +76,7 @@
 				"name": "se to nw",
 				"access_rules": [
 					"melody_memory",
-					"@logic_settings/openMode"
+					"$openModeON"
 				],
 				"item_count": 1
 			},
@@ -67,7 +85,7 @@
 				"name": "to babel",
 				"access_rules": [
 					"melody_memory",
-					"@logic_settings/openMode"
+					"$openModeON"
 				],
 				"item_count": 1
 			},
@@ -76,7 +94,17 @@
 				"name": "ne to n",
 				"access_rules": [
 					"will",
-					"@logic_settings/openMode"
+					"$openModeON"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from North East to Seaside Palace
+				"name": "ne to seaside",
+				"access_rules": [
+					"mu_key",
+					"@logic_transitions/ne to se, @logic_regions/seaside palace",
+					"@logic_transitions/ne to se, $skyGarden"
 				],
 				"item_count": 1
 			},
@@ -85,7 +113,7 @@
 				"name": "ne to se",
 				"access_rules": [
 					"letter_lola",
-					"@logic_settings/openMode"
+					"$openModeON"
 				],
 				"item_count": 1
 			},
@@ -95,7 +123,7 @@
 				"access_rules": [
 					"large_roast",
 					"melody_memory",
-					"@logic_settings/openMode"
+					"$openModeON"
 				],
 				"item_count": 1
 			},
@@ -104,7 +132,7 @@
 				"name": "n to ne",
 				"access_rules": [
 					"will",
-					"@logic_settings/openMode"
+					"$openModeON"
 				],
 				"item_count": 1
 			},
@@ -113,7 +141,16 @@
 				"name": "n to se",
 				"access_rules": [
 					"melody_memory",
-					"@logic_settings/openMode"
+					"$openModeON"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from North to Seaside Palace
+				"name": "n to seaside",
+				"access_rules": [
+					"@logic_transitions/n to se, @logic_regions/seaside palace",
+					"@logic_transitions/n to se, $skyGarden",
 				],
 				"item_count": 1
 			},
@@ -122,7 +159,7 @@
 				"name": "nw to se",
 				"access_rules": [
 					"melody_memory",
-					"@logic_settings/openMode"
+					"$openModeON"
 				],
 				"item_count": 1
 			}

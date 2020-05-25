@@ -1,0 +1,441 @@
+[
+	//  Seaside Palace
+	{
+		"name": "Seaside Palace - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"@logic_regions/north east, mu_key",
+			"southCape_churchRoof_start, @logic_transitions/sw to seaside",
+			"itory_village_start, @logic_transitions/sw to seaside",
+			"edwardsPrison_sewer_start, @logic_transitions/sw to seaside",
+			"incaRuins_windCliff_start, @logic_transitions/sw to seaside",
+			"incaRuins_middleSection_start, @logic_transitions/sw to seaside",
+			"freejia_emptyHouse_start, @logic_transitions/se to seaside",
+			"diamondMine_walledMiner_start, @logic_transitions/se to seaside",
+			"diamondMine_preFriar_start, @logic_transitions/se to seaside",
+			"skyGarden_entrance_start, @logic_transitions/se to seaside",
+			"skyGarden_westBottom_start, @logic_transitions/se to seaside",
+			"skyGarden_southEastRoom_start, @logic_transitions/se to seaside",
+			"seasidePalace_entrance_start",
+			"angelVillage_room_start, @logic_transitions/ne to seaside",
+			"watermia_emptyHouse_start, @logic_transitions/ne to seaside",
+			"greatWall_thirdSection_start, spin_dash, @logic_transitions/ne to seaside",
+			"greatWall_spinDash_start, spin_dash, @logic_transitions/ne to seaside",
+			"euro_hotel_start, @logic_transitions/n to seaside",
+			"mtTemple_Entrance_start, @logic_transitions/n to seaside",
+			"mtTemple_room4_start, @logic_transitions/n to seaside",
+			"nativesVillage_outdoor_start, @logic_transitions/n to seaside",
+			"ankorWat_gardenEntrance_start, @logic_transitions/n to seaside",
+			"ankorWat_mainHall_start, @logic_transitions/n to seaside",
+			"dao_emptyHouse_start, @logic_transitions/n to seaside",
+			"pyramid_entranceDown_start, @logic_transitions/n to seaside",
+			"babel_bottom_start, @logic_dungeons/boss rush, @logic_transitions/n to seaside",
+			"babel_top_start, @logic_transitions/n to seaside",
+			"@logic_switches/jeweler mansion, @logic_transitions/n to seaside",
+		],
+		"sections": [
+			{
+				"name": "Palace",
+				"clear_as_group": false,
+				"item_count": 3
+			},
+			{
+				"name": "Coffin",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_switches/lily"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Purified Palace",
+				"clear_as_group": false,
+				"access_rules": [
+					"purity_stone"
+				],
+				"item_count": 1
+			}
+		],
+		"map_locations": [{
+			"map": "world",
+			"x": 900,
+			"y": 135
+		}],
+		"children": [
+			//  Seaside Palace
+			{
+				"name": "Seaside Palace - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+				"sections": [{
+					"name": "Entrance",
+					"item_count": 1
+				}],
+				"map_locations": [{
+					"map": "world",
+					"x": 940,
+					"y": 135
+				}]
+			},
+			{
+				"name": "Seaside Palace - Hint",
+				"chest_unopened_img": "images/icons/hint.png",
+				"chest_opened_img": "images/icons/hint_gotten.png",
+				"access_rules": [ "setting_hints_visible" ],
+				"sections": [{
+					"name": "Empty Coffin",
+					"access_rules": [
+						"@logic_switches/lily"
+					],
+					"item_count": 1
+				}],
+				"map_locations": [{
+					"map": "world",
+					"x": 940,
+					"y": 95
+				}]
+			}
+		]
+	},
+	
+	// Mu
+	{
+		"name": "Mu - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"seasidePalace_entrance_start, mu_key",
+			"angelVillage_room_start",
+			"watermia_emptyHouse_start",
+			"greatWall_thirdSection_start, spin_dash",
+			"greatWall_spinDash_start, spin_dash",
+			"@logic_regions/north east"
+		],
+		"sections": [
+			{
+				"name": "Higher Level",
+				"clear_as_group": false,
+				"item_count": 3
+			},
+			{
+				"name": "Middle Level",
+				"clear_as_group": false,
+				"access_rules": [
+					"hope_statue:1, psycho_slide"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Lower Level",
+				"clear_as_group": false,
+				"access_rules": [
+					"hope_statue:2"
+				],
+				"item_count": 3
+			},
+			{
+				"name": "Vampires",
+				"access_rules": [
+					"hope_statue:2, rama_statue:2"
+				],
+				"hosted_item": "mystic_statue_3"
+			}
+		],
+		"map_locations": [{
+			"map": "world",
+			"x": 800,
+			"y": 120
+		}],
+		"children": [
+			// Mu
+			{
+				"name": "Mu - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+				"sections": [
+					{
+						"name": "Middle Level",
+						"clear_as_group": false,
+						"access_rules": [
+							"hope_statue:1"
+						],
+						"item_count": 1
+					},
+					{
+						"name": "Slider",
+						"clear_as_group": false,
+						"access_rules": [
+							"hope_statue:1"
+						],
+						"item_count": 1
+					}
+				],
+				"map_locations": [{
+					"map": "world",
+					"x": 840,
+					"y": 120
+				}]
+			}
+		]
+	},
+	
+	//  North East Continent
+    {
+        "name": "North East Continent",
+        "group": "North East Continent",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"seasidePalace_entrance_start, mu_key",
+			"angelVillage_room_start",
+			"watermia_emptyHouse_start",
+			"greatWall_thirdSection_start, spin_dash",
+			"greatWall_spinDash_start, spin_dash",
+			"@logic_regions/north east"
+		],
+        "children": [
+			// Angel Village
+			{
+				"name": "Angel Village - Items",
+				"sections": [{
+					"name": "City",
+					"clear_as_group": false,
+					"item_count": 1
+				}],
+				"map_locations": [{
+					"map": "world",
+					"x": 860,
+					"y": 345
+				}],
+				"children": [
+					{
+						"name": "Angel Village - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [{
+							"name": "City",
+							"item_count": 1
+						}],
+						"map_locations": [{
+							"map": "world",
+							"x": 900,
+							"y": 345
+						}]
+					}
+				]
+			},
+	
+			// Watermia
+			{
+				"name": "Watermia - Items",
+				"sections": [{
+					"name": "City",
+					"clear_as_group": false,
+					"item_count": 4
+				}],
+				"map_locations": [{
+					"map": "world",
+					"x": 720,
+					"y": 420
+				}],
+				"children": [
+					{
+						"name": "Watermia - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [{
+							"name": "City",
+							"item_count": 1
+						}],
+						"map_locations": [{
+							"map": "world",
+							"x": 760,
+							"y": 420
+						}]
+					},
+					{
+						"name": "Watermia - Hint",
+						"chest_unopened_img": "images/icons/hint.png",
+						"chest_opened_img": "images/icons/hint_gotten.png",
+						"access_rules": [ "setting_hints_visible" ],
+						"sections": [{
+							"name": "Kara's Journal",
+							"item_count": 1
+						}],
+						"map_locations": [{
+							"map": "world",
+							"x": 760,
+							"y": 380
+						}]
+					}
+				]
+			}
+		]
+	},
+	
+	// Wind Tunnel
+	{
+		"name": "Wind Tunnel - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"seasidePalace_entrance_start, mu_key, psycho_slide",
+			"angelVillage_room_start, psycho_slide",
+			"watermia_emptyHouse_start, psycho_slide",
+			"greatWall_thirdSection_start, spin_dash, psycho_slide",
+			"greatWall_spinDash_start, spin_dash, psycho_slide",
+			"@logic_regions/north east, psycho_slide"
+		],
+		"sections": [{
+			"name": "Dark Cave",
+			"clear_as_group": false,
+			"item_count": 5
+		}],
+		"map_locations": [{
+			"map": "world",
+			"x": 940,
+			"y": 345
+		}],
+		"children": [
+			// Wind Tunnel - Kara's Paint
+			{
+				"name": "Wind Tunnel - Kara's Paint",
+				"access_rules": [
+					"kara_angel_dungeon"
+				],
+				"sections": [{
+					"name": "Kara's Paint",
+					"access_rules": [
+						"magic_dust"
+					],
+					"hosted_item": "save_kara"
+				}],
+				"map_locations": [{
+					"map": "world",
+					"x": 900,
+					"y": 305
+				}]
+			},
+			{
+				"name": "Wind Tunnel - Hint",
+				"chest_unopened_img": "images/icons/hint.png",
+				"chest_opened_img": "images/icons/hint_gotten.png",
+				"access_rules": [ "setting_hints_visible" ],
+				"sections": [{
+					"name": "Ishtar Apprentice",
+					"item_count": 1
+				}],
+				"map_locations": [{
+					"map": "world",
+					"x": 940,
+					"y": 305
+				}]
+			}
+		]
+	},
+	
+	// Great Wall - Items
+	{
+		"name": "Great Wall - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"sections": [
+			{
+				"name": "Entrance",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/great wall - out",
+					"greatWall_thirdSection_start, spin_dash",
+					"greatWall_spinDash_start, spin_dash"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Fall Down",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/great wall - out",
+					"greatWall_thirdSection_start, spin_dash",
+					"greatWall_spinDash_start, spin_dash"
+				],
+				"item_count": 2
+			},
+			{
+				"name": "Slide",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/great wall - out",
+					"greatWall_thirdSection_start, spin_dash",
+					"greatWall_spinDash_start, spin_dash"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Sand Fanger",
+				"access_rules": [
+					"@logic_dungeons/great wall - out, spin_dash, dark_friar",
+					"greatWall_thirdSection_start, spin_dash, dark_friar",
+					"greatWall_spinDash_start, spin_dash, dark_friar"
+				],
+				"hosted_item": "mystic_statue_4"
+			}
+		],
+		"map_locations": [{
+			"map": "world",
+			"x": 650,
+			"y": 280
+		}]
+	},
+	// Great Wall - Dark Spaces
+	{
+		"name": "Great Wall - Dark Spaces",
+		"chest_unopened_img": "images/icons/dark_space.png",
+		"chest_opened_img": "images/icons/dark_space_visited.png",
+		"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+		"sections": [
+			{
+				"name": "Slide",
+				"access_rules": [
+					"@logic_dungeons/great wall - out, $chaosMode, [spin_dash]",
+					"@logic_dungeons/great wall - out, $chaosMode, [psycho_slide]",
+					"greatWall_thirdSection_start",
+					"greatWall_spinDash_start, setting_mode_beatable",
+					"greatWall_spinDash_start, setting_mode_completable",
+					"greatWall_spinDash_start, $chaosMode, [spin_dash]",
+					"greatWall_spinDash_start, $chaosMode, [psycho_slide]",
+					"@logic_dungeons/great wall - out, setting_mode_completable",
+					"@logic_dungeons/great wall - out, setting_mode_beatable"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Spin Dash Dark Space",
+				"access_rules": [
+					"@logic_dungeons/great wall - out",
+					"greatWall_thirdSection_start",
+					"greatWall_spinDash_start"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Statues Room",
+				"access_rules": [
+					"@logic_dungeons/great wall - out, dark_friar",
+					"greatWall_thirdSection_start, dark_friar",
+					"greatWall_spinDash_start, dark_friar"
+				],
+				"item_count": 1
+			}
+		],
+		"map_locations": [{
+			"map": "world",
+			"x": 690,
+			"y": 280
+		}]
+	}
+]
