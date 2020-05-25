@@ -1,13 +1,9 @@
-TODO :
-  * Map AutoTracking :
-    * Which needs some RAM hunt to complete triggers list to implement
-  * Detailled Map Tracker :
-    * Which need some tests for me to understand how I can use LUA script to "mod" EmoTracker to adjust some ways it works (to link World Maps and Area Maps I'll use)
-
-alpha_v3 - v2.7.0.1 :
+v3.0.0.0 :
 * General :
   * Change : Replace "Item Tracker" by two variants : "Item Tracker - Full" and "Item Tracker - Compact"
   * Change : "Item Tracker - Classic" is available for the moment (for backward compatibility)
+  * Change : Global optimization and architecture adjustments
+  * Change : Use LUA to load files depending on which tracker is used
   * Add : Stats upgrades tracking (Great thanks to Neomatamune)
 * Item Tracker - Full :
   * Re-organization for items, organized by
@@ -36,6 +32,7 @@ alpha_v3 - v2.7.0.1 :
   * Add : Random Starting Location integration
   * Add : Hints
   * Change : Pyramids items in Room 2 are accessible in Logic with Will if you start in Pyramid DS (Bottom)
+  * Change : Logic optimization, use of LUA to factorize locations informations
 
 v2.0.0.0 :
 * General :

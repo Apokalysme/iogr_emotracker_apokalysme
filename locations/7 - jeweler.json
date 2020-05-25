@@ -70,7 +70,7 @@
 		"chest_unopened_img": "images/icons/chest_unopened.png",
 		"chest_opened_img": "images/icons/chest_opened.png",
         "access_rules": [
-			"red_jewel:36, [red_jewel:50]"
+			"@logic_switches/jeweler mansion"
 		],
         "sections": [
             {

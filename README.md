@@ -20,3 +20,5 @@ Includes following :
   * Open Mode ON/OFF
   * Logic Variant
   * Random Start Location
+
+If you want more informations, you should take a look on Wiki pages : https://github.com/Apokalysme/iogr_emotracker_apokalysme/wiki

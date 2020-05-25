@@ -1,0 +1,320 @@
+[
+	// South East Continent
+    {
+        "name": "South East Continent",
+        "group": "South East Continent",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"freejia_emptyHouse_start",
+			"diamondMine_walledMiner_start",
+			"diamondMine_preFriar_start",
+			"skyGarden_entrance_start",
+			"skyGarden_westBottom_start",
+			"skyGarden_southEastRoom_start",
+			"@logic_regions/south east"
+		],
+        "children": [
+			// Diamond Coast
+			{
+				"name": "Diamond Coast - Items",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 590,
+						"y": 860
+					}
+				],
+				"children": [
+					{
+						"name": "Diamond Coast - Hint",
+						"chest_unopened_img": "images/icons/hint.png",
+						"chest_opened_img": "images/icons/hint_gotten.png",
+						"access_rules": [ "setting_hints_visible" ],
+						"sections": [
+							{
+								"name": "Man",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 590,
+								"y": 820
+							}
+						]
+					}
+				]
+			},
+			
+			// Freejia
+			{
+				"name": "Freejia - Items",
+				"sections": [
+					{
+						"name": "City",
+						"clear_as_group": false,
+						"item_count": 5
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 580,
+						"y": 715
+					}
+				],
+				"children": [
+					{
+						"name": "Freejia - Dark Spaces",
+						"chest_unopened_img": "images/icons/dark_space.png",
+						"chest_opened_img": "images/icons/dark_space_visited.png",
+						"access_rules": [ "setting_dark_spaces_all" ],
+						"sections": [
+							{
+								"name": "City",
+								"item_count": 1
+							}
+						],
+						"map_locations": [
+							{
+								"map": "world",
+								"x": 620,
+								"y": 715
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	
+	// Diamond Mine
+	{
+		"name": "Diamond Mine - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"freejia_emptyHouse_start",
+			"diamondMine_walledMiner_start",
+			"diamondMine_preFriar_start",
+			"skyGarden_entrance_start",
+			"skyGarden_westBottom_start",
+			"skyGarden_southEastRoom_start",
+			"@logic_regions/south east"
+		],
+		"sections": [
+			{
+				"name": "Entrance",
+				"clear_as_group": false,
+				"item_count": 1
+			},
+			{
+				"name": "Buried Miner",
+				"clear_as_group": false,
+				"access_rules": [
+					"$oneWillAbility"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Alone Miner",
+				"clear_as_group": false,
+				"access_rules": [
+					"dark_friar",
+					"spin_dash"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "Bottom",
+				"clear_as_group": false,
+				"access_rules": [
+					"elevator_key"
+				],
+				"item_count": 2
+			},
+			{
+				"name": "Samlet",
+				"clear_as_group": false,
+				"access_rules": [
+					"$allMineKeys"
+				],
+				"item_count": 1
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 810,
+				"y": 810
+			}
+		],
+		"children": [
+			{
+				"name": "Diamond Mine - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+				"sections": [
+					{
+						"name": "Buried Miner Room",
+						"item_count": 1
+					},
+					{
+						"name": "Pre Friar",
+						"item_count": 1
+					},
+					{
+						"name": "Dark Friar",
+						"access_rules": [
+							"$oneWillAbility"
+						],
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 850,
+						"y": 810
+					}
+				]
+			},
+			{
+				"name": "Diamond Mine - Kara's Paint",
+				"access_rules": [
+					"kara_diamond_mine"
+				],
+				"sections": [
+					{
+						"name": "Kara's Paint",
+						"access_rules": [
+							"$allMineKeys, magic_dust"
+						],
+					"hosted_item": "save_kara"
+				}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 810,
+						"y": 770
+					}
+				]
+			}
+		]
+	},
+	
+	// Sky Garden - Items
+	{
+		"name": "Sky Garden - Items",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"freejia_emptyHouse_start",
+			"diamondMine_walledMiner_start",
+			"diamondMine_preFriar_start",
+			"skyGarden_entrance_start",
+			"skyGarden_westBottom_start",
+			"skyGarden_southEastRoom_start",
+			"@logic_regions/south east"
+		],
+		"sections": [
+			{
+				"name": "East",
+				"clear_as_group": false,
+				"item_count": 3
+			},
+			{
+				"name": "West",
+				"clear_as_group": false,
+				"access_rules": [
+					"dark_friar",
+					"aura_barrier"
+				],
+				"item_count": 2
+			},
+			{
+				"name": "South East",
+				"clear_as_group": false,
+				"access_rules": [
+					"dark_friar"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "South West - Top",
+				"clear_as_group": false,
+				"access_rules": [
+					"[$oneWillAbility]"
+				],
+				"item_count": 1
+			},
+			{
+				"name": "South West - Below",
+				"clear_as_group": false,
+				"item_count": 1
+			},
+			{
+				"name": "Viper",
+				"access_rules": [
+					"crystal_ball:4"
+				],
+				"hosted_item": "mystic_statue_2"
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 750,
+				"y": 630
+			}
+		],
+		"children": [
+			// Sky Garden - Dark Spaces
+			{
+				"name": "Sky Garden - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_dungeons", "setting_dark_spaces_all" ],
+				"sections": [
+					{
+						"name": "Entrance",
+						"item_count": 1
+					},
+					{
+						"name": "West - Below",
+						"item_count": 1
+					},
+					{
+						"name": "South East",
+						"item_count": 1
+					},
+					{
+						"name": "South West",
+						"access_rules": [
+							"[dark_friar]"
+						],
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 790,
+						"y": 630
+					}
+				]
+			}
+		]
+	}
+]

@@ -1,4 +1,71 @@
 [
+	// Dao
+	{
+		"name": "Dao",
+		"chest_unopened_img": "images/icons/chest_unopened.png",
+		"chest_opened_img": "images/icons/chest_opened.png",
+		"access_rules": [
+			"babel_top_start",
+			"dao_emptyHouse_start",
+			"pyramid_entranceDown_start",
+			"@logic_regions/north west"
+		],
+		"sections": [
+			{
+				"name": "City",
+				"clear_as_group": false,
+				"item_count": 4
+			}
+		],
+		"map_locations": [
+			{
+				"map": "world",
+				"x": 125,
+				"y": 265
+			}
+		],
+		"children": [
+			{
+				"name": "Dao - Dark Spaces",
+				"chest_unopened_img": "images/icons/dark_space.png",
+				"chest_opened_img": "images/icons/dark_space_visited.png",
+				"access_rules": [ "setting_dark_spaces_all" ],
+				"sections": [
+					{
+						"name": "City",
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 165,
+						"y": 265
+					}
+				]
+			},
+			{
+				"name": "Dao - Hint",
+				"chest_unopened_img": "images/icons/hint.png",
+				"chest_opened_img": "images/icons/hint_gotten.png",
+				"access_rules": [ "setting_hints_visible" ],
+				"sections": [
+					{
+						"name": "Girl with Jackal Note",
+						"item_count": 1
+					}
+				],
+				"map_locations": [
+					{
+						"map": "world",
+						"x": 165,
+						"y": 225
+					}
+				]
+			}
+		]
+	},
+	
 	// Pyramid
 	{
 		"name": "Pyramid",
