@@ -393,7 +393,7 @@
 				"name": "Castoth",
 				"access_rules": [
 					"@logic_dungeons/inca ruins - out, $incaDungeon",
-					"@logic_dungeons/inca ruins - in, melody_wind, $incanStatues"
+					"@logic_dungeons/inca ruins - in, $incaStartDungeon"
 				],
 				"hosted_item": "mystic_statue_1"
 			}
@@ -454,8 +454,8 @@
 			"southCape_churchRoof_start, $incaDungeon",
 			"itory_village_start, $incaDungeon",
 			"edwardsPrison_sewer_start, $incaDungeon",
-			"incaRuins_windCliff_start, $incaDungeon",
-			"incaRuins_middleSection_start, $incaDungeon",
+			"incaRuins_windCliff_start, $incaStartDungeon",
+			"incaRuins_middleSection_start, $incaStartDungeon",
 			"@logic_regions/south west, $incaDungeon"
 		],
 		"sections": [

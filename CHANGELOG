@@ -1,4 +1,8 @@
 v3.0.0.0 :
+* World Map Tracker :
+  * Fix : Seaside Palace access logic
+
+v3.0.0.0 :
 * General :
   * Change : Replace "Item Tracker" by two variants : "Item Tracker - Full" and "Item Tracker - Compact"
   * Change : "Item Tracker - Classic" is available for the moment (for backward compatibility)
