@@ -15,11 +15,35 @@
 				"item_count": 1
 			},
 			{
-				// Transition from South West to Seaside Palace
+				// Transition from South West to South East
+				"name": "inca to se",
+				"access_rules": [
+					"$incaStartDungeon",
+					"teapot",
+					"letter_lola",
+					"$openModeON"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from South West to seaside_palace
 				"name": "sw to seaside",
 				"access_rules": [
-					"@logic_transitions/sw to se, $skyGarden",
-					"@logic_regions/seaside palace"
+					"$incaDungeon, $skyGarden",
+					"letter_lola, $skyGarden",
+					"teapot",
+					"$openModeON"
+				],
+				"item_count": 1
+			},
+			{
+				// Transition from South West to seaside_palace
+				"name": "inca to seaside",
+				"access_rules": [
+					"$incaStartDungeon, $skyGarden",
+					"letter_lola, $skyGarden",
+					"teapot",
+					"$openModeON"
 				],
 				"item_count": 1
 			},
@@ -43,10 +67,11 @@
 				"item_count": 1
 			},
 			{
-				// Transition from South East to Seaside Palace
+				// Transition from South East to seaside_palace
 				"name": "se to seaside",
 				"access_rules": [
-					"@logic_regions/seaside palace",
+					"teapot",
+					"$openModeON",
 					"$skyGarden"
 				],
 				"item_count": 1
@@ -99,11 +124,12 @@
 				"item_count": 1
 			},
 			{
-				// Transition from North East to Seaside Palace
+				// Transition from North East to seaside_palace
 				"name": "ne to seaside",
 				"access_rules": [
 					"mu_key",
-					"@logic_transitions/ne to se, @logic_regions/seaside palace",
+					"@logic_transitions/ne to se, teapot",
+					"@logic_transitions/ne to se, $openModeON",
 					"@logic_transitions/ne to se, $skyGarden"
 				],
 				"item_count": 1
@@ -146,11 +172,13 @@
 				"item_count": 1
 			},
 			{
-				// Transition from North to Seaside Palace
+				// Transition from North to seaside_palace
 				"name": "n to seaside",
 				"access_rules": [
-					"@logic_transitions/n to se, @logic_regions/seaside palace",
-					"@logic_transitions/n to se, $skyGarden",
+					"@logic_transitions/n to ne, mu_key",
+					"@logic_transitions/n to se, teapot",
+					"@logic_transitions/n to se, $openModeON",
+					"@logic_transitions/n to se, $skyGarden"
 				],
 				"item_count": 1
 			},

@@ -56,6 +56,18 @@ function incaDungeon()
 	end
 end
 
+-- use $incaStartDungeon
+function incaStartDungeon()
+	statues = incanStatues()
+	wind = Tracker:ProviderCountForCode("melody_wind")
+	
+	if ( statues > 0 and wind > 0 ) then
+		return 1
+	else
+		return 0
+	end
+end
+
 -- use $allMineKeys
 function allMineKeys()
 	key_a = Tracker:ProviderCountForCode("mine_key_a")

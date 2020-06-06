@@ -9,8 +9,8 @@
 			"southCape_churchRoof_start, @logic_transitions/sw to seaside",
 			"itory_village_start, @logic_transitions/sw to seaside",
 			"edwardsPrison_sewer_start, @logic_transitions/sw to seaside",
-			"incaRuins_windCliff_start, @logic_transitions/sw to seaside",
-			"incaRuins_middleSection_start, @logic_transitions/sw to seaside",
+			"incaRuins_windCliff_start, @logic_transitions/inca to seaside",
+			"incaRuins_middleSection_start, @logic_transitions/inca to seaside",
 			"freejia_emptyHouse_start, @logic_transitions/se to seaside",
 			"diamondMine_walledMiner_start, @logic_transitions/se to seaside",
 			"diamondMine_preFriar_start, @logic_transitions/se to seaside",
@@ -32,7 +32,7 @@
 			"pyramid_entranceDown_start, @logic_transitions/n to seaside",
 			"babel_bottom_start, @logic_dungeons/boss rush, @logic_transitions/n to seaside",
 			"babel_top_start, @logic_transitions/n to seaside",
-			"@logic_switches/jeweler mansion, @logic_transitions/n to seaside",
+			"@logic_switches/jeweler mansion, @logic_transitions/n to seaside"
 		],
 		"sections": [
 			{
