@@ -2,8 +2,8 @@
 	   Name : autotracking.lua
 Description : Program to track automatically items obtained and used during an IoG:R seed
 	Authors : Apokalysme, Neomatamune
-	Version : 3.0.0
-Last Change : 23/04/2020
+	Version : 3.2.0
+Last Change : 12/08/2020
 
    Features :
     * Item AutoTracking : (Apokalysme)
@@ -19,14 +19,14 @@ Last Change : 23/04/2020
 --]]
 
 -- Configuration --------------------------------------
-AUTOTRACKER_ENABLE_DEBUG_LOGGING = false
-AUTOTRACKER_ENABLE_INVENTORY_DEBUG = false
-AUTOTRACKER_ENABLE_ITEMS_DEBUG = false
-AUTOTRACKER_ENABLE_COUNTS_DEBUG = false
-AUTOTRACKER_ENABLE_HIEROGLYPHS_DEBUG = false
-AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG = false
-AUTOTRACKER_ENABLE_ABILITIES_DEBUG = false
-AUTOTRACKER_ENABLE_STATS_DEBUG = false
+AUTOTRACKER_ENABLE_DEBUG_LOGGING = true
+AUTOTRACKER_ENABLE_INVENTORY_DEBUG = true
+AUTOTRACKER_ENABLE_ITEMS_DEBUG = true
+AUTOTRACKER_ENABLE_COUNTS_DEBUG = true
+AUTOTRACKER_ENABLE_HIEROGLYPHS_DEBUG = true
+AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG = true
+AUTOTRACKER_ENABLE_ABILITIES_DEBUG = true
+AUTOTRACKER_ENABLE_STATS_DEBUG = true
 -------------------------------------------------------
 
 -- Settings display -----------------------------------
@@ -65,6 +65,30 @@ U8_READ_CACHE_ADDRESS = 0
 
 U16_READ_CACHE = 0
 U16_READ_CACHE_ADDRESS = 0
+
+-- These counted items have separated addresses for each element use
+-- Crystal ball uses
+CRYSTAL_BALL_ADD = {}
+CRYSTAL_BALL_ADD[1] = { 0x7e0a0c , 0x01 }
+CRYSTAL_BALL_ADD[2] = { 0x7e0a0c , 0x02 }
+CRYSTAL_BALL_ADD[3] = { 0x7e0a0c , 0x04 }
+CRYSTAL_BALL_ADD[4] = { 0x7e0a0c , 0x08 }
+
+-- Hope statue uses
+HOPE_STATUE_ADD = {}
+HOPE_STATUE_ADD[1] = { 0x7e0a0f , 0x08 }
+HOPE_STATUE_ADD[2] = { 0x7e0a0f , 0x40 }
+
+-- Rama statue uses
+RAMA_STATUE_ADD = {}
+RAMA_STATUE_ADD[1] = { 0x7e0a10 , 0x01 }
+RAMA_STATUE_ADD[2] = { 0x7e0a10 , 0x02 }
+
+-- Mushroom drop uses
+MUSHROOM_DROP_ADD = {}
+MUSHROOM_DROP_ADD[1] = { 0x7e0a2b , 0x02 }
+MUSHROOM_DROP_ADD[2] = { 0x7e0a2b , 0x80 }
+MUSHROOM_DROP_ADD[3] = { 0x7e0a2c , 0x80 }
 
 -- Items table
 -- each item has an unique value in inventory
@@ -498,7 +522,7 @@ end
    Arguments : code1, code2
 --]]
 function updateTrackerCompactItems(code1, code2)
-	compact_code=code1.."_"..code2
+	local compact_code=code1.."_"..code2
 	
 	local item = Tracker:FindObjectForCode(compact_code)
 
@@ -1179,30 +1203,13 @@ function watchSwitchesFromMemorySegment(segment)
 		
 		updateTrackerUsedItems(segment, "journal", 0x7e0a1d, 0x80)
 		
-		crystal_ball_add = {}
-		crystal_ball_add[1] = { 0x7e0a0c , 0x01 }
-		crystal_ball_add[2] = { 0x7e0a0c , 0x02 }
-		crystal_ball_add[3] = { 0x7e0a0c , 0x04 }
-		crystal_ball_add[4] = { 0x7e0a0c , 0x08 }
-		
-		hope_statue_add = {}
-		hope_statue_add[1] = { 0x7e0a0f , 0x08 }
-		hope_statue_add[2] = { 0x7e0a0f , 0x40 }
-		
-		rama_statue_add = {}
-		rama_statue_add[1] = { 0x7e0a10 , 0x01 }
-		rama_statue_add[2] = { 0x7e0a10 , 0x02 }
-		
-		mushroom_drop_add = {}
-		mushroom_drop_add[1] = { 0x7e0a2b , 0x02 }
-		mushroom_drop_add[2] = { 0x7e0a2b , 0x80 }
-		mushroom_drop_add[3] = { 0x7e0a2c , 0x80 }
-		
-		updateTrackerUsedCountedItem(segment, "crystal_ball", crystal_ball_add, 4)
-		updateTrackerUsedCountedItem(segment, "hope_statue", hope_statue_add, 2)
-		updateTrackerUsedCountedItem(segment, "rama_statue", rama_statue_add, 2)
-		updateTrackerUsedCountedItem(segment, "mushroom_drop", mushroom_drop_add, 3)
-		
+		-- Addresses listed in Global variables section of this script
+		-- each use of this function needs array name and number of elements in it
+		updateTrackerUsedCountedItem(segment, "crystal_ball", CRYSTAL_BALL_ADD, 4)
+		updateTrackerUsedCountedItem(segment, "hope_statue", HOPE_STATUE_ADD, 2)
+		updateTrackerUsedCountedItem(segment, "rama_statue", RAMA_STATUE_ADD, 2)
+		updateTrackerUsedCountedItem(segment, "mushroom_drop", MUSHROOM_DROP_ADD, 3)
+
 		-- Information for the future
 		-- The seven jeweler award amounts are located, respectively, at $8cee0, $8cef1, $8cf02, $8cf13, $8cf24, $8cf35 and $8cf40
 		
@@ -1310,28 +1317,39 @@ function watchStatsFromMemorySegment(address)
 	InvalidateReadCaches()
 
 	if AUTOTRACKER_ENABLE_ITEM_TRACKING then
-		updateStatsPoints(0x7e0aca, "hit_points")
-		updateStatsPoints(0x7e0ade, "atk_stat")
-		updateStatsPoints(0x7e0adc, "def_stat")
+		--if address == 0x7e0aca then
+			updateStatsPoints(0x7e0aca, "hit_points")
+		--end
+		--if address == 0x7e0ade then
+			updateStatsPoints(0x7e0ade, "atk_stat")
+		--end
+		--if address == 0x7e0adc then
+			updateStatsPoints(0x7e0adc, "def_stat")
+		--end
 	end
 end
 
 ---------------------------------------------- WATCH --
 
 -- MAIN -----------------------------------------------
+-- Default time frequency : 1s - 1000ms
 
 ---- Items watchers -----------------------------------
 ScriptHost:AddMemoryWatch("IoG Inventory Data", 0x7e0ab0, 0x16, watchItemsFromInventorySegment)
 ---- Abilities watchers -------------------------------
-ScriptHost:AddMemoryWatch("IoG Ability Data", 0x7e0aa2, 0x01, watchAbilitiesFromMemorySegment)
-ScriptHost:AddMemoryWatch("IoG Ability Upgrade Data", 0x7e0b16, 0x08, watchAbilityUpgradesFromMemorySegment)
+-- Frequency : 2s
+ScriptHost:AddMemoryWatch("IoG Ability Data", 0x7e0aa2, 0x01, watchAbilitiesFromMemorySegment, 2000)
+ScriptHost:AddMemoryWatch("IoG Ability Upgrade Data", 0x7e0b16, 0x08, watchAbilityUpgradesFromMemorySegment, 2000)
 ---- Objectives watchers ------------------------------
-ScriptHost:AddMemoryWatch("IoG Mystic Statue Data", 0x7e0a1f, 0x01, watchMysticStatuesFromMemorySegment)
-ScriptHost:AddMemoryWatch("IoG Kara's Paint Data", 0x7e0644, 0x01, watchKaraFromRoomSegment)
+-- Frequency : 5s
+ScriptHost:AddMemoryWatch("IoG Mystic Statue Data", 0x7e0a1f, 0x01, watchMysticStatuesFromMemorySegment, 5000)
+ScriptHost:AddMemoryWatch("IoG Kara's Paint Data", 0x7e0644, 0x01, watchKaraFromRoomSegment, 5000)
 ---- Switches watchers --------------------------------
 ScriptHost:AddMemoryWatch("IoG Switches Data", 0x7e0a02, 0x2b, watchSwitchesFromMemorySegment)
 ---- Hieroglyphs watchers -----------------------------
-ScriptHost:AddMemoryWatch("IoG Hieroglyphs Data", 0x7e0b28, 0x20, watchHieroglyphsFromMemorySegment)
+-- Frequency : 2s
+ScriptHost:AddMemoryWatch("IoG Hieroglyphs Data", 0x7e0b28, 0x20, watchHieroglyphsFromMemorySegment, 2000)
 ---- Stats watchers -----------------------------------
-ScriptHost:AddMemoryWatch("IoG Stats Data", 0x7e0aca, 0x14, watchStatsFromMemorySegment)
+-- Frequency : 2s
+ScriptHost:AddMemoryWatch("IoG Stats Data", 0x7e0aca, 0x14, watchStatsFromMemorySegment, 2000)
 ----------------------------------------------- MAIN --

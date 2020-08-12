@@ -387,7 +387,16 @@
 					"@logic_dungeons/inca ruins - out, diamond_block, $oneWillAbility",
 					"@logic_dungeons/inca ruins - in"
 				],
-				"item_count": 4
+				"item_count": 3
+			},
+			{
+				"name": "Statues chest",
+				"clear_as_group": false,
+				"access_rules": [
+					"@logic_dungeons/inca ruins - out, diamond_block, $oneWillAbility",
+					"@logic_dungeons/inca ruins - in, $oneWillAbility"
+				],
+				"item_count": 1
 			},
 			{
 				"name": "Castoth",
