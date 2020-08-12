@@ -1,3 +1,9 @@
+v3.2.0.0 :
+* World Map Tracker :
+  * Fix : Inca access logic
+* Autotracker - Items :
+  * Change : Code optimization
+
 v3.1.0.0 :
 * World Map Tracker :
   * Fix : Seaside Palace access logic
