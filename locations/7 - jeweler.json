@@ -75,11 +75,13 @@
         "sections": [
             {
                 "name": "Mansion",
-                "clear_as_group": false,
                 "item_count": 1
             },
 			{
-				"name": "Solid Arm"
+				"name": "Solid Arm",
+				"access_rules": [
+					"psycho_slide"
+				]
 			}
         ],
         "map_locations": [

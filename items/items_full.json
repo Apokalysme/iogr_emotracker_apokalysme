@@ -199,7 +199,7 @@
         },
         {
           "img": "images/items/melody_memory_used.png",
-          "codes": "melody_memory",
+          "codes": "melody_memory,active_memory",
           "secondary_codes": "used"
         }
       ]
@@ -352,7 +352,7 @@
         },
         {
           "img": "images/items/teapot_used.png",
-          "codes": "teapot",
+          "codes": "teapot,active_teapot",
           "secondary_codes": "used"
         }
       ]
