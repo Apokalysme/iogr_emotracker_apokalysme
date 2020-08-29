@@ -8,7 +8,7 @@
 				"name": "sw to se",
 				"access_rules": [
 					"$incaDungeon",
-					"teapot",
+					"active_teapot",
 					"letter_lola",
 					"$openModeON"
 				],
@@ -19,7 +19,7 @@
 				"name": "inca to se",
 				"access_rules": [
 					"$incaStartDungeon",
-					"teapot",
+					"active_teapot",
 					"letter_lola",
 					"$openModeON"
 				],
@@ -31,7 +31,7 @@
 				"access_rules": [
 					"$incaDungeon, $skyGarden",
 					"letter_lola, $skyGarden",
-					"teapot",
+					"active_teapot",
 					"$openModeON"
 				],
 				"item_count": 1
@@ -42,7 +42,7 @@
 				"access_rules": [
 					"$incaStartDungeon, $skyGarden",
 					"letter_lola, $skyGarden",
-					"teapot",
+					"active_teapot",
 					"$openModeON"
 				],
 				"item_count": 1
@@ -60,7 +60,7 @@
 				// Transition from South East to South West
 				"name": "se to sw",
 				"access_rules": [
-					"teapot",
+					"active_teapot",
 					"letter_lola",
 					"$openModeON"
 				],
@@ -70,7 +70,7 @@
 				// Transition from South East to seaside_palace
 				"name": "se to seaside",
 				"access_rules": [
-					"teapot",
+					"active_teapot",
 					"$openModeON",
 					"$skyGarden"
 				],
@@ -81,7 +81,7 @@
 				"name": "se to ne",
 				"access_rules": [
 					"$skyGarden, mu_key",
-					"teapot, mu_key",
+					"active_teapot, mu_key",
 					"letter_lola",
 					"$openModeON"
 				],
@@ -91,7 +91,7 @@
 				// Transition from South East to North
 				"name": "se to n",
 				"access_rules": [
-					"melody_memory",
+					"active_memory",
 					"$openModeON"
 				],
 				"item_count": 1
@@ -100,7 +100,7 @@
 				// Transition from South East to North West
 				"name": "se to nw",
 				"access_rules": [
-					"melody_memory",
+					"active_memory",
 					"$openModeON"
 				],
 				"item_count": 1
@@ -109,7 +109,7 @@
 				// Transition to babel
 				"name": "to babel",
 				"access_rules": [
-					"melody_memory",
+					"active_memory",
 					"$openModeON"
 				],
 				"item_count": 1
@@ -128,7 +128,7 @@
 				"name": "ne to seaside",
 				"access_rules": [
 					"mu_key",
-					"@logic_transitions/ne to se, teapot",
+					"@logic_transitions/ne to se, active_teapot",
 					"@logic_transitions/ne to se, $openModeON",
 					"@logic_transitions/ne to se, $skyGarden"
 				],
@@ -148,7 +148,7 @@
 				"name": "n to nw",
 				"access_rules": [
 					"large_roast",
-					"melody_memory",
+					"active_memory",
 					"$openModeON"
 				],
 				"item_count": 1
@@ -166,7 +166,7 @@
 				// Transition from North to South East
 				"name": "n to se",
 				"access_rules": [
-					"melody_memory",
+					"active_memory",
 					"$openModeON"
 				],
 				"item_count": 1
@@ -176,7 +176,7 @@
 				"name": "n to seaside",
 				"access_rules": [
 					"@logic_transitions/n to ne, mu_key",
-					"@logic_transitions/n to se, teapot",
+					"@logic_transitions/n to se, active_teapot",
 					"@logic_transitions/n to se, $openModeON",
 					"@logic_transitions/n to se, $skyGarden"
 				],
@@ -186,7 +186,7 @@
 				// Transition from North West to South East
 				"name": "nw to se",
 				"access_rules": [
-					"melody_memory",
+					"active_memory",
 					"$openModeON"
 				],
 				"item_count": 1

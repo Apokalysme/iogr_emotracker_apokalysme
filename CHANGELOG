@@ -1,3 +1,9 @@
+v3.3.0.0 :
+* World Map Tracker :
+  * Fix : Memory Melody only usable in Neil's Cottage, so this place must be accessible to permit all other spots to be accessible
+  * Fix : Teapot is only usable in Moon Tribe, so this place must be accessible to permit all other spots to be accessible
+  * Fix : 36-50 RJ don't light up Jeweler Mansion
+
 v3.2.0.0 :
 * World Map Tracker :
   * Fix : Inca access logic

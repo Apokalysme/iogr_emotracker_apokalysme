@@ -19,7 +19,8 @@
 				"name": "jeweler mansion",
 				"access_rules": [
 					"red_jewel:36, [red_jewel:50]"
-				]
+				],
+				"item_count": 1
 			}
 		]
 	}
