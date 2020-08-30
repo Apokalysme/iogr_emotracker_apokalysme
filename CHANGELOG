@@ -1,3 +1,7 @@
+v3.4.0.0 :
+* General :
+  * Fix : Mystic Statues synchronisation with teacher trigger which display needed statues on tracker
+
 v3.3.0.0 :
 * World Map Tracker :
   * Fix : Memory Melody only usable in Neil's Cottage, so this place must be accessible to permit all other spots to be accessible

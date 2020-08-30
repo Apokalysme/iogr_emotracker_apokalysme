@@ -2,8 +2,8 @@
 	   Name : autotracking.lua
 Description : Program to track automatically items obtained and used during an IoG:R seed
 	Authors : Apokalysme, Neomatamune
-	Version : 3.2.0
-Last Change : 12/08/2020
+	Version : 3.4.0
+Last Change : 30/08/2020
 
    Features :
     * Item AutoTracking : (Apokalysme)
@@ -709,20 +709,20 @@ function updateTrackerNeededStatues(segment, address, flag)
 	
 	if item1 and item2 and item3 and item4 and item5 and item6 then
 		local value = ReadU8(segment, address)
-		
-		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG then
-			print("Needed Statues : ", value)
-		end
 
 		-- Update Tracker when player has talked to teacher in South Cape
 		local flagTest = value & flag
         if flagTest > 0 and MYSTIC_STATUE_SET == 0 then
+			if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG then
+				print("Talked to Teacher : OK")
+			end
             if (MYSTIC_STATUE_NEEDED[1] == 1) then item1.CurrentStage = 1 end
 			if (MYSTIC_STATUE_NEEDED[2] == 1) then item2.CurrentStage = 1 end
 			if (MYSTIC_STATUE_NEEDED[3] == 1) then item3.CurrentStage = 1 end
 			if (MYSTIC_STATUE_NEEDED[4] == 1) then item4.CurrentStage = 1 end
 			if (MYSTIC_STATUE_NEEDED[5] == 1) then item5.CurrentStage = 1 end
 			if (MYSTIC_STATUE_NEEDED[6] == 1) then item6.CurrentStage = 1 end
+
 			-- Set this variable to not do this check again
 			MYSTIC_STATUE_SET = 1
         end
@@ -1214,7 +1214,9 @@ function watchSwitchesFromMemorySegment(segment)
 		-- The seven jeweler award amounts are located, respectively, at $8cee0, $8cef1, $8cf02, $8cf13, $8cf24, $8cf35 and $8cf40
 		
 		-- Updating Needed mystic statues marks
-		if MYSTIC_STATUE_SET == 0 then updateTrackerNeededStatues(segment, 0x7e0a07, 0x01) end
+		if MYSTIC_STATUE_SET == 0 and MYSTIC_STATUE_CHECK == 1 then
+			updateTrackerNeededStatues(segment, 0x7e0a07, 0x01)
+		end
 		
 		-- Debug informations about hieroglyphs check status
 		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_HIEROGLYPHS_DEBUG then

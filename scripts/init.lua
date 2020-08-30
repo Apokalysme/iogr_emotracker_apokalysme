@@ -1,4 +1,4 @@
-print("-- IoG:R Tracker pack - v3.2.0.0 --")
+print("-- IoG:R Tracker pack - v3.4.0.0 --")
 print("Loaded tracker : ", Tracker.ActiveVariantUID)
 
 --  Load configuration options up front
