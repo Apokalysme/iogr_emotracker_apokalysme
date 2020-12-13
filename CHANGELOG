@@ -1,5 +1,9 @@
+v3.5.0.0 :
+* Autotracker - Items :
+  * Change : Manage new stackable herbs
+
 v3.4.0.0 :
-* General :
+* Autotracker - Items :
   * Fix : Mystic Statues synchronisation with teacher trigger which display needed statues on tracker
 
 v3.3.0.0 :
