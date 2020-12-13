@@ -4,7 +4,6 @@ Description : Program to track automatically items obtained and used during an I
 	Authors : Apokalysme, Neomatamune
 	Version : 3.5.0
 Last Change : 13/12/2020
-
    Features :
     * Item AutoTracking : (Apokalysme)
 		- Items obtained and used
