@@ -2,9 +2,8 @@
 	   Name : autotracking.lua
 Description : Program to track automatically items obtained and used during an IoG:R seed
 	Authors : Apokalysme, Neomatamune
-	Version : 3.4.0
-Last Change : 30/08/2020
-
+	Version : 3.5.0
+Last Change : 13/12/2020
    Features :
     * Item AutoTracking : (Apokalysme)
 		- Items obtained and used
@@ -19,14 +18,14 @@ Last Change : 30/08/2020
 --]]
 
 -- Configuration --------------------------------------
-AUTOTRACKER_ENABLE_DEBUG_LOGGING = true
-AUTOTRACKER_ENABLE_INVENTORY_DEBUG = true
-AUTOTRACKER_ENABLE_ITEMS_DEBUG = true
-AUTOTRACKER_ENABLE_COUNTS_DEBUG = true
-AUTOTRACKER_ENABLE_HIEROGLYPHS_DEBUG = true
-AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG = true
-AUTOTRACKER_ENABLE_ABILITIES_DEBUG = true
-AUTOTRACKER_ENABLE_STATS_DEBUG = true
+AUTOTRACKER_ENABLE_DEBUG_LOGGING = false
+AUTOTRACKER_ENABLE_INVENTORY_DEBUG = false
+AUTOTRACKER_ENABLE_ITEMS_DEBUG = false
+AUTOTRACKER_ENABLE_COUNTS_DEBUG = false
+AUTOTRACKER_ENABLE_HIEROGLYPHS_DEBUG = false
+AUTOTRACKER_ENABLE_OBJECTIVES_DEBUG = false
+AUTOTRACKER_ENABLE_ABILITIES_DEBUG = false
+AUTOTRACKER_ENABLE_STATS_DEBUG = false
 -------------------------------------------------------
 
 -- Settings display -----------------------------------
@@ -376,7 +375,7 @@ function newItemInInventory(segment)
 	updateTrackerCompactItems("mu_key", "purity_stone")
 
 	-- Check item counts and do Tracker updates if necessary
-	checkCountChange(herb_count, "herb")
+	checkHerbCountChange(herb_count)
 	checkCountChange(crystal_ball_count, "crystal_ball")
 	checkCountChange(hope_statue_count, "hope_statue")
 	checkCountChange(rama_statue_count, "rama_statue")
@@ -393,6 +392,38 @@ end
    Arguments : new_count, code
 --]]
 function checkCountChange(new_count, code)
+	-- If there is some change in count
+	if new_count + INVENTORY_TABLE[code][2] ~= INVENTORY_TABLE[code][1] then
+		-- Debug informations about actual and new count
+		if AUTOTRACKER_ENABLE_DEBUG_LOGGING and AUTOTRACKER_ENABLE_COUNTS_DEBUG then
+			print(code, " count : actual ", INVENTORY_TABLE[code][1], " - new ", new_count, " - used ", INVENTORY_TABLE[code][2])
+		end
+		-- If there is a new in inventory, add 1
+		if new_count + INVENTORY_TABLE[code][2] > INVENTORY_TABLE[code][1] then
+			INVENTORY_TABLE[code][1] = new_count + INVENTORY_TABLE[code][2]
+			updateTrackerCountedItem(code)
+		-- If there is one less, add 1 to used ones
+		elseif new_count + INVENTORY_TABLE[code][2] < INVENTORY_TABLE[code][1] then
+			INVENTORY_TABLE[code][2] = INVENTORY_TABLE[code][1] - new_count
+		end
+	end
+end
+
+--[[
+	Function : checkHerbCountChange()
+ Description : Check count change for herbs
+   Arguments : new_count, code
+--]]
+function checkHerbCountChange(new_count)
+	local code = "herb"
+	
+		-- manage stackable herbs
+	if INVENTORY_TABLE[code][1] >= 1 or new_count >= 1 then
+		-- check actual stack value
+		local value = tonumber(string.format("%04X", AutoTracker:ReadU8(0x7e0aaa, 0)))
+		new_count = value
+	end
+
 	-- If there is some change in count
 	if new_count + INVENTORY_TABLE[code][2] ~= INVENTORY_TABLE[code][1] then
 		-- Debug informations about actual and new count
@@ -1337,7 +1368,7 @@ end
 -- Default time frequency : 1s - 1000ms
 
 ---- Items watchers -----------------------------------
-ScriptHost:AddMemoryWatch("IoG Inventory Data", 0x7e0ab0, 0x16, watchItemsFromInventorySegment)
+ScriptHost:AddMemoryWatch("IoG Inventory Data", 0x7e0aaa, 0x1c, watchItemsFromInventorySegment)
 ---- Abilities watchers -------------------------------
 -- Frequency : 2s
 ScriptHost:AddMemoryWatch("IoG Ability Data", 0x7e0aa2, 0x01, watchAbilitiesFromMemorySegment, 2000)
