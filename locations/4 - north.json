@@ -268,8 +268,8 @@
 				"name": "Garden - Left room",
 				"clear_as_group": false,
 				"access_rules": [
-					"@logic_dungeons/ankor - out, @logic_dungeons/ankor garden",
-					"ankorWat_gardenEntrance_start",
+					"@logic_dungeons/ankor - out, @logic_dungeons/ankor garden, @logic_dungeons/ankor main hall",
+					"ankorWat_gardenEntrance_start, @logic_dungeons/ankor main hall",
 					"ankorWat_mainHall_start"
 				],
 				"item_count": 1
