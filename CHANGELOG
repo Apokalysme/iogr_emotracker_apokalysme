@@ -1,6 +1,7 @@
 v3.6.0.0 :
 * World Map Tracker :
   * Fix : Garden Left Room only accessible with Dark Friar or Earthquaker, if start is not in Inner Garden Dark Space
+  * Fix : Main Hall Dark Space is accessible if you start in it
 
 v3.5.0.0 :
 * Autotracker - Items :

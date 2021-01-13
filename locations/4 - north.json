@@ -333,7 +333,7 @@
 				"access_rules": [
 					"@logic_dungeons/ankor - out, @logic_dungeons/ankor garden, @logic_dungeons/ankor main hall, [black_glasses]",
 					"ankorWat_gardenEntrance_start, @logic_dungeons/ankor main hall, [black_glasses]",
-					"ankorWat_mainHall_start, [black_glasses]"
+					"ankorWat_mainHall_start"
 				],
 				"item_count": 1
 			}
